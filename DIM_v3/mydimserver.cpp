@@ -1,10 +1,11 @@
 #include "mydimserver.h"
 
+/*
 
 pm_pNonValSignal getPMNonValPointerToSignal(QString PARname){ return PMNonValHash[PARname]; };
 pmch_pNonValSignal getPMCHNonValPointerToSignal(QString PARname){ return PMCHNonValHash[PARname]; };
 
-
+*/
 
 
 //  ==========================================  MyDimServer  =============================================
@@ -12,6 +13,8 @@ pmch_pNonValSignal getPMCHNonValPointerToSignal(QString PARname){ return PMCHNon
 MyDimServer::MyDimServer(QString dns_node,QString server_name)  :
     QObject(nullptr)//,
 {
+    OpenOutFile();
+
     dnsNode = dns_node;
     serverName = server_name;
     setDnsNode(qPrintable(dnsNode));
@@ -26,6 +29,7 @@ MyDimServer::~MyDimServer()
 {
     for(quint8 i=0;i<Npms;i++){
         delete pm[i];
+
     }
     PMValHash<quint8>.clear();      PMValHash<quint16>.clear();     PMValHash<quint32>.clear();
     PMValHash<qint8>.clear();       PMValHash<qint16>.clear();      PMValHash<qint32>.clear();
@@ -33,6 +37,8 @@ MyDimServer::~MyDimServer()
     PMCHValHash<qint8>.clear();     PMCHValHash<qint16>.clear();    PMCHValHash<qint32>.clear();
     PMNonValHash.clear();
     PMCHNonValHash.clear();
+
+    CloseOutFile();
 }
 
 void MyDimServer::startServer()
@@ -42,7 +48,6 @@ void MyDimServer::startServer()
      cout << "###################################################" << endl
           << "Start DIM server on " << dnsNode << endl
           << "###################################################" << endl;
-
      for(quint8 i=0;i<Npms;i++) {
          pm[i] = new PMPars(this);
          pm[i]->PMid = i+1;
@@ -56,6 +61,7 @@ void MyDimServer::stopServer()
     cout << "###################################################" << endl
          << "Stop DIM server "  << endl
          << "###################################################" << endl;
+
 }
 
 void MyDimServer::OpenOutFile()
@@ -289,78 +295,78 @@ void PMPars::publish()
         //  loop for channels
         for(quint8 i=0; i<Nchannels; i++) {
 
-            adczero[i]->SetCHid(i+1);        adczero[i]->SetPMid(PMid);       adczero[i]->publishCommands();        adczero[i]->publishServices();
-            adcdelay[i]->SetCHid(i+1);       adcdelay[i]->SetPMid(PMid);      adcdelay[i]->publishCommands();       adcdelay[i]->publishServices();
-            adc0offset[i]->SetCHid(i+1);     adc0offset[i]->SetPMid(PMid);    adc0offset[i]->publishCommands();     adc0offset[i]->publishServices();
-            adc1offset[i]->SetCHid(i+1);     adc1offset[i]->SetPMid(PMid);    adc1offset[i]->publishCommands();     adc1offset[i]->publishServices();
+//            adczero[i]->SetCHid(i+1);        adczero[i]->SetPMid(PMid);       adczero[i]->publishCommands();        adczero[i]->publishServices();
+//            adcdelay[i]->SetCHid(i+1);       adcdelay[i]->SetPMid(PMid);      adcdelay[i]->publishCommands();       adcdelay[i]->publishServices();
+//            adc0offset[i]->SetCHid(i+1);     adc0offset[i]->SetPMid(PMid);    adc0offset[i]->publishCommands();     adc0offset[i]->publishServices();
+//            adc1offset[i]->SetCHid(i+1);     adc1offset[i]->SetPMid(PMid);    adc1offset[i]->publishCommands();     adc1offset[i]->publishServices();
             adc0range[i]->SetCHid(i+1);      adc0range[i]->SetPMid(PMid);     adc0range[i]->publishCommands();      adc0range[i]->publishServices();
-            adc1range[i]->SetCHid(i+1);      adc1range[i]->SetPMid(PMid);     adc1range[i]->publishCommands();      adc1range[i]->publishServices();
-            timealign[i]->SetCHid(i+1);       timealign[i]->SetPMid(PMid);      timealign[i]->publishCommands();       timealign[i]->publishServices();
-            cfdthreshold[i]->SetCHid(i+1);    cfdthreshold[i]->SetPMid(PMid);   cfdthreshold[i]->publishCommands();    cfdthreshold[i]->publishServices();
-            cfdzero[i]->SetCHid(i+1);        cfdzero[i]->SetPMid(PMid);       cfdzero[i]->publishCommands();        cfdzero[i]->publishServices();
-            thresholdcalibr[i]->SetCHid(i+1); thresholdcalibr[i]->SetPMid(PMid);thresholdcalibr[i]->publishCommands(); thresholdcalibr[i]->publishServices();
+//            adc1range[i]->SetCHid(i+1);      adc1range[i]->SetPMid(PMid);     adc1range[i]->publishCommands();      adc1range[i]->publishServices();
+//            timealign[i]->SetCHid(i+1);       timealign[i]->SetPMid(PMid);      timealign[i]->publishCommands();       timealign[i]->publishServices();
+//            cfdthreshold[i]->SetCHid(i+1);    cfdthreshold[i]->SetPMid(PMid);   cfdthreshold[i]->publishCommands();    cfdthreshold[i]->publishServices();
+//            cfdzero[i]->SetCHid(i+1);        cfdzero[i]->SetPMid(PMid);       cfdzero[i]->publishCommands();        cfdzero[i]->publishServices();
+//            thresholdcalibr[i]->SetCHid(i+1); thresholdcalibr[i]->SetPMid(PMid);thresholdcalibr[i]->publishCommands(); thresholdcalibr[i]->publishServices();
 
-            alltoch[i]->SetCHid(i+1);        alltoch[i]->SetPMid(PMid);       alltoch[i]->publishCommands();
+//            alltoch[i]->SetCHid(i+1);        alltoch[i]->SetPMid(PMid);       alltoch[i]->publishCommands();
 
-            adc0meanampl[i]->SetCHid(i+1);   adc0meanampl[i]->SetPMid(PMid);                                      adc0meanampl[i]->publishServices();
-            adc1meanampl[i]->SetCHid(i+1);   adc1meanampl[i]->SetPMid(PMid);                                      adc1meanampl[i]->publishServices();
-            adc0zerolvl[i]->SetCHid(i+1);    adc0zerolvl[i]->SetPMid(PMid);                                       adc0zerolvl[i]->publishServices();
-            adc1zerolvl[i]->SetCHid(i+1);    adc1zerolvl[i]->SetPMid(PMid);                                       adc1zerolvl[i]->publishServices();
-            cfdcnt[i]->SetCHid(i+1);         cfdcnt[i]->SetPMid(PMid);                                            cfdcnt[i]->publishServices();
-            trgcnt[i]->SetCHid(i+1);         trgcnt[i]->SetPMid(PMid);                                            trgcnt[i]->publishServices();
-            rawtdcdata[i]->SetCHid(i+1);     rawtdcdata[i]->SetPMid(PMid);                                        rawtdcdata[i]->publishServices();
+//            adc0meanampl[i]->SetCHid(i+1);   adc0meanampl[i]->SetPMid(PMid);                                      adc0meanampl[i]->publishServices();
+//            adc1meanampl[i]->SetCHid(i+1);   adc1meanampl[i]->SetPMid(PMid);                                      adc1meanampl[i]->publishServices();
+//            adc0zerolvl[i]->SetCHid(i+1);    adc0zerolvl[i]->SetPMid(PMid);                                       adc0zerolvl[i]->publishServices();
+//            adc1zerolvl[i]->SetCHid(i+1);    adc1zerolvl[i]->SetPMid(PMid);                                       adc1zerolvl[i]->publishServices();
+//            cfdcnt[i]->SetCHid(i+1);         cfdcnt[i]->SetPMid(PMid);                                            cfdcnt[i]->publishServices();
+//            trgcnt[i]->SetCHid(i+1);         trgcnt[i]->SetPMid(PMid);                                            trgcnt[i]->publishServices();
+//            rawtdcdata[i]->SetCHid(i+1);     rawtdcdata[i]->SetPMid(PMid);                                        rawtdcdata[i]->publishServices();
 
         }
 
-        chmask->SetPMid(PMid);                   chmask->publishCommands();                    chmask->publishServices();
-        cfdsatr->SetPMid(PMid);                  cfdsatr->publishCommands();                   cfdsatr->publishServices();
-        orgate->SetPMid(PMid);                   orgate->publishCommands();                    orgate->publishServices();
-        resetcounters->SetPMid(PMid);            resetcounters->publishCommands();
-        zerolvlcalibration->SetPMid(PMid);       zerolvlcalibration->publishCommands();
+//        chmask->SetPMid(PMid);                   chmask->publishCommands();                    chmask->publishServices();
+//        cfdsatr->SetPMid(PMid);                  cfdsatr->publishCommands();                   cfdsatr->publishServices();
+//        orgate->SetPMid(PMid);                   orgate->publishCommands();                    orgate->publishServices();
+//        resetcounters->SetPMid(PMid);            resetcounters->publishCommands();
+//        zerolvlcalibration->SetPMid(PMid);       zerolvlcalibration->publishCommands();
 
-        resetorbitsync->SetPMid(PMid);           resetorbitsync->publishCommands();
-        resetdrophitcnts->SetPMid(PMid);         resetdrophitcnts->publishCommands();
-        resetgenbunchoffset->SetPMid(PMid);      resetgenbunchoffset->publishCommands();
-        resetgbterrors->SetPMid(PMid);           resetgbterrors->publishCommands();
-        resetgbt->SetPMid(PMid);                 resetgbt->publishCommands();
-        resetrxphaseerror->SetPMid(PMid);        resetrxphaseerror->publishCommands();
-        sendreadoutcommand->SetPMid(PMid);       sendreadoutcommand->publishCommands();
-        tgmode->SetPMid(PMid);                   tgmode->publishCommands();                    tgmode->publishServices();
-        tgpattern1->SetPMid(PMid);               tgpattern1->publishCommands();                tgpattern1->publishServices();
-        tgpattern0->SetPMid(PMid);               tgpattern0->publishCommands();                tgpattern0->publishServices();
-        tgcontvalue->SetPMid(PMid);              tgcontvalue->publishCommands();               tgcontvalue->publishServices();
-        tgsendsingle->SetPMid(PMid);             tgsendsingle->publishCommands();
-        tgbunchfreq->SetPMid(PMid);              tgbunchfreq->publishCommands();               tgbunchfreq->publishServices();
-        tgfreqoffset->SetPMid(PMid);             tgfreqoffset->publishCommands();              tgfreqoffset->publishServices();
-        dgmode->SetPMid(PMid);                   dgmode->publishCommands();                    dgmode->publishServices();
-        dgtrgrespondmask->SetPMid(PMid);         dgtrgrespondmask->publishCommands();          dgtrgrespondmask->publishServices();
-        dgbunchpattern->SetPMid(PMid);           dgbunchpattern->publishCommands();            dgbunchpattern->publishServices();
-        dgbunchfreq->SetPMid(PMid);              dgbunchfreq->publishCommands();               dgbunchfreq->publishServices();
-        dgfreqoffset->SetPMid(PMid);             dgfreqoffset->publishCommands();              dgfreqoffset->publishServices();
-        rdhfeeid->SetPMid(PMid);                 rdhfeeid->publishCommands();                  rdhfeeid->publishServices();
-        rdhpar->SetPMid(PMid);                   rdhpar->publishCommands();                    rdhpar->publishServices();
-        rdhmaxpayload->SetPMid(PMid);            rdhmaxpayload->publishCommands();             rdhmaxpayload->publishServices();
-        rdhdetfield->SetPMid(PMid);              rdhdetfield->publishCommands();               rdhdetfield->publishServices();
-        crutrgcomparedelay->SetPMid(PMid);       crutrgcomparedelay->publishCommands();        crutrgcomparedelay->publishServices();
-        bciddelay->SetPMid(PMid);                bciddelay->publishCommands();                 bciddelay->publishServices();
-        alltopm->SetPMid(PMid);                  alltopm->publishCommands();
+//        resetorbitsync->SetPMid(PMid);           resetorbitsync->publishCommands();
+//        resetdrophitcnts->SetPMid(PMid);         resetdrophitcnts->publishCommands();
+//        resetgenbunchoffset->SetPMid(PMid);      resetgenbunchoffset->publishCommands();
+//        resetgbterrors->SetPMid(PMid);           resetgbterrors->publishCommands();
+//        resetgbt->SetPMid(PMid);                 resetgbt->publishCommands();
+//        resetrxphaseerror->SetPMid(PMid);        resetrxphaseerror->publishCommands();
+//        sendreadoutcommand->SetPMid(PMid);       sendreadoutcommand->publishCommands();
+//        tgmode->SetPMid(PMid);                   tgmode->publishCommands();                    tgmode->publishServices();
+//        tgpattern1->SetPMid(PMid);               tgpattern1->publishCommands();                tgpattern1->publishServices();
+//        tgpattern0->SetPMid(PMid);               tgpattern0->publishCommands();                tgpattern0->publishServices();
+//        tgcontvalue->SetPMid(PMid);              tgcontvalue->publishCommands();               tgcontvalue->publishServices();
+//        tgsendsingle->SetPMid(PMid);             tgsendsingle->publishCommands();
+//        tgbunchfreq->SetPMid(PMid);              tgbunchfreq->publishCommands();               tgbunchfreq->publishServices();
+//        tgfreqoffset->SetPMid(PMid);             tgfreqoffset->publishCommands();              tgfreqoffset->publishServices();
+//        dgmode->SetPMid(PMid);                   dgmode->publishCommands();                    dgmode->publishServices();
+//        dgtrgrespondmask->SetPMid(PMid);         dgtrgrespondmask->publishCommands();          dgtrgrespondmask->publishServices();
+//        dgbunchpattern->SetPMid(PMid);           dgbunchpattern->publishCommands();            dgbunchpattern->publishServices();
+//        dgbunchfreq->SetPMid(PMid);              dgbunchfreq->publishCommands();               dgbunchfreq->publishServices();
+//        dgfreqoffset->SetPMid(PMid);             dgfreqoffset->publishCommands();              dgfreqoffset->publishServices();
+//        rdhfeeid->SetPMid(PMid);                 rdhfeeid->publishCommands();                  rdhfeeid->publishServices();
+//        rdhpar->SetPMid(PMid);                   rdhpar->publishCommands();                    rdhpar->publishServices();
+//        rdhmaxpayload->SetPMid(PMid);            rdhmaxpayload->publishCommands();             rdhmaxpayload->publishServices();
+//        rdhdetfield->SetPMid(PMid);              rdhdetfield->publishCommands();               rdhdetfield->publishServices();
+//        crutrgcomparedelay->SetPMid(PMid);       crutrgcomparedelay->publishCommands();        crutrgcomparedelay->publishServices();
+//        bciddelay->SetPMid(PMid);                bciddelay->publishCommands();                 bciddelay->publishServices();
+//        alltopm->SetPMid(PMid);                  alltopm->publishCommands();
 
 
-        boardstatus->SetPMid(PMid);                                                          boardstatus->publishServices();
-        temperature->SetPMid(PMid);                                                          temperature->publishServices();
-        hdmilink->SetPMid(PMid);                                                             hdmilink->publishServices();
-        bits->SetPMid(PMid);                                                                 bits->publishServices();
-        readoutmode->SetPMid(PMid);                                                          readoutmode->publishServices();
-        bcidsyncmode->SetPMid(PMid);                                                         bcidsyncmode->publishServices();
-        rxphase->SetPMid(PMid);                                                              rxphase->publishServices();
-        cruorbit->SetPMid(PMid);                                                             cruorbit->publishServices();
-        crubc->SetPMid(PMid);                                                                crubc->publishServices();
-        rawfifo->SetPMid(PMid);                                                              rawfifo->publishServices();
-        selfifo->SetPMid(PMid);                                                              selfifo->publishServices();
-        selfirsthit->SetPMid(PMid);                                                          selfirsthit->publishServices();
-        sellasthit->SetPMid(PMid);                                                           sellasthit->publishServices();
-        selhitsdropped->SetPMid(PMid);                                                       selhitsdropped->publishServices();
-        readoutrate->SetPMid(PMid);                                                          readoutrate->publishServices();
+//        boardstatus->SetPMid(PMid);                                                          boardstatus->publishServices();
+//        temperature->SetPMid(PMid);                                                          temperature->publishServices();
+//        hdmilink->SetPMid(PMid);                                                             hdmilink->publishServices();
+//        bits->SetPMid(PMid);                                                                 bits->publishServices();
+//        readoutmode->SetPMid(PMid);                                                          readoutmode->publishServices();
+//        bcidsyncmode->SetPMid(PMid);                                                         bcidsyncmode->publishServices();
+//        rxphase->SetPMid(PMid);                                                              rxphase->publishServices();
+//        cruorbit->SetPMid(PMid);                                                             cruorbit->publishServices();
+//        crubc->SetPMid(PMid);                                                                crubc->publishServices();
+//        rawfifo->SetPMid(PMid);                                                              rawfifo->publishServices();
+//        selfifo->SetPMid(PMid);                                                              selfifo->publishServices();
+//        selfirsthit->SetPMid(PMid);                                                          selfirsthit->publishServices();
+//        sellasthit->SetPMid(PMid);                                                           sellasthit->publishServices();
+//        selhitsdropped->SetPMid(PMid);                                                       selhitsdropped->publishServices();
+//        readoutrate->SetPMid(PMid);                                                          readoutrate->publishServices();
 }
 
 //  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -469,6 +475,8 @@ void fillPMCHNonValHash()
 
 }
 
+/*
+
 pm_APP::pm_APP(QString t_name) : Base(t_name)
 {
 //    pAPPSignal = returnPMAppPointerToSignal(name);
@@ -524,3 +532,6 @@ PMCHonlyAppPar::PMCHonlyAppPar(QString t_name, MyDimServer* t_pServer) : Base(t_
 
 void PMCHonlyAppPar::publishCommands()
 { pmch_APP::publishCommand(); }
+
+
+*/

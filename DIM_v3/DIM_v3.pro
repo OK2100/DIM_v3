@@ -15,7 +15,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        dimclasses.cpp \
+        classes.cpp \
+        common.cpp \
         main.cpp \
         mydimserver.cpp
 
@@ -32,5 +33,6 @@ DEPENDPATH += $$PWD/../dim_v20r26/dim
 unix:!macx: PRE_TARGETDEPS += $$PWD/../dim_v20r26/linux/libdim.a
 
 HEADERS += \
-    dimclasses.h \
+    classes.h \
+    common.h \
     mydimserver.h

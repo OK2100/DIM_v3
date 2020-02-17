@@ -1,23 +1,14 @@
-//#include "mainwindow.h"
 #include "mydimserver.h"
-//#include "emulator.h"
-//#include <QApplication>
-
-
 
 int main(int argc, char *argv[])
 {
-//    QApplication a(argc, argv);
-//    MainWindow w;
-//    w.show();
-
     MyDimServer* serv;
     QString node;
     node = "hplu-Notebook-PC";
     serv = new MyDimServer(node);
+//    serv->OpenOutFile();
     serv->startServer();
-
-
+    while (1){}
 
 //    QObject::connect(serv,&MyDimServer::set_ADC_ZERO_requested,serv,&MyDimServer::test_slot3);
 //    QObject::connect(serv,&MyDimServer::set_ADC_DELAY_requested,serv,&MyDimServer::test_slot3);
@@ -31,8 +22,5 @@ int main(int argc, char *argv[])
 
 //    QObject::connect(serv,&MyDimServer::set_TRESHOLD_CALIBR_requested,serv,&MyDimServer::update_new_TRESHOLD_CALIBR);
 
-
-
-//    return a.exec();
     return 0;
 }
