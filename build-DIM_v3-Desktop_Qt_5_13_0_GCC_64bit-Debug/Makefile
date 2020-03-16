@@ -715,6 +715,7 @@ compiler_moc_header_make_all: moc_mydimserver.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_mydimserver.cpp
 moc_mydimserver.cpp: ../DIM_v3/mydimserver.h \
+		../DIM_v3/classes.h \
 		../DIM_v3/common.h \
 		/home/hplu/Programms/Qt/5.13.0/gcc_64/include/QtCore/QDebug \
 		/home/hplu/Programms/Qt/5.13.0/gcc_64/include/QtCore/qdebug.h \
@@ -794,7 +795,6 @@ moc_mydimserver.cpp: ../DIM_v3/mydimserver.h \
 		../dim_v20r26/dim/dim.hxx \
 		../dim_v20r26/dim/sllist.hxx \
 		../dim_v20r26/dim/dllist.hxx \
-		../DIM_v3/classes.h \
 		moc_predefs.h \
 		/home/hplu/Programms/Qt/5.13.0/gcc_64/bin/moc
 	/home/hplu/Programms/Qt/5.13.0/gcc_64/bin/moc $(DEFINES) --include /home/hplu/Documents/WORK/FIT/qt_prj/My_projects/DIM_prj/3th_step/DIM_v3/build-DIM_v3-Desktop_Qt_5_13_0_GCC_64bit-Debug/moc_predefs.h -I/home/hplu/Programms/Qt/5.13.0/gcc_64/mkspecs/linux-g++ -I/home/hplu/Documents/WORK/FIT/qt_prj/My_projects/DIM_prj/3th_step/DIM_v3/DIM_v3 -I/home/hplu/Documents/WORK/FIT/qt_prj/My_projects/DIM_prj/3th_step/DIM_v3/dim_v20r26/dim -I/home/hplu/Programms/Qt/5.13.0/gcc_64/include -I/home/hplu/Programms/Qt/5.13.0/gcc_64/include/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../DIM_v3/mydimserver.h -o moc_mydimserver.cpp
@@ -977,6 +977,7 @@ common.o: ../DIM_v3/common.cpp ../DIM_v3/common.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o common.o ../DIM_v3/common.cpp
 
 main.o: ../DIM_v3/main.cpp ../DIM_v3/mydimserver.h \
+		../DIM_v3/classes.h \
 		../DIM_v3/common.h \
 		/home/hplu/Programms/Qt/5.13.0/gcc_64/include/QtCore/QDebug \
 		/home/hplu/Programms/Qt/5.13.0/gcc_64/include/QtCore/qdebug.h \
@@ -1055,11 +1056,11 @@ main.o: ../DIM_v3/main.cpp ../DIM_v3/mydimserver.h \
 		../dim_v20r26/dim/dic.h \
 		../dim_v20r26/dim/dim.hxx \
 		../dim_v20r26/dim/sllist.hxx \
-		../dim_v20r26/dim/dllist.hxx \
-		../DIM_v3/classes.h
+		../dim_v20r26/dim/dllist.hxx
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../DIM_v3/main.cpp
 
 mydimserver.o: ../DIM_v3/mydimserver.cpp ../DIM_v3/mydimserver.h \
+		../DIM_v3/classes.h \
 		../DIM_v3/common.h \
 		/home/hplu/Programms/Qt/5.13.0/gcc_64/include/QtCore/QDebug \
 		/home/hplu/Programms/Qt/5.13.0/gcc_64/include/QtCore/qdebug.h \
@@ -1138,8 +1139,7 @@ mydimserver.o: ../DIM_v3/mydimserver.cpp ../DIM_v3/mydimserver.h \
 		../dim_v20r26/dim/dic.h \
 		../dim_v20r26/dim/dim.hxx \
 		../dim_v20r26/dim/sllist.hxx \
-		../dim_v20r26/dim/dllist.hxx \
-		../DIM_v3/classes.h
+		../dim_v20r26/dim/dllist.hxx
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mydimserver.o ../DIM_v3/mydimserver.cpp
 
 moc_mydimserver.o: moc_mydimserver.cpp 

@@ -20,19 +20,20 @@ template <class T>
 using pmch_pValSignal = void(MyDimServer::*)(quint8,quint8,T);
 using pmch_pNonValSignal = void(MyDimServer::*)(quint8,quint8);
 
-
-
 static QTextStream cout(stdout);
 static QTextStream cin(stdin);
 static QTextStream cerr(stderr);
 
 static QFile DimServicesFile("ServicesList_v1_0.txt");
 static QFile DimCommandsFile("CommandsList_v1_0.txt");
-static QTextStream outDSs(&DimServicesFile);
-static QTextStream outDCs(&DimCommandsFile);
+
+//static QTextStream outDSs;
+//static QTextStream outDCs;
+extern QTextStream outDSs;
+extern QTextStream outDCs;
 
 
-
+void OpenOutFiles();
 
 template<class T>
 QHash<QString,pm_pValSignal<T>> PMValHash;

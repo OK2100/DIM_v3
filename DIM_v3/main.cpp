@@ -2,11 +2,12 @@
 
 int main(int argc, char *argv[])
 {
+    OpenOutFiles();
+
     MyDimServer* serv;
     QString node;
     node = "hplu-Notebook-PC";
     serv = new MyDimServer(node);
-//    serv->OpenOutFile();
     serv->startServer();
     while (1){}
 
