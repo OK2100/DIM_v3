@@ -10,14 +10,14 @@ protected:
     QString name;
 //    QString prefix;
     MyDimServer* pServer;
-    quint8 PMid;    //  default is 0
-    quint8 CHid;    //  default is 0
+    quint16 FEE_id;    //  default is 0xffff
+    quint8  CHid;    //  default is 0
 
 public:
     QString prefix;
     void SetServer(MyDimServer* t_pServer){ pServer = t_pServer; }
-    void SetPMid(quint8 t_PMid){ PMid = t_PMid; }
-    Base(QString t_name, QString t_prefix = "")	:	name (t_name), PMid(0), CHid(0), prefix(t_prefix)
+    void SetFEEid(quint16 t_pm_fee_id){ FEE_id = t_pm_fee_id; }
+    Base(QString t_name, QString t_prefix = "")	:	name (t_name), FEE_id(0xFFFF), CHid(0), prefix(t_prefix)
     {/*cout << name << " created" << endl;*/}
     ~Base()	{/*cout << name << " deleted" << endl;*/}
 };
@@ -47,19 +47,19 @@ public:
     {
         switch (sizeof(T)) {
         case 1:
-            actService = new DimService(qPrintable("ACT_FT0/PM"+PM_Names[PMid]+prefix+"/"+name),"C:1",&actValue,1);
+            actService = new DimService(qPrintable("ACT_"+DIM_name[FEE_id]+prefix+"/"+name),"C:1",&actValue,1);
             outDSs << actService->getName() << endl;
             break;
         case 2:
-            actService = new DimService(qPrintable("ACT_FT0/PM"+PM_Names[PMid]+prefix+"/"+name),"S:1",&actValue,2);
+            actService = new DimService(qPrintable("ACT_"+DIM_name[FEE_id]+prefix+"/"+name),"S:1",&actValue,2);
             outDSs << actService->getName() << endl;
             break;
         case 4:
-            actService = new DimService(qPrintable("ACT_FT0/PM"+PM_Names[PMid]+prefix+"/"+name),"I:1",&actValue,4);
+            actService = new DimService(qPrintable("ACT_"+DIM_name[FEE_id]+prefix+"/"+name),"I:1",&actValue,4);
             outDSs << actService->getName() << endl;
             break;
         case 8:
-            actService = new DimService(qPrintable("ACT_FT0/PM"+PM_Names[PMid]+prefix+"/"+name),"X:1",&actValue,8);
+            actService = new DimService(qPrintable("ACT_"+DIM_name[FEE_id]+prefix+"/"+name),"X:1",&actValue,8);
             outDSs << actService->getName() << endl;
             break;
         default:
@@ -107,19 +107,19 @@ public:
     {
         switch (sizeof(T)) {
         case 1:
-            newService = new DimService(qPrintable("NEW_FT0/PM"+PM_Names[PMid]+prefix+"/"+name),"C:1",&newValue,1);
+            newService = new DimService(qPrintable("NEW_"+DIM_name[FEE_id]+prefix+"/"+name),"C:1",&newValue,1);
             outDSs << newService->getName() << endl;
             break;
         case 2:
-            newService = new DimService(qPrintable("NEW_FT0/PM"+PM_Names[PMid]+prefix+"/"+name),"S:1",&newValue,2);
+            newService = new DimService(qPrintable("NEW_"+DIM_name[FEE_id]+prefix+"/"+name),"S:1",&newValue,2);
             outDSs << newService->getName() << endl;
             break;
         case 4:
-            newService = new DimService(qPrintable("NEW_FT0/PM"+PM_Names[PMid]+prefix+"/"+name),"I:1",&newValue,4);
+            newService = new DimService(qPrintable("NEW_"+DIM_name[FEE_id]+prefix+"/"+name),"I:1",&newValue,4);
             outDSs << newService->getName() << endl;
             break;
         case 8:
-            newService = new DimService(qPrintable("NEW_FT0/PM"+PM_Names[PMid]+prefix+"/"+name),"X:1",&newValue,8);
+            newService = new DimService(qPrintable("NEW_"+DIM_name[FEE_id]+prefix+"/"+name),"X:1",&newValue,8);
             outDSs << newService->getName() << endl;
             break;
         default:
@@ -193,16 +193,16 @@ public:
     {
     //    if(pSet!= nullptr)
         switch (sizeof(T)) {
-        case 1: appCommand = new DimCommand(qPrintable("APP_FT0/PM"+PM_Names[PMid]+prefix+"/"+name),"C:1",this);
+        case 1: appCommand = new DimCommand(qPrintable("APP_"+DIM_name[FEE_id]+prefix+"/"+name),"C:1",this);
             outDCs << appCommand->getName() << endl;
             break;
-        case 2: appCommand = new DimCommand(qPrintable("APP_FT0/PM"+PM_Names[PMid]+prefix+"/"+name),"S:1",this);
+        case 2: appCommand = new DimCommand(qPrintable("APP_"+DIM_name[FEE_id]+prefix+"/"+name),"S:1",this);
             outDCs << appCommand->getName() << endl;
             break;
-        case 4: appCommand = new DimCommand(qPrintable("APP_FT0/PM"+PM_Names[PMid]+prefix+"/"+name),"I:1",this);
+        case 4: appCommand = new DimCommand(qPrintable("APP_"+DIM_name[FEE_id]+prefix+"/"+name),"I:1",this);
             outDCs << appCommand->getName() << endl;
             break;
-        case 8: appCommand = new DimCommand(qPrintable("APP_FT0/PM"+PM_Names[PMid]+prefix+"/"+name),"X:1",this);
+        case 8: appCommand = new DimCommand(qPrintable("APP_"+DIM_name[FEE_id]+prefix+"/"+name),"X:1",this);
             outDCs << appCommand->getName() << endl;
             break;
         default:
@@ -240,16 +240,16 @@ public:
     {
     //    if(pSet!= nullptr)
         switch (sizeof(T)) {
-        case 1: setCommand = new DimCommand(qPrintable("SET_FT0/PM"+PM_Names[PMid]+prefix+"/"+name),"C:1",this);
+        case 1: setCommand = new DimCommand(qPrintable("SET_"+DIM_name[FEE_id]+prefix+"/"+name),"C:1",this);
             outDCs << setCommand->getName() << endl;
             break;
-        case 2: setCommand = new DimCommand(qPrintable("SET_FT0/PM"+PM_Names[PMid]+prefix+"/"+name),"S:1",this);
+        case 2: setCommand = new DimCommand(qPrintable("SET_"+DIM_name[FEE_id]+prefix+"/"+name),"S:1",this);
             outDCs << setCommand->getName() << endl;
             break;
-        case 4: setCommand = new DimCommand(qPrintable("SET_FT0/PM"+PM_Names[PMid]+prefix+"/"+name),"I:1",this);
+        case 4: setCommand = new DimCommand(qPrintable("SET_"+DIM_name[FEE_id]+prefix+"/"+name),"I:1",this);
             outDCs << setCommand->getName() << endl;
             break;
-        case 8: setCommand = new DimCommand(qPrintable("SET_FT0/PM"+PM_Names[PMid]+prefix+"/"+name),"X:1",this);
+        case 8: setCommand = new DimCommand(qPrintable("SET_"+DIM_name[FEE_id]+prefix+"/"+name),"X:1",this);
             outDCs << setCommand->getName() << endl;
             break;
         default:
@@ -268,7 +268,7 @@ class pmch_SET : public pm_SET<T>
     pmch_pValSignal<T> pSETSignal = nullptr;
 public:
     void emitSignalRequest(DimCommand* currCmnd){
-        this->pServer->emitSignal(pSETSignal,this->PMid,this->CHid,*static_cast<T*>(currCmnd->getData()));
+        this->pServer->emitSignal(pSETSignal,this->FEE_id,this->CHid,*static_cast<T*>(currCmnd->getData()));
     }
 
     void SetSignal(){ pSETSignal = getPMCHValPointerToSignal<T>(this->name);}

@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MyDimServer_t {
     QByteArrayData data[160];
-    char stringdata0[3962];
+    char stringdata0[3963];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -35,167 +35,167 @@ static const qt_meta_stringdata_MyDimServer_t qt_meta_stringdata_MyDimServer = {
 QT_MOC_LITERAL(0, 0, 11), // "MyDimServer"
 QT_MOC_LITERAL(1, 12, 22), // "set_ADC_ZERO_requested"
 QT_MOC_LITERAL(2, 35, 0), // ""
-QT_MOC_LITERAL(3, 36, 4), // "PMid"
-QT_MOC_LITERAL(4, 41, 4), // "CHid"
-QT_MOC_LITERAL(5, 46, 3), // "val"
-QT_MOC_LITERAL(6, 50, 23), // "set_ADC_DELAY_requested"
-QT_MOC_LITERAL(7, 74, 25), // "set_ADC0_OFFSET_requested"
-QT_MOC_LITERAL(8, 100, 25), // "set_ADC1_OFFSET_requested"
-QT_MOC_LITERAL(9, 126, 24), // "set_ADC0_RANGE_requested"
-QT_MOC_LITERAL(10, 151, 24), // "set_ADC1_RANGE_requested"
-QT_MOC_LITERAL(11, 176, 24), // "set_TIME_ALIGN_requested"
-QT_MOC_LITERAL(12, 201, 27), // "set_CFD_THRESHOLD_requested"
-QT_MOC_LITERAL(13, 229, 22), // "set_CFD_ZERO_requested"
-QT_MOC_LITERAL(14, 252, 30), // "set_THRESHOLD_CALIBR_requested"
-QT_MOC_LITERAL(15, 283, 24), // "apply_ADC_ZERO_requested"
-QT_MOC_LITERAL(16, 308, 25), // "apply_ADC_DELAY_requested"
-QT_MOC_LITERAL(17, 334, 27), // "apply_ADC0_OFFSET_requested"
-QT_MOC_LITERAL(18, 362, 27), // "apply_ADC1_OFFSET_requested"
-QT_MOC_LITERAL(19, 390, 26), // "apply_ADC0_RANGE_requested"
-QT_MOC_LITERAL(20, 417, 26), // "apply_ADC1_RANGE_requested"
-QT_MOC_LITERAL(21, 444, 26), // "apply_TIME_ALIGN_requested"
-QT_MOC_LITERAL(22, 471, 29), // "apply_CFD_THRESHOLD_requested"
-QT_MOC_LITERAL(23, 501, 24), // "apply_CFD_ZERO_requested"
-QT_MOC_LITERAL(24, 526, 32), // "apply_THRESHOLD_CALIBR_requested"
-QT_MOC_LITERAL(25, 559, 23), // "apply_ALLtoCh_requested"
-QT_MOC_LITERAL(26, 583, 21), // "set_CH_MASK_requested"
-QT_MOC_LITERAL(27, 605, 22), // "set_CFD_SATR_requested"
-QT_MOC_LITERAL(28, 628, 21), // "set_OR_GATE_requested"
-QT_MOC_LITERAL(29, 650, 23), // "apply_CH_MASK_requested"
-QT_MOC_LITERAL(30, 674, 24), // "apply_CFD_SATR_requested"
-QT_MOC_LITERAL(31, 699, 23), // "apply_OR_GATE_requested"
-QT_MOC_LITERAL(32, 723, 30), // "apply_RESET_COUNTERS_requested"
-QT_MOC_LITERAL(33, 754, 31), // "apply_ZERO_LVL_CALIBR_requested"
-QT_MOC_LITERAL(34, 786, 32), // "apply_RESET_ORBIT_SYNC_requested"
-QT_MOC_LITERAL(35, 819, 43), // "apply_RESET_DROPPING_HIT_COUN..."
-QT_MOC_LITERAL(36, 863, 38), // "apply_RESET_GEN_BUNCH_OFFSET_..."
-QT_MOC_LITERAL(37, 902, 32), // "apply_RESET_GBT_ERRORS_requested"
-QT_MOC_LITERAL(38, 935, 25), // "apply_RESET_GBT_requested"
-QT_MOC_LITERAL(39, 961, 36), // "apply_RESET_RX_PHASE_ERROR_re..."
-QT_MOC_LITERAL(40, 998, 36), // "apply_SEND_READOUT_COMMAND_re..."
-QT_MOC_LITERAL(41, 1035, 3), // "cmd"
-QT_MOC_LITERAL(42, 1039, 23), // "apply_TG_MODE_requested"
-QT_MOC_LITERAL(43, 1063, 28), // "apply_TG_PATTERN_1_requested"
-QT_MOC_LITERAL(44, 1092, 28), // "apply_TG_PATTERN_0_requested"
-QT_MOC_LITERAL(45, 1121, 29), // "apply_TG_CONT_VALUE_requested"
-QT_MOC_LITERAL(46, 1151, 30), // "apply_TG_SEND_SINGLE_requested"
-QT_MOC_LITERAL(47, 1182, 29), // "apply_TG_BUNCH_FREQ_requested"
-QT_MOC_LITERAL(48, 1212, 30), // "apply_TG_FREQ_OFFSET_requested"
-QT_MOC_LITERAL(49, 1243, 23), // "apply_DG_MODE_requested"
-QT_MOC_LITERAL(50, 1267, 35), // "apply_DG_TRG_RESPOND_MASK_req..."
-QT_MOC_LITERAL(51, 1303, 32), // "apply_DG_BUNCH_PATTERN_requested"
-QT_MOC_LITERAL(52, 1336, 29), // "apply_DG_BUNCH_FREQ_requested"
-QT_MOC_LITERAL(53, 1366, 30), // "apply_DG_FREQ_OFFSET_requested"
-QT_MOC_LITERAL(54, 1397, 26), // "apply_RDH_FEE_ID_requested"
-QT_MOC_LITERAL(55, 1424, 23), // "apply_RDH_PAR_requested"
-QT_MOC_LITERAL(56, 1448, 31), // "apply_RDH_MAX_PAYLOAD_requested"
-QT_MOC_LITERAL(57, 1480, 29), // "apply_RDH_DET_FIELD_requested"
-QT_MOC_LITERAL(58, 1510, 37), // "apply_CRU_TRG_COMPARE_DELAY_r..."
-QT_MOC_LITERAL(59, 1548, 26), // "apply_BCID_DELAY_requested"
-QT_MOC_LITERAL(60, 1575, 26), // "set_TG_PATTERN_1_requested"
-QT_MOC_LITERAL(61, 1602, 26), // "set_TG_PATTERN_0_requested"
-QT_MOC_LITERAL(62, 1629, 27), // "set_TG_CONT_VALUE_requested"
-QT_MOC_LITERAL(63, 1657, 27), // "set_TG_BUNCH_FREQ_requested"
-QT_MOC_LITERAL(64, 1685, 28), // "set_TG_FREQ_OFFSET_requested"
-QT_MOC_LITERAL(65, 1714, 33), // "set_DG_TRG_RESPOND_MASK_reque..."
-QT_MOC_LITERAL(66, 1748, 30), // "set_DG_BUNCH_PATTERN_requested"
-QT_MOC_LITERAL(67, 1779, 27), // "set_DG_BUNCH_FREQ_requested"
-QT_MOC_LITERAL(68, 1807, 28), // "set_DG_FREQ_OFFSET_requested"
-QT_MOC_LITERAL(69, 1836, 24), // "set_RDH_FEE_ID_requested"
-QT_MOC_LITERAL(70, 1861, 21), // "set_RDH_PAR_requested"
-QT_MOC_LITERAL(71, 1883, 29), // "set_RDH_MAX_PAYLOAD_requested"
-QT_MOC_LITERAL(72, 1913, 27), // "set_RDH_DET_FIELD_requested"
-QT_MOC_LITERAL(73, 1941, 35), // "set_CRU_TRG_COMPARE_DELAY_req..."
-QT_MOC_LITERAL(74, 1977, 24), // "set_BCID_DELAY_requested"
-QT_MOC_LITERAL(75, 2002, 23), // "apply_ALLtoPM_requested"
-QT_MOC_LITERAL(76, 2026, 10), // "test_slot0"
-QT_MOC_LITERAL(77, 2037, 10), // "test_slot1"
-QT_MOC_LITERAL(78, 2048, 10), // "test_slot2"
-QT_MOC_LITERAL(79, 2059, 10), // "test_slot3"
-QT_MOC_LITERAL(80, 2070, 19), // "update_act_ADC_ZERO"
-QT_MOC_LITERAL(81, 2090, 20), // "update_act_ADC_DELAY"
-QT_MOC_LITERAL(82, 2111, 22), // "update_act_ADC0_OFFSET"
-QT_MOC_LITERAL(83, 2134, 22), // "update_act_ADC1_OFFSET"
-QT_MOC_LITERAL(84, 2157, 21), // "update_act_ADC0_RANGE"
-QT_MOC_LITERAL(85, 2179, 21), // "update_act_ADC1_RANGE"
-QT_MOC_LITERAL(86, 2201, 21), // "update_act_TIME_ALIGN"
-QT_MOC_LITERAL(87, 2223, 24), // "update_act_CFD_THRESHOLD"
-QT_MOC_LITERAL(88, 2248, 19), // "update_act_CFD_ZERO"
-QT_MOC_LITERAL(89, 2268, 27), // "update_act_THRESHOLD_CALIBR"
-QT_MOC_LITERAL(90, 2296, 19), // "update_new_ADC_ZERO"
-QT_MOC_LITERAL(91, 2316, 20), // "update_new_ADC_DELAY"
-QT_MOC_LITERAL(92, 2337, 22), // "update_new_ADC0_OFFSET"
-QT_MOC_LITERAL(93, 2360, 22), // "update_new_ADC1_OFFSET"
-QT_MOC_LITERAL(94, 2383, 21), // "update_new_ADC0_RANGE"
-QT_MOC_LITERAL(95, 2405, 21), // "update_new_ADC1_RANGE"
-QT_MOC_LITERAL(96, 2427, 21), // "update_new_TIME_ALIGN"
-QT_MOC_LITERAL(97, 2449, 24), // "update_new_CFD_THRESHOLD"
-QT_MOC_LITERAL(98, 2474, 19), // "update_new_CFD_ZERO"
-QT_MOC_LITERAL(99, 2494, 27), // "update_new_THRESHOLD_CALIBR"
-QT_MOC_LITERAL(100, 2522, 24), // "update_act_ADC0_MEANAMPL"
-QT_MOC_LITERAL(101, 2547, 24), // "update_act_ADC1_MEANAMPL"
-QT_MOC_LITERAL(102, 2572, 23), // "update_act_ADC0_ZEROLVL"
-QT_MOC_LITERAL(103, 2596, 23), // "update_act_ADC1_ZEROLVL"
-QT_MOC_LITERAL(104, 2620, 18), // "update_act_CFD_CNT"
-QT_MOC_LITERAL(105, 2639, 18), // "update_act_TRG_CNT"
-QT_MOC_LITERAL(106, 2658, 23), // "update_act_RAW_TDC_DATA"
-QT_MOC_LITERAL(107, 2682, 18), // "update_act_CH_MASK"
-QT_MOC_LITERAL(108, 2701, 19), // "update_act_CFD_SATR"
-QT_MOC_LITERAL(109, 2721, 18), // "update_act_OR_GATE"
-QT_MOC_LITERAL(110, 2740, 18), // "update_new_CH_MASK"
-QT_MOC_LITERAL(111, 2759, 19), // "update_new_CFD_SATR"
-QT_MOC_LITERAL(112, 2779, 18), // "update_new_OR_GATE"
-QT_MOC_LITERAL(113, 2798, 18), // "update_act_TG_MODE"
-QT_MOC_LITERAL(114, 2817, 23), // "update_act_TG_PATTERN_1"
-QT_MOC_LITERAL(115, 2841, 23), // "update_act_TG_PATTERN_0"
-QT_MOC_LITERAL(116, 2865, 24), // "update_act_TG_CONT_VALUE"
-QT_MOC_LITERAL(117, 2890, 24), // "update_act_TG_BUNCH_FREQ"
-QT_MOC_LITERAL(118, 2915, 25), // "update_act_TG_FREQ_OFFSET"
-QT_MOC_LITERAL(119, 2941, 18), // "update_act_DG_MODE"
-QT_MOC_LITERAL(120, 2960, 30), // "update_act_DG_TRG_RESPOND_MASK"
-QT_MOC_LITERAL(121, 2991, 27), // "update_act_DG_BUNCH_PATTERN"
-QT_MOC_LITERAL(122, 3019, 24), // "update_act_DG_BUNCH_FREQ"
-QT_MOC_LITERAL(123, 3044, 25), // "update_act_DG_FREQ_OFFSET"
-QT_MOC_LITERAL(124, 3070, 21), // "update_act_RDH_FEE_ID"
-QT_MOC_LITERAL(125, 3092, 18), // "update_act_RDH_PAR"
-QT_MOC_LITERAL(126, 3111, 26), // "update_act_RDH_MAX_PAYLOAD"
-QT_MOC_LITERAL(127, 3138, 24), // "update_act_RDH_DET_FIELD"
-QT_MOC_LITERAL(128, 3163, 32), // "update_act_CRU_TRG_COMPARE_DELAY"
-QT_MOC_LITERAL(129, 3196, 21), // "update_act_BCID_DELAY"
-QT_MOC_LITERAL(130, 3218, 23), // "update_new_TG_PATTERN_1"
-QT_MOC_LITERAL(131, 3242, 23), // "update_new_TG_PATTERN_0"
-QT_MOC_LITERAL(132, 3266, 24), // "update_new_TG_CONT_VALUE"
-QT_MOC_LITERAL(133, 3291, 24), // "update_new_TG_BUNCH_FREQ"
-QT_MOC_LITERAL(134, 3316, 25), // "update_new_TG_FREQ_OFFSET"
-QT_MOC_LITERAL(135, 3342, 30), // "update_new_DG_TRG_RESPOND_MASK"
-QT_MOC_LITERAL(136, 3373, 27), // "update_new_DG_BUNCH_PATTERN"
-QT_MOC_LITERAL(137, 3401, 24), // "update_new_DG_BUNCH_FREQ"
-QT_MOC_LITERAL(138, 3426, 25), // "update_new_DG_FREQ_OFFSET"
-QT_MOC_LITERAL(139, 3452, 21), // "update_new_RDH_FEE_ID"
-QT_MOC_LITERAL(140, 3474, 18), // "update_new_RDH_PAR"
-QT_MOC_LITERAL(141, 3493, 26), // "update_new_RDH_MAX_PAYLOAD"
-QT_MOC_LITERAL(142, 3520, 24), // "update_new_RDH_DET_FIELD"
-QT_MOC_LITERAL(143, 3545, 32), // "update_new_CRU_TRG_COMPARE_DELAY"
-QT_MOC_LITERAL(144, 3578, 21), // "update_new_BCID_DELAY"
-QT_MOC_LITERAL(145, 3600, 23), // "update_act_BOARD_STATUS"
-QT_MOC_LITERAL(146, 3624, 22), // "update_act_TEMPERATURE"
-QT_MOC_LITERAL(147, 3647, 20), // "update_act_HDMI_LINK"
-QT_MOC_LITERAL(148, 3668, 15), // "update_act_BITS"
-QT_MOC_LITERAL(149, 3684, 23), // "update_act_READOUT_MODE"
-QT_MOC_LITERAL(150, 3708, 25), // "update_act_BCID_SYNC_MODE"
-QT_MOC_LITERAL(151, 3734, 19), // "update_act_RX_PHASE"
-QT_MOC_LITERAL(152, 3754, 20), // "update_act_CRU_ORBIT"
-QT_MOC_LITERAL(153, 3775, 17), // "update_act_CRU_BC"
-QT_MOC_LITERAL(154, 3793, 19), // "update_act_RAW_FIFO"
-QT_MOC_LITERAL(155, 3813, 19), // "update_act_SEL_FIFO"
-QT_MOC_LITERAL(156, 3833, 38), // "update_act_SEL_FIRST_HIT_DROP..."
-QT_MOC_LITERAL(157, 3872, 37), // "update_act_SEL_LAST_HIT_DROPP..."
-QT_MOC_LITERAL(158, 3910, 27), // "update_act_SEL_HITS_DROPPED"
-QT_MOC_LITERAL(159, 3938, 23) // "update_act_READOUT_RATE"
+QT_MOC_LITERAL(3, 36, 5), // "FEEid"
+QT_MOC_LITERAL(4, 42, 4), // "CHid"
+QT_MOC_LITERAL(5, 47, 3), // "val"
+QT_MOC_LITERAL(6, 51, 23), // "set_ADC_DELAY_requested"
+QT_MOC_LITERAL(7, 75, 25), // "set_ADC0_OFFSET_requested"
+QT_MOC_LITERAL(8, 101, 25), // "set_ADC1_OFFSET_requested"
+QT_MOC_LITERAL(9, 127, 24), // "set_ADC0_RANGE_requested"
+QT_MOC_LITERAL(10, 152, 24), // "set_ADC1_RANGE_requested"
+QT_MOC_LITERAL(11, 177, 24), // "set_TIME_ALIGN_requested"
+QT_MOC_LITERAL(12, 202, 27), // "set_CFD_THRESHOLD_requested"
+QT_MOC_LITERAL(13, 230, 22), // "set_CFD_ZERO_requested"
+QT_MOC_LITERAL(14, 253, 30), // "set_THRESHOLD_CALIBR_requested"
+QT_MOC_LITERAL(15, 284, 24), // "apply_ADC_ZERO_requested"
+QT_MOC_LITERAL(16, 309, 25), // "apply_ADC_DELAY_requested"
+QT_MOC_LITERAL(17, 335, 27), // "apply_ADC0_OFFSET_requested"
+QT_MOC_LITERAL(18, 363, 27), // "apply_ADC1_OFFSET_requested"
+QT_MOC_LITERAL(19, 391, 26), // "apply_ADC0_RANGE_requested"
+QT_MOC_LITERAL(20, 418, 26), // "apply_ADC1_RANGE_requested"
+QT_MOC_LITERAL(21, 445, 26), // "apply_TIME_ALIGN_requested"
+QT_MOC_LITERAL(22, 472, 29), // "apply_CFD_THRESHOLD_requested"
+QT_MOC_LITERAL(23, 502, 24), // "apply_CFD_ZERO_requested"
+QT_MOC_LITERAL(24, 527, 32), // "apply_THRESHOLD_CALIBR_requested"
+QT_MOC_LITERAL(25, 560, 23), // "apply_ALLtoCh_requested"
+QT_MOC_LITERAL(26, 584, 21), // "set_CH_MASK_requested"
+QT_MOC_LITERAL(27, 606, 22), // "set_CFD_SATR_requested"
+QT_MOC_LITERAL(28, 629, 21), // "set_OR_GATE_requested"
+QT_MOC_LITERAL(29, 651, 23), // "apply_CH_MASK_requested"
+QT_MOC_LITERAL(30, 675, 24), // "apply_CFD_SATR_requested"
+QT_MOC_LITERAL(31, 700, 23), // "apply_OR_GATE_requested"
+QT_MOC_LITERAL(32, 724, 30), // "apply_RESET_COUNTERS_requested"
+QT_MOC_LITERAL(33, 755, 31), // "apply_ZERO_LVL_CALIBR_requested"
+QT_MOC_LITERAL(34, 787, 32), // "apply_RESET_ORBIT_SYNC_requested"
+QT_MOC_LITERAL(35, 820, 43), // "apply_RESET_DROPPING_HIT_COUN..."
+QT_MOC_LITERAL(36, 864, 38), // "apply_RESET_GEN_BUNCH_OFFSET_..."
+QT_MOC_LITERAL(37, 903, 32), // "apply_RESET_GBT_ERRORS_requested"
+QT_MOC_LITERAL(38, 936, 25), // "apply_RESET_GBT_requested"
+QT_MOC_LITERAL(39, 962, 36), // "apply_RESET_RX_PHASE_ERROR_re..."
+QT_MOC_LITERAL(40, 999, 36), // "apply_SEND_READOUT_COMMAND_re..."
+QT_MOC_LITERAL(41, 1036, 3), // "cmd"
+QT_MOC_LITERAL(42, 1040, 23), // "apply_TG_MODE_requested"
+QT_MOC_LITERAL(43, 1064, 28), // "apply_TG_PATTERN_1_requested"
+QT_MOC_LITERAL(44, 1093, 28), // "apply_TG_PATTERN_0_requested"
+QT_MOC_LITERAL(45, 1122, 29), // "apply_TG_CONT_VALUE_requested"
+QT_MOC_LITERAL(46, 1152, 30), // "apply_TG_SEND_SINGLE_requested"
+QT_MOC_LITERAL(47, 1183, 29), // "apply_TG_BUNCH_FREQ_requested"
+QT_MOC_LITERAL(48, 1213, 30), // "apply_TG_FREQ_OFFSET_requested"
+QT_MOC_LITERAL(49, 1244, 23), // "apply_DG_MODE_requested"
+QT_MOC_LITERAL(50, 1268, 35), // "apply_DG_TRG_RESPOND_MASK_req..."
+QT_MOC_LITERAL(51, 1304, 32), // "apply_DG_BUNCH_PATTERN_requested"
+QT_MOC_LITERAL(52, 1337, 29), // "apply_DG_BUNCH_FREQ_requested"
+QT_MOC_LITERAL(53, 1367, 30), // "apply_DG_FREQ_OFFSET_requested"
+QT_MOC_LITERAL(54, 1398, 26), // "apply_RDH_FEE_ID_requested"
+QT_MOC_LITERAL(55, 1425, 23), // "apply_RDH_PAR_requested"
+QT_MOC_LITERAL(56, 1449, 31), // "apply_RDH_MAX_PAYLOAD_requested"
+QT_MOC_LITERAL(57, 1481, 29), // "apply_RDH_DET_FIELD_requested"
+QT_MOC_LITERAL(58, 1511, 37), // "apply_CRU_TRG_COMPARE_DELAY_r..."
+QT_MOC_LITERAL(59, 1549, 26), // "apply_BCID_DELAY_requested"
+QT_MOC_LITERAL(60, 1576, 26), // "set_TG_PATTERN_1_requested"
+QT_MOC_LITERAL(61, 1603, 26), // "set_TG_PATTERN_0_requested"
+QT_MOC_LITERAL(62, 1630, 27), // "set_TG_CONT_VALUE_requested"
+QT_MOC_LITERAL(63, 1658, 27), // "set_TG_BUNCH_FREQ_requested"
+QT_MOC_LITERAL(64, 1686, 28), // "set_TG_FREQ_OFFSET_requested"
+QT_MOC_LITERAL(65, 1715, 33), // "set_DG_TRG_RESPOND_MASK_reque..."
+QT_MOC_LITERAL(66, 1749, 30), // "set_DG_BUNCH_PATTERN_requested"
+QT_MOC_LITERAL(67, 1780, 27), // "set_DG_BUNCH_FREQ_requested"
+QT_MOC_LITERAL(68, 1808, 28), // "set_DG_FREQ_OFFSET_requested"
+QT_MOC_LITERAL(69, 1837, 24), // "set_RDH_FEE_ID_requested"
+QT_MOC_LITERAL(70, 1862, 21), // "set_RDH_PAR_requested"
+QT_MOC_LITERAL(71, 1884, 29), // "set_RDH_MAX_PAYLOAD_requested"
+QT_MOC_LITERAL(72, 1914, 27), // "set_RDH_DET_FIELD_requested"
+QT_MOC_LITERAL(73, 1942, 35), // "set_CRU_TRG_COMPARE_DELAY_req..."
+QT_MOC_LITERAL(74, 1978, 24), // "set_BCID_DELAY_requested"
+QT_MOC_LITERAL(75, 2003, 23), // "apply_ALLtoPM_requested"
+QT_MOC_LITERAL(76, 2027, 10), // "test_slot0"
+QT_MOC_LITERAL(77, 2038, 10), // "test_slot1"
+QT_MOC_LITERAL(78, 2049, 10), // "test_slot2"
+QT_MOC_LITERAL(79, 2060, 10), // "test_slot3"
+QT_MOC_LITERAL(80, 2071, 19), // "update_act_ADC_ZERO"
+QT_MOC_LITERAL(81, 2091, 20), // "update_act_ADC_DELAY"
+QT_MOC_LITERAL(82, 2112, 22), // "update_act_ADC0_OFFSET"
+QT_MOC_LITERAL(83, 2135, 22), // "update_act_ADC1_OFFSET"
+QT_MOC_LITERAL(84, 2158, 21), // "update_act_ADC0_RANGE"
+QT_MOC_LITERAL(85, 2180, 21), // "update_act_ADC1_RANGE"
+QT_MOC_LITERAL(86, 2202, 21), // "update_act_TIME_ALIGN"
+QT_MOC_LITERAL(87, 2224, 24), // "update_act_CFD_THRESHOLD"
+QT_MOC_LITERAL(88, 2249, 19), // "update_act_CFD_ZERO"
+QT_MOC_LITERAL(89, 2269, 27), // "update_act_THRESHOLD_CALIBR"
+QT_MOC_LITERAL(90, 2297, 19), // "update_new_ADC_ZERO"
+QT_MOC_LITERAL(91, 2317, 20), // "update_new_ADC_DELAY"
+QT_MOC_LITERAL(92, 2338, 22), // "update_new_ADC0_OFFSET"
+QT_MOC_LITERAL(93, 2361, 22), // "update_new_ADC1_OFFSET"
+QT_MOC_LITERAL(94, 2384, 21), // "update_new_ADC0_RANGE"
+QT_MOC_LITERAL(95, 2406, 21), // "update_new_ADC1_RANGE"
+QT_MOC_LITERAL(96, 2428, 21), // "update_new_TIME_ALIGN"
+QT_MOC_LITERAL(97, 2450, 24), // "update_new_CFD_THRESHOLD"
+QT_MOC_LITERAL(98, 2475, 19), // "update_new_CFD_ZERO"
+QT_MOC_LITERAL(99, 2495, 27), // "update_new_THRESHOLD_CALIBR"
+QT_MOC_LITERAL(100, 2523, 24), // "update_act_ADC0_MEANAMPL"
+QT_MOC_LITERAL(101, 2548, 24), // "update_act_ADC1_MEANAMPL"
+QT_MOC_LITERAL(102, 2573, 23), // "update_act_ADC0_ZEROLVL"
+QT_MOC_LITERAL(103, 2597, 23), // "update_act_ADC1_ZEROLVL"
+QT_MOC_LITERAL(104, 2621, 18), // "update_act_CFD_CNT"
+QT_MOC_LITERAL(105, 2640, 18), // "update_act_TRG_CNT"
+QT_MOC_LITERAL(106, 2659, 23), // "update_act_RAW_TDC_DATA"
+QT_MOC_LITERAL(107, 2683, 18), // "update_act_CH_MASK"
+QT_MOC_LITERAL(108, 2702, 19), // "update_act_CFD_SATR"
+QT_MOC_LITERAL(109, 2722, 18), // "update_act_OR_GATE"
+QT_MOC_LITERAL(110, 2741, 18), // "update_new_CH_MASK"
+QT_MOC_LITERAL(111, 2760, 19), // "update_new_CFD_SATR"
+QT_MOC_LITERAL(112, 2780, 18), // "update_new_OR_GATE"
+QT_MOC_LITERAL(113, 2799, 18), // "update_act_TG_MODE"
+QT_MOC_LITERAL(114, 2818, 23), // "update_act_TG_PATTERN_1"
+QT_MOC_LITERAL(115, 2842, 23), // "update_act_TG_PATTERN_0"
+QT_MOC_LITERAL(116, 2866, 24), // "update_act_TG_CONT_VALUE"
+QT_MOC_LITERAL(117, 2891, 24), // "update_act_TG_BUNCH_FREQ"
+QT_MOC_LITERAL(118, 2916, 25), // "update_act_TG_FREQ_OFFSET"
+QT_MOC_LITERAL(119, 2942, 18), // "update_act_DG_MODE"
+QT_MOC_LITERAL(120, 2961, 30), // "update_act_DG_TRG_RESPOND_MASK"
+QT_MOC_LITERAL(121, 2992, 27), // "update_act_DG_BUNCH_PATTERN"
+QT_MOC_LITERAL(122, 3020, 24), // "update_act_DG_BUNCH_FREQ"
+QT_MOC_LITERAL(123, 3045, 25), // "update_act_DG_FREQ_OFFSET"
+QT_MOC_LITERAL(124, 3071, 21), // "update_act_RDH_FEE_ID"
+QT_MOC_LITERAL(125, 3093, 18), // "update_act_RDH_PAR"
+QT_MOC_LITERAL(126, 3112, 26), // "update_act_RDH_MAX_PAYLOAD"
+QT_MOC_LITERAL(127, 3139, 24), // "update_act_RDH_DET_FIELD"
+QT_MOC_LITERAL(128, 3164, 32), // "update_act_CRU_TRG_COMPARE_DELAY"
+QT_MOC_LITERAL(129, 3197, 21), // "update_act_BCID_DELAY"
+QT_MOC_LITERAL(130, 3219, 23), // "update_new_TG_PATTERN_1"
+QT_MOC_LITERAL(131, 3243, 23), // "update_new_TG_PATTERN_0"
+QT_MOC_LITERAL(132, 3267, 24), // "update_new_TG_CONT_VALUE"
+QT_MOC_LITERAL(133, 3292, 24), // "update_new_TG_BUNCH_FREQ"
+QT_MOC_LITERAL(134, 3317, 25), // "update_new_TG_FREQ_OFFSET"
+QT_MOC_LITERAL(135, 3343, 30), // "update_new_DG_TRG_RESPOND_MASK"
+QT_MOC_LITERAL(136, 3374, 27), // "update_new_DG_BUNCH_PATTERN"
+QT_MOC_LITERAL(137, 3402, 24), // "update_new_DG_BUNCH_FREQ"
+QT_MOC_LITERAL(138, 3427, 25), // "update_new_DG_FREQ_OFFSET"
+QT_MOC_LITERAL(139, 3453, 21), // "update_new_RDH_FEE_ID"
+QT_MOC_LITERAL(140, 3475, 18), // "update_new_RDH_PAR"
+QT_MOC_LITERAL(141, 3494, 26), // "update_new_RDH_MAX_PAYLOAD"
+QT_MOC_LITERAL(142, 3521, 24), // "update_new_RDH_DET_FIELD"
+QT_MOC_LITERAL(143, 3546, 32), // "update_new_CRU_TRG_COMPARE_DELAY"
+QT_MOC_LITERAL(144, 3579, 21), // "update_new_BCID_DELAY"
+QT_MOC_LITERAL(145, 3601, 23), // "update_act_BOARD_STATUS"
+QT_MOC_LITERAL(146, 3625, 22), // "update_act_TEMPERATURE"
+QT_MOC_LITERAL(147, 3648, 20), // "update_act_HDMI_LINK"
+QT_MOC_LITERAL(148, 3669, 15), // "update_act_BITS"
+QT_MOC_LITERAL(149, 3685, 23), // "update_act_READOUT_MODE"
+QT_MOC_LITERAL(150, 3709, 25), // "update_act_BCID_SYNC_MODE"
+QT_MOC_LITERAL(151, 3735, 19), // "update_act_RX_PHASE"
+QT_MOC_LITERAL(152, 3755, 20), // "update_act_CRU_ORBIT"
+QT_MOC_LITERAL(153, 3776, 17), // "update_act_CRU_BC"
+QT_MOC_LITERAL(154, 3794, 19), // "update_act_RAW_FIFO"
+QT_MOC_LITERAL(155, 3814, 19), // "update_act_SEL_FIFO"
+QT_MOC_LITERAL(156, 3834, 38), // "update_act_SEL_FIRST_HIT_DROP..."
+QT_MOC_LITERAL(157, 3873, 37), // "update_act_SEL_LAST_HIT_DROPP..."
+QT_MOC_LITERAL(158, 3911, 27), // "update_act_SEL_HITS_DROPPED"
+QT_MOC_LITERAL(159, 3939, 23) // "update_act_READOUT_RATE"
 
     },
     "MyDimServer\0set_ADC_ZERO_requested\0\0"
-    "PMid\0CHid\0val\0set_ADC_DELAY_requested\0"
+    "FEEid\0CHid\0val\0set_ADC_DELAY_requested\0"
     "set_ADC0_OFFSET_requested\0"
     "set_ADC1_OFFSET_requested\0"
     "set_ADC0_RANGE_requested\0"
@@ -490,162 +490,162 @@ static const uint qt_meta_data_MyDimServer[] = {
      159,    2, 1571,    2, 0x0a /* Public */,
 
  // signals: parameters
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar,    3,    4,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar,    3,    4,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar,    3,    4,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar,    3,    4,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar,    3,    4,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar,    3,    4,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar,    3,    4,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar,    3,    4,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar,    3,    4,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar,    3,    4,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar,    3,    4,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar,    3,    5,
-    QMetaType::Void, QMetaType::UChar,    3,
-    QMetaType::Void, QMetaType::UChar,    3,
-    QMetaType::Void, QMetaType::UChar,    3,
-    QMetaType::Void, QMetaType::UChar,    3,
-    QMetaType::Void, QMetaType::UChar,    3,
-    QMetaType::Void, QMetaType::UChar,    3,
-    QMetaType::Void, QMetaType::UChar,    3,
-    QMetaType::Void, QMetaType::UChar,    3,
-    QMetaType::Void, QMetaType::UChar,    3,
-    QMetaType::Void, QMetaType::UChar,    3,
-    QMetaType::Void, QMetaType::UChar,    3,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar,    3,   41,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar,    3,    5,
-    QMetaType::Void, QMetaType::UChar,    3,
-    QMetaType::Void, QMetaType::UChar,    3,
-    QMetaType::Void, QMetaType::UChar,    3,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UInt,    3,    5,
-    QMetaType::Void, QMetaType::UChar,    3,
-    QMetaType::Void, QMetaType::UChar,    3,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar,    3,    5,
-    QMetaType::Void, QMetaType::UChar,    3,
-    QMetaType::Void, QMetaType::UChar,    3,
-    QMetaType::Void, QMetaType::UChar,    3,
-    QMetaType::Void, QMetaType::UChar,    3,
-    QMetaType::Void, QMetaType::UChar,    3,
-    QMetaType::Void, QMetaType::UChar,    3,
-    QMetaType::Void, QMetaType::UChar,    3,
-    QMetaType::Void, QMetaType::UChar,    3,
-    QMetaType::Void, QMetaType::UChar,    3,
-    QMetaType::Void, QMetaType::UChar,    3,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UInt,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UInt,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UInt,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UInt,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar,    3,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar,    3,    4,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar,    3,    4,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar,    3,    4,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar,    3,    4,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar,    3,    4,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar,    3,    4,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar,    3,    4,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar,    3,    4,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar,    3,    4,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar,    3,    4,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar,    3,    4,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar,    3,    5,
+    QMetaType::Void, QMetaType::UShort,    3,
+    QMetaType::Void, QMetaType::UShort,    3,
+    QMetaType::Void, QMetaType::UShort,    3,
+    QMetaType::Void, QMetaType::UShort,    3,
+    QMetaType::Void, QMetaType::UShort,    3,
+    QMetaType::Void, QMetaType::UShort,    3,
+    QMetaType::Void, QMetaType::UShort,    3,
+    QMetaType::Void, QMetaType::UShort,    3,
+    QMetaType::Void, QMetaType::UShort,    3,
+    QMetaType::Void, QMetaType::UShort,    3,
+    QMetaType::Void, QMetaType::UShort,    3,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar,    3,   41,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar,    3,    5,
+    QMetaType::Void, QMetaType::UShort,    3,
+    QMetaType::Void, QMetaType::UShort,    3,
+    QMetaType::Void, QMetaType::UShort,    3,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UInt,    3,    5,
+    QMetaType::Void, QMetaType::UShort,    3,
+    QMetaType::Void, QMetaType::UShort,    3,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar,    3,    5,
+    QMetaType::Void, QMetaType::UShort,    3,
+    QMetaType::Void, QMetaType::UShort,    3,
+    QMetaType::Void, QMetaType::UShort,    3,
+    QMetaType::Void, QMetaType::UShort,    3,
+    QMetaType::Void, QMetaType::UShort,    3,
+    QMetaType::Void, QMetaType::UShort,    3,
+    QMetaType::Void, QMetaType::UShort,    3,
+    QMetaType::Void, QMetaType::UShort,    3,
+    QMetaType::Void, QMetaType::UShort,    3,
+    QMetaType::Void, QMetaType::UShort,    3,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UInt,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UInt,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UInt,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UInt,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort,    3,
 
  // slots: parameters
-    QMetaType::Void, QMetaType::UChar,    3,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::UInt,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::UInt,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UInt,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UInt,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UInt,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UInt,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UInt,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UInt,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UInt,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UInt,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UInt,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UChar,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UInt,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UInt,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
-    QMetaType::Void, QMetaType::UChar, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort,    3,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::UInt,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::UInt,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::UShort,    3,    4,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UInt,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UInt,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UInt,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UInt,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UInt,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UInt,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UInt,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UInt,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UInt,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UChar,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UInt,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UInt,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
 
        0        // eod
 };
@@ -656,649 +656,649 @@ void MyDimServer::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         auto *_t = static_cast<MyDimServer *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->set_ADC_ZERO_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
-        case 1: _t->set_ADC_DELAY_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
-        case 2: _t->set_ADC0_OFFSET_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
-        case 3: _t->set_ADC1_OFFSET_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
-        case 4: _t->set_ADC0_RANGE_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
-        case 5: _t->set_ADC1_RANGE_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
-        case 6: _t->set_TIME_ALIGN_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
-        case 7: _t->set_CFD_THRESHOLD_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
-        case 8: _t->set_CFD_ZERO_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
-        case 9: _t->set_THRESHOLD_CALIBR_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
-        case 10: _t->apply_ADC_ZERO_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 11: _t->apply_ADC_DELAY_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 12: _t->apply_ADC0_OFFSET_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 13: _t->apply_ADC1_OFFSET_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 14: _t->apply_ADC0_RANGE_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 15: _t->apply_ADC1_RANGE_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 16: _t->apply_TIME_ALIGN_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 17: _t->apply_CFD_THRESHOLD_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 18: _t->apply_CFD_ZERO_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 19: _t->apply_THRESHOLD_CALIBR_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 20: _t->apply_ALLtoCh_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 21: _t->set_CH_MASK_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 22: _t->set_CFD_SATR_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 23: _t->set_OR_GATE_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 24: _t->apply_CH_MASK_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
-        case 25: _t->apply_CFD_SATR_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
-        case 26: _t->apply_OR_GATE_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
-        case 27: _t->apply_RESET_COUNTERS_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
-        case 28: _t->apply_ZERO_LVL_CALIBR_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
-        case 29: _t->apply_RESET_ORBIT_SYNC_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
-        case 30: _t->apply_RESET_DROPPING_HIT_COUNTERS_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
-        case 31: _t->apply_RESET_GEN_BUNCH_OFFSET_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
-        case 32: _t->apply_RESET_GBT_ERRORS_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
-        case 33: _t->apply_RESET_GBT_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
-        case 34: _t->apply_RESET_RX_PHASE_ERROR_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
-        case 35: _t->apply_SEND_READOUT_COMMAND_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 36: _t->apply_TG_MODE_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 37: _t->apply_TG_PATTERN_1_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
-        case 38: _t->apply_TG_PATTERN_0_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
-        case 39: _t->apply_TG_CONT_VALUE_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
-        case 40: _t->apply_TG_SEND_SINGLE_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
-        case 41: _t->apply_TG_BUNCH_FREQ_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
-        case 42: _t->apply_TG_FREQ_OFFSET_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
-        case 43: _t->apply_DG_MODE_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 44: _t->apply_DG_TRG_RESPOND_MASK_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
-        case 45: _t->apply_DG_BUNCH_PATTERN_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
-        case 46: _t->apply_DG_BUNCH_FREQ_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
-        case 47: _t->apply_DG_FREQ_OFFSET_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
-        case 48: _t->apply_RDH_FEE_ID_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
-        case 49: _t->apply_RDH_PAR_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
-        case 50: _t->apply_RDH_MAX_PAYLOAD_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
-        case 51: _t->apply_RDH_DET_FIELD_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
-        case 52: _t->apply_CRU_TRG_COMPARE_DELAY_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
-        case 53: _t->apply_BCID_DELAY_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
-        case 54: _t->set_TG_PATTERN_1_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
-        case 55: _t->set_TG_PATTERN_0_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
-        case 56: _t->set_TG_CONT_VALUE_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 57: _t->set_TG_BUNCH_FREQ_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 58: _t->set_TG_FREQ_OFFSET_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 59: _t->set_DG_TRG_RESPOND_MASK_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
-        case 60: _t->set_DG_BUNCH_PATTERN_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
-        case 61: _t->set_DG_BUNCH_FREQ_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 62: _t->set_DG_FREQ_OFFSET_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 63: _t->set_RDH_FEE_ID_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 64: _t->set_RDH_PAR_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 65: _t->set_RDH_MAX_PAYLOAD_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 66: _t->set_RDH_DET_FIELD_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 67: _t->set_CRU_TRG_COMPARE_DELAY_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 68: _t->set_BCID_DELAY_requested((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 69: _t->apply_ALLtoPM_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
-        case 70: _t->test_slot0((*reinterpret_cast< quint8(*)>(_a[1]))); break;
-        case 71: _t->test_slot1((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 72: _t->test_slot2((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
-        case 73: _t->test_slot3((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
-        case 74: _t->update_act_ADC_ZERO((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
-        case 75: _t->update_act_ADC_DELAY((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
-        case 76: _t->update_act_ADC0_OFFSET((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
-        case 77: _t->update_act_ADC1_OFFSET((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
-        case 78: _t->update_act_ADC0_RANGE((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
-        case 79: _t->update_act_ADC1_RANGE((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
-        case 80: _t->update_act_TIME_ALIGN((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
-        case 81: _t->update_act_CFD_THRESHOLD((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
-        case 82: _t->update_act_CFD_ZERO((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
-        case 83: _t->update_act_THRESHOLD_CALIBR((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
-        case 84: _t->update_new_ADC_ZERO((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
-        case 85: _t->update_new_ADC_DELAY((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
-        case 86: _t->update_new_ADC0_OFFSET((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
-        case 87: _t->update_new_ADC1_OFFSET((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
-        case 88: _t->update_new_ADC0_RANGE((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
-        case 89: _t->update_new_ADC1_RANGE((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
-        case 90: _t->update_new_TIME_ALIGN((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
-        case 91: _t->update_new_CFD_THRESHOLD((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
-        case 92: _t->update_new_CFD_ZERO((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
-        case 93: _t->update_new_THRESHOLD_CALIBR((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
-        case 94: _t->update_act_ADC0_MEANAMPL((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
-        case 95: _t->update_act_ADC1_MEANAMPL((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
-        case 96: _t->update_act_ADC0_ZEROLVL((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
-        case 97: _t->update_act_ADC1_ZEROLVL((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
-        case 98: _t->update_act_CFD_CNT((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint32(*)>(_a[3]))); break;
-        case 99: _t->update_act_TRG_CNT((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint32(*)>(_a[3]))); break;
-        case 100: _t->update_act_RAW_TDC_DATA((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
-        case 101: _t->update_act_CH_MASK((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 102: _t->update_act_CFD_SATR((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 103: _t->update_act_OR_GATE((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 104: _t->update_new_CH_MASK((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 105: _t->update_new_CFD_SATR((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 106: _t->update_new_OR_GATE((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 107: _t->update_act_TG_MODE((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 108: _t->update_act_TG_PATTERN_1((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
-        case 109: _t->update_act_TG_PATTERN_0((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
-        case 110: _t->update_act_TG_CONT_VALUE((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 111: _t->update_act_TG_BUNCH_FREQ((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 112: _t->update_act_TG_FREQ_OFFSET((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 113: _t->update_act_DG_MODE((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 114: _t->update_act_DG_TRG_RESPOND_MASK((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
-        case 115: _t->update_act_DG_BUNCH_PATTERN((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
-        case 116: _t->update_act_DG_BUNCH_FREQ((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 117: _t->update_act_DG_FREQ_OFFSET((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 118: _t->update_act_RDH_FEE_ID((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 119: _t->update_act_RDH_PAR((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 120: _t->update_act_RDH_MAX_PAYLOAD((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 121: _t->update_act_RDH_DET_FIELD((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 122: _t->update_act_CRU_TRG_COMPARE_DELAY((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 123: _t->update_act_BCID_DELAY((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 124: _t->update_new_TG_PATTERN_1((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
-        case 125: _t->update_new_TG_PATTERN_0((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
-        case 126: _t->update_new_TG_CONT_VALUE((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 127: _t->update_new_TG_BUNCH_FREQ((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 128: _t->update_new_TG_FREQ_OFFSET((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 129: _t->update_new_DG_TRG_RESPOND_MASK((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
-        case 130: _t->update_new_DG_BUNCH_PATTERN((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
-        case 131: _t->update_new_DG_BUNCH_FREQ((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 132: _t->update_new_DG_FREQ_OFFSET((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 133: _t->update_new_RDH_FEE_ID((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 134: _t->update_new_RDH_PAR((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 135: _t->update_new_RDH_MAX_PAYLOAD((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 136: _t->update_new_RDH_DET_FIELD((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 137: _t->update_new_CRU_TRG_COMPARE_DELAY((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 138: _t->update_new_BCID_DELAY((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 139: _t->update_act_BOARD_STATUS((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 140: _t->update_act_TEMPERATURE((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 141: _t->update_act_HDMI_LINK((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
-        case 142: _t->update_act_BITS((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 143: _t->update_act_READOUT_MODE((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 144: _t->update_act_BCID_SYNC_MODE((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 145: _t->update_act_RX_PHASE((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 146: _t->update_act_CRU_ORBIT((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
-        case 147: _t->update_act_CRU_BC((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 148: _t->update_act_RAW_FIFO((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 149: _t->update_act_SEL_FIFO((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 150: _t->update_act_SEL_FIRST_HIT_DROPPED_ORBIT((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
-        case 151: _t->update_act_SEL_LAST_HIT_DROPPED_ORBIT((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 152: _t->update_act_SEL_HITS_DROPPED((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 153: _t->update_act_READOUT_RATE((*reinterpret_cast< quint8(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 0: _t->set_ADC_ZERO_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
+        case 1: _t->set_ADC_DELAY_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
+        case 2: _t->set_ADC0_OFFSET_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
+        case 3: _t->set_ADC1_OFFSET_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
+        case 4: _t->set_ADC0_RANGE_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
+        case 5: _t->set_ADC1_RANGE_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
+        case 6: _t->set_TIME_ALIGN_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
+        case 7: _t->set_CFD_THRESHOLD_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
+        case 8: _t->set_CFD_ZERO_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
+        case 9: _t->set_THRESHOLD_CALIBR_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
+        case 10: _t->apply_ADC_ZERO_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 11: _t->apply_ADC_DELAY_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 12: _t->apply_ADC0_OFFSET_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 13: _t->apply_ADC1_OFFSET_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 14: _t->apply_ADC0_RANGE_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 15: _t->apply_ADC1_RANGE_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 16: _t->apply_TIME_ALIGN_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 17: _t->apply_CFD_THRESHOLD_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 18: _t->apply_CFD_ZERO_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 19: _t->apply_THRESHOLD_CALIBR_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 20: _t->apply_ALLtoCh_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 21: _t->set_CH_MASK_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 22: _t->set_CFD_SATR_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 23: _t->set_OR_GATE_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 24: _t->apply_CH_MASK_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 25: _t->apply_CFD_SATR_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 26: _t->apply_OR_GATE_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 27: _t->apply_RESET_COUNTERS_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 28: _t->apply_ZERO_LVL_CALIBR_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 29: _t->apply_RESET_ORBIT_SYNC_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 30: _t->apply_RESET_DROPPING_HIT_COUNTERS_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 31: _t->apply_RESET_GEN_BUNCH_OFFSET_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 32: _t->apply_RESET_GBT_ERRORS_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 33: _t->apply_RESET_GBT_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 34: _t->apply_RESET_RX_PHASE_ERROR_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 35: _t->apply_SEND_READOUT_COMMAND_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 36: _t->apply_TG_MODE_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 37: _t->apply_TG_PATTERN_1_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 38: _t->apply_TG_PATTERN_0_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 39: _t->apply_TG_CONT_VALUE_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 40: _t->apply_TG_SEND_SINGLE_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
+        case 41: _t->apply_TG_BUNCH_FREQ_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 42: _t->apply_TG_FREQ_OFFSET_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 43: _t->apply_DG_MODE_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 44: _t->apply_DG_TRG_RESPOND_MASK_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 45: _t->apply_DG_BUNCH_PATTERN_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 46: _t->apply_DG_BUNCH_FREQ_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 47: _t->apply_DG_FREQ_OFFSET_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 48: _t->apply_RDH_FEE_ID_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 49: _t->apply_RDH_PAR_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 50: _t->apply_RDH_MAX_PAYLOAD_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 51: _t->apply_RDH_DET_FIELD_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 52: _t->apply_CRU_TRG_COMPARE_DELAY_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 53: _t->apply_BCID_DELAY_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 54: _t->set_TG_PATTERN_1_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
+        case 55: _t->set_TG_PATTERN_0_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
+        case 56: _t->set_TG_CONT_VALUE_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 57: _t->set_TG_BUNCH_FREQ_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 58: _t->set_TG_FREQ_OFFSET_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 59: _t->set_DG_TRG_RESPOND_MASK_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
+        case 60: _t->set_DG_BUNCH_PATTERN_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
+        case 61: _t->set_DG_BUNCH_FREQ_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 62: _t->set_DG_FREQ_OFFSET_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 63: _t->set_RDH_FEE_ID_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 64: _t->set_RDH_PAR_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 65: _t->set_RDH_MAX_PAYLOAD_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 66: _t->set_RDH_DET_FIELD_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 67: _t->set_CRU_TRG_COMPARE_DELAY_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 68: _t->set_BCID_DELAY_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 69: _t->apply_ALLtoPM_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 70: _t->test_slot0((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 71: _t->test_slot1((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 72: _t->test_slot2((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
+        case 73: _t->test_slot3((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
+        case 74: _t->update_act_ADC_ZERO((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
+        case 75: _t->update_act_ADC_DELAY((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
+        case 76: _t->update_act_ADC0_OFFSET((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
+        case 77: _t->update_act_ADC1_OFFSET((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
+        case 78: _t->update_act_ADC0_RANGE((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
+        case 79: _t->update_act_ADC1_RANGE((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
+        case 80: _t->update_act_TIME_ALIGN((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
+        case 81: _t->update_act_CFD_THRESHOLD((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
+        case 82: _t->update_act_CFD_ZERO((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
+        case 83: _t->update_act_THRESHOLD_CALIBR((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
+        case 84: _t->update_new_ADC_ZERO((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
+        case 85: _t->update_new_ADC_DELAY((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
+        case 86: _t->update_new_ADC0_OFFSET((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
+        case 87: _t->update_new_ADC1_OFFSET((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
+        case 88: _t->update_new_ADC0_RANGE((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
+        case 89: _t->update_new_ADC1_RANGE((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
+        case 90: _t->update_new_TIME_ALIGN((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
+        case 91: _t->update_new_CFD_THRESHOLD((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
+        case 92: _t->update_new_CFD_ZERO((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
+        case 93: _t->update_new_THRESHOLD_CALIBR((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< qint16(*)>(_a[3]))); break;
+        case 94: _t->update_act_ADC0_MEANAMPL((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
+        case 95: _t->update_act_ADC1_MEANAMPL((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
+        case 96: _t->update_act_ADC0_ZEROLVL((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
+        case 97: _t->update_act_ADC1_ZEROLVL((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
+        case 98: _t->update_act_CFD_CNT((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint32(*)>(_a[3]))); break;
+        case 99: _t->update_act_TRG_CNT((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint32(*)>(_a[3]))); break;
+        case 100: _t->update_act_RAW_TDC_DATA((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
+        case 101: _t->update_act_CH_MASK((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 102: _t->update_act_CFD_SATR((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 103: _t->update_act_OR_GATE((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 104: _t->update_new_CH_MASK((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 105: _t->update_new_CFD_SATR((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 106: _t->update_new_OR_GATE((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 107: _t->update_act_TG_MODE((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 108: _t->update_act_TG_PATTERN_1((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
+        case 109: _t->update_act_TG_PATTERN_0((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
+        case 110: _t->update_act_TG_CONT_VALUE((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 111: _t->update_act_TG_BUNCH_FREQ((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 112: _t->update_act_TG_FREQ_OFFSET((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 113: _t->update_act_DG_MODE((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 114: _t->update_act_DG_TRG_RESPOND_MASK((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
+        case 115: _t->update_act_DG_BUNCH_PATTERN((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
+        case 116: _t->update_act_DG_BUNCH_FREQ((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 117: _t->update_act_DG_FREQ_OFFSET((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 118: _t->update_act_RDH_FEE_ID((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 119: _t->update_act_RDH_PAR((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 120: _t->update_act_RDH_MAX_PAYLOAD((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 121: _t->update_act_RDH_DET_FIELD((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 122: _t->update_act_CRU_TRG_COMPARE_DELAY((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 123: _t->update_act_BCID_DELAY((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 124: _t->update_new_TG_PATTERN_1((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
+        case 125: _t->update_new_TG_PATTERN_0((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
+        case 126: _t->update_new_TG_CONT_VALUE((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 127: _t->update_new_TG_BUNCH_FREQ((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 128: _t->update_new_TG_FREQ_OFFSET((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 129: _t->update_new_DG_TRG_RESPOND_MASK((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
+        case 130: _t->update_new_DG_BUNCH_PATTERN((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
+        case 131: _t->update_new_DG_BUNCH_FREQ((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 132: _t->update_new_DG_FREQ_OFFSET((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 133: _t->update_new_RDH_FEE_ID((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 134: _t->update_new_RDH_PAR((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 135: _t->update_new_RDH_MAX_PAYLOAD((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 136: _t->update_new_RDH_DET_FIELD((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 137: _t->update_new_CRU_TRG_COMPARE_DELAY((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 138: _t->update_new_BCID_DELAY((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 139: _t->update_act_BOARD_STATUS((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 140: _t->update_act_TEMPERATURE((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 141: _t->update_act_HDMI_LINK((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
+        case 142: _t->update_act_BITS((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 143: _t->update_act_READOUT_MODE((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 144: _t->update_act_BCID_SYNC_MODE((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 145: _t->update_act_RX_PHASE((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 146: _t->update_act_CRU_ORBIT((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
+        case 147: _t->update_act_CRU_BC((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 148: _t->update_act_RAW_FIFO((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 149: _t->update_act_SEL_FIFO((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 150: _t->update_act_SEL_FIRST_HIT_DROPPED_ORBIT((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
+        case 151: _t->update_act_SEL_LAST_HIT_DROPPED_ORBIT((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 152: _t->update_act_SEL_HITS_DROPPED((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 153: _t->update_act_READOUT_RATE((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _t = void (MyDimServer::*)(quint8 , quint8 , qint16 );
+            using _t = void (MyDimServer::*)(quint16 , quint8 , qint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::set_ADC_ZERO_requested)) {
                 *result = 0;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint8 , qint16 );
+            using _t = void (MyDimServer::*)(quint16 , quint8 , qint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::set_ADC_DELAY_requested)) {
                 *result = 1;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint8 , quint16 );
+            using _t = void (MyDimServer::*)(quint16 , quint8 , quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::set_ADC0_OFFSET_requested)) {
                 *result = 2;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint8 , quint16 );
+            using _t = void (MyDimServer::*)(quint16 , quint8 , quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::set_ADC1_OFFSET_requested)) {
                 *result = 3;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint8 , quint16 );
+            using _t = void (MyDimServer::*)(quint16 , quint8 , quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::set_ADC0_RANGE_requested)) {
                 *result = 4;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint8 , quint16 );
+            using _t = void (MyDimServer::*)(quint16 , quint8 , quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::set_ADC1_RANGE_requested)) {
                 *result = 5;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint8 , quint16 );
+            using _t = void (MyDimServer::*)(quint16 , quint8 , quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::set_TIME_ALIGN_requested)) {
                 *result = 6;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint8 , qint16 );
+            using _t = void (MyDimServer::*)(quint16 , quint8 , qint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::set_CFD_THRESHOLD_requested)) {
                 *result = 7;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint8 , qint16 );
+            using _t = void (MyDimServer::*)(quint16 , quint8 , qint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::set_CFD_ZERO_requested)) {
                 *result = 8;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint8 , qint16 );
+            using _t = void (MyDimServer::*)(quint16 , quint8 , qint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::set_THRESHOLD_CALIBR_requested)) {
                 *result = 9;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint8 );
+            using _t = void (MyDimServer::*)(quint16 , quint8 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_ADC_ZERO_requested)) {
                 *result = 10;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint8 );
+            using _t = void (MyDimServer::*)(quint16 , quint8 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_ADC_DELAY_requested)) {
                 *result = 11;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint8 );
+            using _t = void (MyDimServer::*)(quint16 , quint8 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_ADC0_OFFSET_requested)) {
                 *result = 12;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint8 );
+            using _t = void (MyDimServer::*)(quint16 , quint8 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_ADC1_OFFSET_requested)) {
                 *result = 13;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint8 );
+            using _t = void (MyDimServer::*)(quint16 , quint8 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_ADC0_RANGE_requested)) {
                 *result = 14;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint8 );
+            using _t = void (MyDimServer::*)(quint16 , quint8 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_ADC1_RANGE_requested)) {
                 *result = 15;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint8 );
+            using _t = void (MyDimServer::*)(quint16 , quint8 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_TIME_ALIGN_requested)) {
                 *result = 16;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint8 );
+            using _t = void (MyDimServer::*)(quint16 , quint8 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_CFD_THRESHOLD_requested)) {
                 *result = 17;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint8 );
+            using _t = void (MyDimServer::*)(quint16 , quint8 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_CFD_ZERO_requested)) {
                 *result = 18;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint8 );
+            using _t = void (MyDimServer::*)(quint16 , quint8 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_THRESHOLD_CALIBR_requested)) {
                 *result = 19;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint8 );
+            using _t = void (MyDimServer::*)(quint16 , quint8 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_ALLtoCh_requested)) {
                 *result = 20;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint16 );
+            using _t = void (MyDimServer::*)(quint16 , quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::set_CH_MASK_requested)) {
                 *result = 21;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint16 );
+            using _t = void (MyDimServer::*)(quint16 , quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::set_CFD_SATR_requested)) {
                 *result = 22;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint8 );
+            using _t = void (MyDimServer::*)(quint16 , quint8 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::set_OR_GATE_requested)) {
                 *result = 23;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 );
+            using _t = void (MyDimServer::*)(quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_CH_MASK_requested)) {
                 *result = 24;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 );
+            using _t = void (MyDimServer::*)(quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_CFD_SATR_requested)) {
                 *result = 25;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 );
+            using _t = void (MyDimServer::*)(quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_OR_GATE_requested)) {
                 *result = 26;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 );
+            using _t = void (MyDimServer::*)(quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_RESET_COUNTERS_requested)) {
                 *result = 27;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 );
+            using _t = void (MyDimServer::*)(quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_ZERO_LVL_CALIBR_requested)) {
                 *result = 28;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 );
+            using _t = void (MyDimServer::*)(quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_RESET_ORBIT_SYNC_requested)) {
                 *result = 29;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 );
+            using _t = void (MyDimServer::*)(quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_RESET_DROPPING_HIT_COUNTERS_requested)) {
                 *result = 30;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 );
+            using _t = void (MyDimServer::*)(quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_RESET_GEN_BUNCH_OFFSET_requested)) {
                 *result = 31;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 );
+            using _t = void (MyDimServer::*)(quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_RESET_GBT_ERRORS_requested)) {
                 *result = 32;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 );
+            using _t = void (MyDimServer::*)(quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_RESET_GBT_requested)) {
                 *result = 33;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 );
+            using _t = void (MyDimServer::*)(quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_RESET_RX_PHASE_ERROR_requested)) {
                 *result = 34;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint8 );
+            using _t = void (MyDimServer::*)(quint16 , quint8 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_SEND_READOUT_COMMAND_requested)) {
                 *result = 35;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint8 );
+            using _t = void (MyDimServer::*)(quint16 , quint8 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_TG_MODE_requested)) {
                 *result = 36;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 );
+            using _t = void (MyDimServer::*)(quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_TG_PATTERN_1_requested)) {
                 *result = 37;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 );
+            using _t = void (MyDimServer::*)(quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_TG_PATTERN_0_requested)) {
                 *result = 38;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 );
+            using _t = void (MyDimServer::*)(quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_TG_CONT_VALUE_requested)) {
                 *result = 39;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint32 );
+            using _t = void (MyDimServer::*)(quint16 , quint32 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_TG_SEND_SINGLE_requested)) {
                 *result = 40;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 );
+            using _t = void (MyDimServer::*)(quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_TG_BUNCH_FREQ_requested)) {
                 *result = 41;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 );
+            using _t = void (MyDimServer::*)(quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_TG_FREQ_OFFSET_requested)) {
                 *result = 42;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint8 );
+            using _t = void (MyDimServer::*)(quint16 , quint8 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_DG_MODE_requested)) {
                 *result = 43;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 );
+            using _t = void (MyDimServer::*)(quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_DG_TRG_RESPOND_MASK_requested)) {
                 *result = 44;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 );
+            using _t = void (MyDimServer::*)(quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_DG_BUNCH_PATTERN_requested)) {
                 *result = 45;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 );
+            using _t = void (MyDimServer::*)(quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_DG_BUNCH_FREQ_requested)) {
                 *result = 46;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 );
+            using _t = void (MyDimServer::*)(quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_DG_FREQ_OFFSET_requested)) {
                 *result = 47;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 );
+            using _t = void (MyDimServer::*)(quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_RDH_FEE_ID_requested)) {
                 *result = 48;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 );
+            using _t = void (MyDimServer::*)(quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_RDH_PAR_requested)) {
                 *result = 49;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 );
+            using _t = void (MyDimServer::*)(quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_RDH_MAX_PAYLOAD_requested)) {
                 *result = 50;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 );
+            using _t = void (MyDimServer::*)(quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_RDH_DET_FIELD_requested)) {
                 *result = 51;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 );
+            using _t = void (MyDimServer::*)(quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_CRU_TRG_COMPARE_DELAY_requested)) {
                 *result = 52;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 );
+            using _t = void (MyDimServer::*)(quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_BCID_DELAY_requested)) {
                 *result = 53;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint32 );
+            using _t = void (MyDimServer::*)(quint16 , quint32 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::set_TG_PATTERN_1_requested)) {
                 *result = 54;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint32 );
+            using _t = void (MyDimServer::*)(quint16 , quint32 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::set_TG_PATTERN_0_requested)) {
                 *result = 55;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint8 );
+            using _t = void (MyDimServer::*)(quint16 , quint8 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::set_TG_CONT_VALUE_requested)) {
                 *result = 56;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint16 );
+            using _t = void (MyDimServer::*)(quint16 , quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::set_TG_BUNCH_FREQ_requested)) {
                 *result = 57;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint16 );
+            using _t = void (MyDimServer::*)(quint16 , quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::set_TG_FREQ_OFFSET_requested)) {
                 *result = 58;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint32 );
+            using _t = void (MyDimServer::*)(quint16 , quint32 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::set_DG_TRG_RESPOND_MASK_requested)) {
                 *result = 59;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint32 );
+            using _t = void (MyDimServer::*)(quint16 , quint32 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::set_DG_BUNCH_PATTERN_requested)) {
                 *result = 60;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint16 );
+            using _t = void (MyDimServer::*)(quint16 , quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::set_DG_BUNCH_FREQ_requested)) {
                 *result = 61;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint16 );
+            using _t = void (MyDimServer::*)(quint16 , quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::set_DG_FREQ_OFFSET_requested)) {
                 *result = 62;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint16 );
+            using _t = void (MyDimServer::*)(quint16 , quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::set_RDH_FEE_ID_requested)) {
                 *result = 63;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint16 );
+            using _t = void (MyDimServer::*)(quint16 , quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::set_RDH_PAR_requested)) {
                 *result = 64;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint16 );
+            using _t = void (MyDimServer::*)(quint16 , quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::set_RDH_MAX_PAYLOAD_requested)) {
                 *result = 65;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint16 );
+            using _t = void (MyDimServer::*)(quint16 , quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::set_RDH_DET_FIELD_requested)) {
                 *result = 66;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint16 );
+            using _t = void (MyDimServer::*)(quint16 , quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::set_CRU_TRG_COMPARE_DELAY_requested)) {
                 *result = 67;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 , quint16 );
+            using _t = void (MyDimServer::*)(quint16 , quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::set_BCID_DELAY_requested)) {
                 *result = 68;
                 return;
             }
         }
         {
-            using _t = void (MyDimServer::*)(quint8 );
+            using _t = void (MyDimServer::*)(quint16 );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MyDimServer::apply_ALLtoPM_requested)) {
                 *result = 69;
                 return;
@@ -1350,490 +1350,490 @@ int MyDimServer::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void MyDimServer::set_ADC_ZERO_requested(quint8 _t1, quint8 _t2, qint16 _t3)
+void MyDimServer::set_ADC_ZERO_requested(quint16 _t1, quint8 _t2, qint16 _t3)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t3))) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 
 // SIGNAL 1
-void MyDimServer::set_ADC_DELAY_requested(quint8 _t1, quint8 _t2, qint16 _t3)
+void MyDimServer::set_ADC_DELAY_requested(quint16 _t1, quint8 _t2, qint16 _t3)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t3))) };
     QMetaObject::activate(this, &staticMetaObject, 1, _a);
 }
 
 // SIGNAL 2
-void MyDimServer::set_ADC0_OFFSET_requested(quint8 _t1, quint8 _t2, quint16 _t3)
+void MyDimServer::set_ADC0_OFFSET_requested(quint16 _t1, quint8 _t2, quint16 _t3)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t3))) };
     QMetaObject::activate(this, &staticMetaObject, 2, _a);
 }
 
 // SIGNAL 3
-void MyDimServer::set_ADC1_OFFSET_requested(quint8 _t1, quint8 _t2, quint16 _t3)
+void MyDimServer::set_ADC1_OFFSET_requested(quint16 _t1, quint8 _t2, quint16 _t3)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t3))) };
     QMetaObject::activate(this, &staticMetaObject, 3, _a);
 }
 
 // SIGNAL 4
-void MyDimServer::set_ADC0_RANGE_requested(quint8 _t1, quint8 _t2, quint16 _t3)
+void MyDimServer::set_ADC0_RANGE_requested(quint16 _t1, quint8 _t2, quint16 _t3)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t3))) };
     QMetaObject::activate(this, &staticMetaObject, 4, _a);
 }
 
 // SIGNAL 5
-void MyDimServer::set_ADC1_RANGE_requested(quint8 _t1, quint8 _t2, quint16 _t3)
+void MyDimServer::set_ADC1_RANGE_requested(quint16 _t1, quint8 _t2, quint16 _t3)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t3))) };
     QMetaObject::activate(this, &staticMetaObject, 5, _a);
 }
 
 // SIGNAL 6
-void MyDimServer::set_TIME_ALIGN_requested(quint8 _t1, quint8 _t2, quint16 _t3)
+void MyDimServer::set_TIME_ALIGN_requested(quint16 _t1, quint8 _t2, quint16 _t3)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t3))) };
     QMetaObject::activate(this, &staticMetaObject, 6, _a);
 }
 
 // SIGNAL 7
-void MyDimServer::set_CFD_THRESHOLD_requested(quint8 _t1, quint8 _t2, qint16 _t3)
+void MyDimServer::set_CFD_THRESHOLD_requested(quint16 _t1, quint8 _t2, qint16 _t3)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t3))) };
     QMetaObject::activate(this, &staticMetaObject, 7, _a);
 }
 
 // SIGNAL 8
-void MyDimServer::set_CFD_ZERO_requested(quint8 _t1, quint8 _t2, qint16 _t3)
+void MyDimServer::set_CFD_ZERO_requested(quint16 _t1, quint8 _t2, qint16 _t3)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t3))) };
     QMetaObject::activate(this, &staticMetaObject, 8, _a);
 }
 
 // SIGNAL 9
-void MyDimServer::set_THRESHOLD_CALIBR_requested(quint8 _t1, quint8 _t2, qint16 _t3)
+void MyDimServer::set_THRESHOLD_CALIBR_requested(quint16 _t1, quint8 _t2, qint16 _t3)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t3))) };
     QMetaObject::activate(this, &staticMetaObject, 9, _a);
 }
 
 // SIGNAL 10
-void MyDimServer::apply_ADC_ZERO_requested(quint8 _t1, quint8 _t2)
+void MyDimServer::apply_ADC_ZERO_requested(quint16 _t1, quint8 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 10, _a);
 }
 
 // SIGNAL 11
-void MyDimServer::apply_ADC_DELAY_requested(quint8 _t1, quint8 _t2)
+void MyDimServer::apply_ADC_DELAY_requested(quint16 _t1, quint8 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 11, _a);
 }
 
 // SIGNAL 12
-void MyDimServer::apply_ADC0_OFFSET_requested(quint8 _t1, quint8 _t2)
+void MyDimServer::apply_ADC0_OFFSET_requested(quint16 _t1, quint8 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 12, _a);
 }
 
 // SIGNAL 13
-void MyDimServer::apply_ADC1_OFFSET_requested(quint8 _t1, quint8 _t2)
+void MyDimServer::apply_ADC1_OFFSET_requested(quint16 _t1, quint8 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 13, _a);
 }
 
 // SIGNAL 14
-void MyDimServer::apply_ADC0_RANGE_requested(quint8 _t1, quint8 _t2)
+void MyDimServer::apply_ADC0_RANGE_requested(quint16 _t1, quint8 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 14, _a);
 }
 
 // SIGNAL 15
-void MyDimServer::apply_ADC1_RANGE_requested(quint8 _t1, quint8 _t2)
+void MyDimServer::apply_ADC1_RANGE_requested(quint16 _t1, quint8 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 15, _a);
 }
 
 // SIGNAL 16
-void MyDimServer::apply_TIME_ALIGN_requested(quint8 _t1, quint8 _t2)
+void MyDimServer::apply_TIME_ALIGN_requested(quint16 _t1, quint8 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 16, _a);
 }
 
 // SIGNAL 17
-void MyDimServer::apply_CFD_THRESHOLD_requested(quint8 _t1, quint8 _t2)
+void MyDimServer::apply_CFD_THRESHOLD_requested(quint16 _t1, quint8 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 17, _a);
 }
 
 // SIGNAL 18
-void MyDimServer::apply_CFD_ZERO_requested(quint8 _t1, quint8 _t2)
+void MyDimServer::apply_CFD_ZERO_requested(quint16 _t1, quint8 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 18, _a);
 }
 
 // SIGNAL 19
-void MyDimServer::apply_THRESHOLD_CALIBR_requested(quint8 _t1, quint8 _t2)
+void MyDimServer::apply_THRESHOLD_CALIBR_requested(quint16 _t1, quint8 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 19, _a);
 }
 
 // SIGNAL 20
-void MyDimServer::apply_ALLtoCh_requested(quint8 _t1, quint8 _t2)
+void MyDimServer::apply_ALLtoCh_requested(quint16 _t1, quint8 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 20, _a);
 }
 
 // SIGNAL 21
-void MyDimServer::set_CH_MASK_requested(quint8 _t1, quint16 _t2)
+void MyDimServer::set_CH_MASK_requested(quint16 _t1, quint16 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 21, _a);
 }
 
 // SIGNAL 22
-void MyDimServer::set_CFD_SATR_requested(quint8 _t1, quint16 _t2)
+void MyDimServer::set_CFD_SATR_requested(quint16 _t1, quint16 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 22, _a);
 }
 
 // SIGNAL 23
-void MyDimServer::set_OR_GATE_requested(quint8 _t1, quint8 _t2)
+void MyDimServer::set_OR_GATE_requested(quint16 _t1, quint8 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 23, _a);
 }
 
 // SIGNAL 24
-void MyDimServer::apply_CH_MASK_requested(quint8 _t1)
+void MyDimServer::apply_CH_MASK_requested(quint16 _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 24, _a);
 }
 
 // SIGNAL 25
-void MyDimServer::apply_CFD_SATR_requested(quint8 _t1)
+void MyDimServer::apply_CFD_SATR_requested(quint16 _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 25, _a);
 }
 
 // SIGNAL 26
-void MyDimServer::apply_OR_GATE_requested(quint8 _t1)
+void MyDimServer::apply_OR_GATE_requested(quint16 _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 26, _a);
 }
 
 // SIGNAL 27
-void MyDimServer::apply_RESET_COUNTERS_requested(quint8 _t1)
+void MyDimServer::apply_RESET_COUNTERS_requested(quint16 _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 27, _a);
 }
 
 // SIGNAL 28
-void MyDimServer::apply_ZERO_LVL_CALIBR_requested(quint8 _t1)
+void MyDimServer::apply_ZERO_LVL_CALIBR_requested(quint16 _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 28, _a);
 }
 
 // SIGNAL 29
-void MyDimServer::apply_RESET_ORBIT_SYNC_requested(quint8 _t1)
+void MyDimServer::apply_RESET_ORBIT_SYNC_requested(quint16 _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 29, _a);
 }
 
 // SIGNAL 30
-void MyDimServer::apply_RESET_DROPPING_HIT_COUNTERS_requested(quint8 _t1)
+void MyDimServer::apply_RESET_DROPPING_HIT_COUNTERS_requested(quint16 _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 30, _a);
 }
 
 // SIGNAL 31
-void MyDimServer::apply_RESET_GEN_BUNCH_OFFSET_requested(quint8 _t1)
+void MyDimServer::apply_RESET_GEN_BUNCH_OFFSET_requested(quint16 _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 31, _a);
 }
 
 // SIGNAL 32
-void MyDimServer::apply_RESET_GBT_ERRORS_requested(quint8 _t1)
+void MyDimServer::apply_RESET_GBT_ERRORS_requested(quint16 _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 32, _a);
 }
 
 // SIGNAL 33
-void MyDimServer::apply_RESET_GBT_requested(quint8 _t1)
+void MyDimServer::apply_RESET_GBT_requested(quint16 _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 33, _a);
 }
 
 // SIGNAL 34
-void MyDimServer::apply_RESET_RX_PHASE_ERROR_requested(quint8 _t1)
+void MyDimServer::apply_RESET_RX_PHASE_ERROR_requested(quint16 _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 34, _a);
 }
 
 // SIGNAL 35
-void MyDimServer::apply_SEND_READOUT_COMMAND_requested(quint8 _t1, quint8 _t2)
+void MyDimServer::apply_SEND_READOUT_COMMAND_requested(quint16 _t1, quint8 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 35, _a);
 }
 
 // SIGNAL 36
-void MyDimServer::apply_TG_MODE_requested(quint8 _t1, quint8 _t2)
+void MyDimServer::apply_TG_MODE_requested(quint16 _t1, quint8 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 36, _a);
 }
 
 // SIGNAL 37
-void MyDimServer::apply_TG_PATTERN_1_requested(quint8 _t1)
+void MyDimServer::apply_TG_PATTERN_1_requested(quint16 _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 37, _a);
 }
 
 // SIGNAL 38
-void MyDimServer::apply_TG_PATTERN_0_requested(quint8 _t1)
+void MyDimServer::apply_TG_PATTERN_0_requested(quint16 _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 38, _a);
 }
 
 // SIGNAL 39
-void MyDimServer::apply_TG_CONT_VALUE_requested(quint8 _t1)
+void MyDimServer::apply_TG_CONT_VALUE_requested(quint16 _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 39, _a);
 }
 
 // SIGNAL 40
-void MyDimServer::apply_TG_SEND_SINGLE_requested(quint8 _t1, quint32 _t2)
+void MyDimServer::apply_TG_SEND_SINGLE_requested(quint16 _t1, quint32 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 40, _a);
 }
 
 // SIGNAL 41
-void MyDimServer::apply_TG_BUNCH_FREQ_requested(quint8 _t1)
+void MyDimServer::apply_TG_BUNCH_FREQ_requested(quint16 _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 41, _a);
 }
 
 // SIGNAL 42
-void MyDimServer::apply_TG_FREQ_OFFSET_requested(quint8 _t1)
+void MyDimServer::apply_TG_FREQ_OFFSET_requested(quint16 _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 42, _a);
 }
 
 // SIGNAL 43
-void MyDimServer::apply_DG_MODE_requested(quint8 _t1, quint8 _t2)
+void MyDimServer::apply_DG_MODE_requested(quint16 _t1, quint8 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 43, _a);
 }
 
 // SIGNAL 44
-void MyDimServer::apply_DG_TRG_RESPOND_MASK_requested(quint8 _t1)
+void MyDimServer::apply_DG_TRG_RESPOND_MASK_requested(quint16 _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 44, _a);
 }
 
 // SIGNAL 45
-void MyDimServer::apply_DG_BUNCH_PATTERN_requested(quint8 _t1)
+void MyDimServer::apply_DG_BUNCH_PATTERN_requested(quint16 _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 45, _a);
 }
 
 // SIGNAL 46
-void MyDimServer::apply_DG_BUNCH_FREQ_requested(quint8 _t1)
+void MyDimServer::apply_DG_BUNCH_FREQ_requested(quint16 _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 46, _a);
 }
 
 // SIGNAL 47
-void MyDimServer::apply_DG_FREQ_OFFSET_requested(quint8 _t1)
+void MyDimServer::apply_DG_FREQ_OFFSET_requested(quint16 _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 47, _a);
 }
 
 // SIGNAL 48
-void MyDimServer::apply_RDH_FEE_ID_requested(quint8 _t1)
+void MyDimServer::apply_RDH_FEE_ID_requested(quint16 _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 48, _a);
 }
 
 // SIGNAL 49
-void MyDimServer::apply_RDH_PAR_requested(quint8 _t1)
+void MyDimServer::apply_RDH_PAR_requested(quint16 _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 49, _a);
 }
 
 // SIGNAL 50
-void MyDimServer::apply_RDH_MAX_PAYLOAD_requested(quint8 _t1)
+void MyDimServer::apply_RDH_MAX_PAYLOAD_requested(quint16 _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 50, _a);
 }
 
 // SIGNAL 51
-void MyDimServer::apply_RDH_DET_FIELD_requested(quint8 _t1)
+void MyDimServer::apply_RDH_DET_FIELD_requested(quint16 _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 51, _a);
 }
 
 // SIGNAL 52
-void MyDimServer::apply_CRU_TRG_COMPARE_DELAY_requested(quint8 _t1)
+void MyDimServer::apply_CRU_TRG_COMPARE_DELAY_requested(quint16 _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 52, _a);
 }
 
 // SIGNAL 53
-void MyDimServer::apply_BCID_DELAY_requested(quint8 _t1)
+void MyDimServer::apply_BCID_DELAY_requested(quint16 _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 53, _a);
 }
 
 // SIGNAL 54
-void MyDimServer::set_TG_PATTERN_1_requested(quint8 _t1, quint32 _t2)
+void MyDimServer::set_TG_PATTERN_1_requested(quint16 _t1, quint32 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 54, _a);
 }
 
 // SIGNAL 55
-void MyDimServer::set_TG_PATTERN_0_requested(quint8 _t1, quint32 _t2)
+void MyDimServer::set_TG_PATTERN_0_requested(quint16 _t1, quint32 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 55, _a);
 }
 
 // SIGNAL 56
-void MyDimServer::set_TG_CONT_VALUE_requested(quint8 _t1, quint8 _t2)
+void MyDimServer::set_TG_CONT_VALUE_requested(quint16 _t1, quint8 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 56, _a);
 }
 
 // SIGNAL 57
-void MyDimServer::set_TG_BUNCH_FREQ_requested(quint8 _t1, quint16 _t2)
+void MyDimServer::set_TG_BUNCH_FREQ_requested(quint16 _t1, quint16 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 57, _a);
 }
 
 // SIGNAL 58
-void MyDimServer::set_TG_FREQ_OFFSET_requested(quint8 _t1, quint16 _t2)
+void MyDimServer::set_TG_FREQ_OFFSET_requested(quint16 _t1, quint16 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 58, _a);
 }
 
 // SIGNAL 59
-void MyDimServer::set_DG_TRG_RESPOND_MASK_requested(quint8 _t1, quint32 _t2)
+void MyDimServer::set_DG_TRG_RESPOND_MASK_requested(quint16 _t1, quint32 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 59, _a);
 }
 
 // SIGNAL 60
-void MyDimServer::set_DG_BUNCH_PATTERN_requested(quint8 _t1, quint32 _t2)
+void MyDimServer::set_DG_BUNCH_PATTERN_requested(quint16 _t1, quint32 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 60, _a);
 }
 
 // SIGNAL 61
-void MyDimServer::set_DG_BUNCH_FREQ_requested(quint8 _t1, quint16 _t2)
+void MyDimServer::set_DG_BUNCH_FREQ_requested(quint16 _t1, quint16 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 61, _a);
 }
 
 // SIGNAL 62
-void MyDimServer::set_DG_FREQ_OFFSET_requested(quint8 _t1, quint16 _t2)
+void MyDimServer::set_DG_FREQ_OFFSET_requested(quint16 _t1, quint16 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 62, _a);
 }
 
 // SIGNAL 63
-void MyDimServer::set_RDH_FEE_ID_requested(quint8 _t1, quint16 _t2)
+void MyDimServer::set_RDH_FEE_ID_requested(quint16 _t1, quint16 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 63, _a);
 }
 
 // SIGNAL 64
-void MyDimServer::set_RDH_PAR_requested(quint8 _t1, quint16 _t2)
+void MyDimServer::set_RDH_PAR_requested(quint16 _t1, quint16 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 64, _a);
 }
 
 // SIGNAL 65
-void MyDimServer::set_RDH_MAX_PAYLOAD_requested(quint8 _t1, quint16 _t2)
+void MyDimServer::set_RDH_MAX_PAYLOAD_requested(quint16 _t1, quint16 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 65, _a);
 }
 
 // SIGNAL 66
-void MyDimServer::set_RDH_DET_FIELD_requested(quint8 _t1, quint16 _t2)
+void MyDimServer::set_RDH_DET_FIELD_requested(quint16 _t1, quint16 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 66, _a);
 }
 
 // SIGNAL 67
-void MyDimServer::set_CRU_TRG_COMPARE_DELAY_requested(quint8 _t1, quint16 _t2)
+void MyDimServer::set_CRU_TRG_COMPARE_DELAY_requested(quint16 _t1, quint16 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 67, _a);
 }
 
 // SIGNAL 68
-void MyDimServer::set_BCID_DELAY_requested(quint8 _t1, quint16 _t2)
+void MyDimServer::set_BCID_DELAY_requested(quint16 _t1, quint16 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 68, _a);
 }
 
 // SIGNAL 69
-void MyDimServer::apply_ALLtoPM_requested(quint8 _t1)
+void MyDimServer::apply_ALLtoPM_requested(quint16 _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 69, _a);

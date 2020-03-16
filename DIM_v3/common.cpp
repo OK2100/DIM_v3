@@ -5,7 +5,7 @@ QTextStream outDSs(&DimServicesFile);
 QTextStream outDCs(&DimCommandsFile);
 
 pm_pNonValSignal getPMNonValPointerToSignal(QString PARname){ return PMNonValHash[PARname]; };
-pmch_pNonValSignal getPMCHNonValPointerToSignal(QString PARname){ return PMCHNonValHash[PARname]; };
+pmch_pNonValSignal getPMCHNonValPointerToSignal(QString PARname){ return PMCHNonValHash[PARname];};
 
 void OpenOutFiles()
 {
