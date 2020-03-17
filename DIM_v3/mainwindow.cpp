@@ -7,7 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-//    OpenOutFiles();
+    OpenOutFiles();
 
     QString node = "localhost";
     server = new MyDimServer(node);
@@ -41,7 +41,6 @@ void MainWindow::on_Btn2_AppName_clicked()
 void MainWindow::on_Btn_Start_clicked()
 {
     if((ui->Btn_AppNode->isChecked()) && (ui->Btn2_AppName->isChecked())) {
-        OpenOutFiles();
         emulator->serv->Npms = static_cast<quint8>(ui->SpinBox_Npms->value());
         emulator->node = ui->lE1_node->text();
 ////        emulator->serv->setNChannels(static_cast<quint8>(ui->SpinBox_Nchs->value()));

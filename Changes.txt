@@ -8,6 +8,8 @@ OR_GATE		C	->	S
 CFD_CNT	->	CNT_CFD
 TRG_CNT	->	CNT_TRG
 
+HDMI_LINK	->	LINK_STATUS
+
 		[New parameters]
 
 CNT_CFD_RATE
@@ -21,4 +23,7 @@ FW_VERSION
 
 DATA_SEL_TRG_MASK
 
+		[Deleted parameters]
+
+ALLtoCh
 

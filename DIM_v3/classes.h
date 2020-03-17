@@ -379,5 +379,53 @@ public:
     {this->SetServer(t_pServer);}
 };
 
+template<class T>
+class tcm_ACT : public virtual Base
+{
+protected:
+    T actValue;
+    DimService* actService = nullptr;
+public:
+    void updateAct(T val)
+    {
+        actValue = val;
+        actService->updateService();
+        cout << "# " << actService->getName() << " updated to" <<
+              hex << " H:" << val << dec << " D:" << val << endl << endl;
+    }
+
+    void publishService()
+    {
+        switch (sizeof(T)) {
+        case 1:
+            actService = new DimService(qPrintable("ACT_"+DIM_name[FEE_id]+prefix+"/"+name),"C:1",&actValue,1);
+            outDSs << actService->getName() << endl;
+            break;
+        case 2:
+            actService = new DimService(qPrintable("ACT_"+DIM_name[FEE_id]+prefix+"/"+name),"S:1",&actValue,2);
+            outDSs << actService->getName() << endl;
+            break;
+        case 4:
+            actService = new DimService(qPrintable("ACT_"+DIM_name[FEE_id]+prefix+"/"+name),"I:1",&actValue,4);
+            outDSs << actService->getName() << endl;
+            break;
+        case 8:
+            actService = new DimService(qPrintable("ACT_"+DIM_name[FEE_id]+prefix+"/"+name),"X:1",&actValue,8);
+            outDSs << actService->getName() << endl;
+            break;
+        default:
+            cerr << "\n## Underfined size of T\n";
+            Q_ASSERT(1);
+        }
+    }
+
+
+    tcm_ACT(QString t_name) : Base(t_name), actValue(0){}
+    ~tcm_ACT(){ delete actService; }
+};
+
+
+
+
 
 #endif // CLASSES_H

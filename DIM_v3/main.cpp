@@ -10,7 +10,6 @@ int main(int argc, char *argv[])
 //    QString node;
 //    node = "hplu-Notebook-PC";
 //    serv = new MyDimServer(node);
-//    serv->Npms = 1;
 //    serv->startServer();
 //    while (1){}
 

@@ -5,6 +5,20 @@
 #include "classes.h"
 #include "common.h"
 
+class TCMPars
+{
+public:
+    TCMPars(MyDimServer* _server);
+    ~TCMPars();
+
+    MyDimServer* pServer;
+    quint16 TCM_FEE_id;
+    void publish();         //  Here the order of publishing is defined
+
+
+
+
+};
 
 class PMPars
 {
