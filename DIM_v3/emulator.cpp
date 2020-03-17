@@ -14,6 +14,8 @@ Emulator::~Emulator()
 
 void Emulator::SetupConnection()
 {
+    //      This block is related to parameters with NEWvalue
+
     connect(serv,&MyDimServer::set_ADC_ZERO_requested,serv,&MyDimServer::update_new_ADC_ZERO);
     connect(serv,&MyDimServer::set_ADC_DELAY_requested,serv,&MyDimServer::update_new_ADC_DELAY);
     connect(serv,&MyDimServer::set_ADC0_OFFSET_requested,serv,&MyDimServer::update_new_ADC0_OFFSET);
@@ -46,12 +48,17 @@ void Emulator::SetupConnection()
     connect(serv,&MyDimServer::set_RDH_DET_FIELD_requested,serv,&MyDimServer::update_new_RDH_DET_FIELD);
     connect(serv,&MyDimServer::set_CRU_TRG_COMPARE_DELAY_requested,serv,&MyDimServer::update_new_CRU_TRG_COMPARE_DELAY);
     connect(serv,&MyDimServer::set_BCID_DELAY_requested,serv,&MyDimServer::update_new_BCID_DELAY);
+    connect(serv,&MyDimServer::set_DATA_SEL_TRG_MASK_requested,serv,&MyDimServer::update_new_DATA_SEL_TRG_MASK);
 
+    //  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    //      This block is related to parameters wit only ACT+APP values
 
     connect(serv,&MyDimServer::apply_TG_MODE_requested,serv,&MyDimServer::update_act_TG_MODE);
+    connect(serv,&MyDimServer::apply_HB_RESPONSE_requested,serv,&MyDimServer::update_act_HB_RESPONSE);
     connect(serv,&MyDimServer::apply_DG_MODE_requested,serv,&MyDimServer::update_act_DG_MODE);
 
     //  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    //      This block is also related to parameters with NEWvalue
 
     connect(serv,&MyDimServer::apply_ADC_ZERO_requested,this,&Emulator::update_request_act_ADC_ZERO);
     connect(serv,&MyDimServer::apply_ADC_DELAY_requested,this,&Emulator::update_request_act_ADC_DELAY);
@@ -63,7 +70,6 @@ void Emulator::SetupConnection()
     connect(serv,&MyDimServer::apply_CFD_THRESHOLD_requested,this,&Emulator::update_request_act_CFD_THRESHOLD);
     connect(serv,&MyDimServer::apply_CFD_ZERO_requested,this,&Emulator::update_request_act_CFD_ZERO);
     connect(serv,&MyDimServer::apply_THRESHOLD_CALIBR_requested,this,&Emulator::update_request_act_THRESHOLD_CALIBR);
-    connect(serv,&MyDimServer::apply_ALLtoCh_requested,this,&Emulator::update_request_act_AlltoCh);
 
     connect(serv,&MyDimServer::apply_CH_MASK_requested,this,&Emulator::update_request_act_CH_MASK);
     connect(serv,&MyDimServer::apply_CFD_SATR_requested,this,&Emulator::update_request_act_CFD_SATR);
@@ -71,7 +77,6 @@ void Emulator::SetupConnection()
     connect(serv,&MyDimServer::apply_TG_PATTERN_1_requested,this,&Emulator::update_request_act_TG_PATTERN_1);
     connect(serv,&MyDimServer::apply_TG_PATTERN_0_requested,this,&Emulator::update_request_act_TG_PATTERN_0);
     connect(serv,&MyDimServer::apply_TG_CONT_VALUE_requested,this,&Emulator::update_request_act_TG_CONT_VALUE);
-////    connect(serv,&MyDimServer::apply_TG_SEND_SINGLE_requested,this,&Emulator::update_request_act_);(quint8 PMid, quint32 val)
     connect(serv,&MyDimServer::apply_TG_BUNCH_FREQ_requested,this,&Emulator::update_request_act_TG_BUNCH_FREQ);
     connect(serv,&MyDimServer::apply_TG_FREQ_OFFSET_requested,this,&Emulator::update_request_act_TG_FREQ_OFFSET);
     connect(serv,&MyDimServer::apply_DG_TRG_RESPOND_MASK_requested,this,&Emulator::update_request_act_DG_TRG_RESPOND_MASK);
@@ -84,10 +89,24 @@ void Emulator::SetupConnection()
     connect(serv,&MyDimServer::apply_RDH_DET_FIELD_requested,this,&Emulator::update_request_act_RDH_DET_FIELD);
     connect(serv,&MyDimServer::apply_CRU_TRG_COMPARE_DELAY_requested,this,&Emulator::update_request_act_CRU_TRG_COMPARE_DELAY);
     connect(serv,&MyDimServer::apply_BCID_DELAY_requested,this,&Emulator::update_request_act_BCID_DELAY);
+    connect(serv,&MyDimServer::apply_DATA_SEL_TRG_MASK_requested,this,&Emulator::update_request_act_DATA_SEL_TRG_MASK);
+
+    //      Exept tis
+
     connect(serv,&MyDimServer::apply_ALLtoPM_requested,this,&Emulator::update_request_act_AlltoPM);
 
     //  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
+    //3
+    connect(this,&Emulator::set_cmnd_OR_GATE_requested,serv,&MyDimServer::update_act_OR_GATE);
+    connect(this,&Emulator::set_cmnd_CFD_SATR_requested,serv,&MyDimServer::update_act_CFD_SATR);
+    connect(this,&Emulator::set_cmnd_CH_MASK_requested,serv,&MyDimServer::update_act_CH_MASK);
+    //5
+    connect(this,&Emulator::set_cmnd_LINK_STATUS_requested,serv,&MyDimServer::update_act_LINK_STATUS);
+    connect(this,&Emulator::set_cmnd_BOARD_STATUS_requested,serv,&MyDimServer::update_act_BOARD_STATUS);
+    connect(this,&Emulator::set_cmnd_TEMPERATURE_requested,serv,&MyDimServer::update_act_TEMPERATURE);
+    connect(this,&Emulator::set_cmnd_SERIAL_NUM_requested,serv,&MyDimServer::update_act_SERIAL_NUM);
+    connect(this,&Emulator::set_cmnd_FW_VERSION_requested,serv,&MyDimServer::update_act_FW_VERSION);
+    //10
     connect(this,&Emulator::set_cmnd_ADC_ZERO_requested,serv,&MyDimServer::update_act_ADC_ZERO);
     connect(this,&Emulator::set_cmnd_ADC_DELAY_requested,serv,&MyDimServer::update_act_ADC_DELAY);
     connect(this,&Emulator::set_cmnd_ADC0_OFFSET_requested,serv,&MyDimServer::update_act_ADC0_OFFSET);
@@ -98,26 +117,28 @@ void Emulator::SetupConnection()
     connect(this,&Emulator::set_cmnd_CFD_THRESHOLD_requested,serv,&MyDimServer::update_act_CFD_THRESHOLD);
     connect(this,&Emulator::set_cmnd_CFD_ZERO_requested,serv,&MyDimServer::update_act_CFD_ZERO);
     connect(this,&Emulator::set_cmnd_THRESHOLD_CALIBR_requested,serv,&MyDimServer::update_act_THRESHOLD_CALIBR);
-
-
+    //9
     connect(this,&Emulator::set_cmnd_ADC0_MEANAMPL_requested,serv,&MyDimServer::update_act_ADC0_MEANAMPL);
     connect(this,&Emulator::set_cmnd_ADC1_MEANAMPL_requested,serv,&MyDimServer::update_act_ADC1_MEANAMPL);
     connect(this,&Emulator::set_cmnd_ADC0_ZEROLVL_requested,serv,&MyDimServer::update_act_ADC0_ZEROLVL);
     connect(this,&Emulator::set_cmnd_ADC1_ZEROLVL_requested,serv,&MyDimServer::update_act_ADC1_ZEROLVL);
-    connect(this,&Emulator::set_cmnd_CFD_CNT_requested,serv,&MyDimServer::update_act_CFD_CNT);
-    connect(this,&Emulator::set_cmnd_TRG_CNT_requested,serv,&MyDimServer::update_act_TRG_CNT);
     connect(this,&Emulator::set_cmnd_RAW_TDC_DATA_requested,serv,&MyDimServer::update_act_RAW_TDC_DATA);
-
-    connect(this,&Emulator::set_cmnd_CH_MASK_requested,serv,&MyDimServer::update_act_CH_MASK);
-    connect(this,&Emulator::set_cmnd_CFD_SATR_requested,serv,&MyDimServer::update_act_CFD_SATR);
-    connect(this,&Emulator::set_cmnd_OR_GATE_requested,serv,&MyDimServer::update_act_OR_GATE);
-
+    connect(this,&Emulator::set_cmnd_CNT_CFD_requested,serv,&MyDimServer::update_act_CNT_CFD);
+    connect(this,&Emulator::set_cmnd_CNT_CFD_RATE_requested,serv,&MyDimServer::update_act_CNT_CFD_RATE);
+    connect(this,&Emulator::set_cmnd_CNT_TRG_requested,serv,&MyDimServer::update_act_CNT_TRG);
+    connect(this,&Emulator::set_cmnd_CNT_TRG_RATE_requested,serv,&MyDimServer::update_act_CNT_TRG_RATE);
+    //5
     connect(this,&Emulator::set_cmnd_TG_PATTERN_1_requested,serv,&MyDimServer::update_act_TG_PATTERN_1);
     connect(this,&Emulator::set_cmnd_TG_PATTERN_0_requested,serv,&MyDimServer::update_act_TG_PATTERN_0);
     connect(this,&Emulator::set_cmnd_TG_CONT_VALUE_requested,serv,&MyDimServer::update_act_TG_CONT_VALUE);
     connect(this,&Emulator::set_cmnd_TG_BUNCH_FREQ_requested,serv,&MyDimServer::update_act_TG_BUNCH_FREQ);
     connect(this,&Emulator::set_cmnd_TG_FREQ_OFFSET_requested,serv,&MyDimServer::update_act_TG_FREQ_OFFSET);
 
+    connect(this,&Emulator::set_cmnd_TG_MODE_requested,serv,&MyDimServer::update_act_TG_MODE);
+    connect(this,&Emulator::set_cmnd_HB_RESPONSE_requested,serv,&MyDimServer::update_act_HB_RESPONSE);
+    connect(this,&Emulator::set_cmnd_DG_MODE_requested,serv,&MyDimServer::update_act_DG_MODE);
+
+    //11
     connect(this,&Emulator::set_cmnd_DG_TRG_RESPOND_MASK_requested,serv,&MyDimServer::update_act_DG_TRG_RESPOND_MASK);
     connect(this,&Emulator::set_cmnd_DG_BUNCH_PATTERN_requested,serv,&MyDimServer::update_act_DG_BUNCH_PATTERN);
     connect(this,&Emulator::set_cmnd_DG_BUNCH_FREQ_requested,serv,&MyDimServer::update_act_DG_BUNCH_FREQ);
@@ -128,10 +149,8 @@ void Emulator::SetupConnection()
     connect(this,&Emulator::set_cmnd_RDH_DET_FIELD_requested,serv,&MyDimServer::update_act_RDH_DET_FIELD);
     connect(this,&Emulator::set_cmnd_CRU_TRG_COMPARE_DELAY_requested,serv,&MyDimServer::update_act_CRU_TRG_COMPARE_DELAY);
     connect(this,&Emulator::set_cmnd_BCID_DELAY_requested,serv,&MyDimServer::update_act_BCID_DELAY);
-
-    connect(this,&Emulator::set_cmnd_BOARD_STATUS_requested,serv,&MyDimServer::update_act_BOARD_STATUS);
-    connect(this,&Emulator::set_cmnd_TEMPERATURE_requested,serv,&MyDimServer::update_act_TEMPERATURE);
-    connect(this,&Emulator::set_cmnd_HDMI_LINK_requested,serv,&MyDimServer::update_act_HDMI_LINK);
+    connect(this,&Emulator::set_cmnd_DATA_SEL_TRG_MASK_requested,serv,&MyDimServer::update_act_DATA_SEL_TRG_MASK);
+    //12
     connect(this,&Emulator::set_cmnd_BITS_requested,serv,&MyDimServer::update_act_BITS);
     connect(this,&Emulator::set_cmnd_READOUT_MODE_requested,serv,&MyDimServer::update_act_READOUT_MODE);
     connect(this,&Emulator::set_cmnd_BCID_SYNC_MODE_requested,serv,&MyDimServer::update_act_BCID_SYNC_MODE);
@@ -166,20 +185,32 @@ void Emulator::FillActRandom()
             emit set_cmnd_ADC1_MEANAMPL_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
             emit set_cmnd_ADC0_ZEROLVL_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
             emit set_cmnd_ADC1_ZEROLVL_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-            emit set_cmnd_CFD_CNT_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-            emit set_cmnd_TRG_CNT_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
             emit set_cmnd_RAW_TDC_DATA_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+            emit set_cmnd_CNT_CFD_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+            emit set_cmnd_CNT_CFD_RATE_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+            emit set_cmnd_CNT_TRG_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+            emit set_cmnd_CNT_TRG_RATE_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
         }
 
-        emit set_cmnd_CH_MASK_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_CFD_SATR_requested(FT0_FEE_ID[iPM],qrand()%1000);
         emit set_cmnd_OR_GATE_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_CFD_SATR_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_CH_MASK_requested(FT0_FEE_ID[iPM],qrand()%1000);
+
+        emit set_cmnd_LINK_STATUS_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_BOARD_STATUS_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_TEMPERATURE_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_SERIAL_NUM_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_FW_VERSION_requested(FT0_FEE_ID[iPM],qrand()%1000);
 
         emit set_cmnd_TG_PATTERN_1_requested(FT0_FEE_ID[iPM],qrand()%1000);
         emit set_cmnd_TG_PATTERN_0_requested(FT0_FEE_ID[iPM],qrand()%1000);
         emit set_cmnd_TG_CONT_VALUE_requested(FT0_FEE_ID[iPM],qrand()%1000);
         emit set_cmnd_TG_BUNCH_FREQ_requested(FT0_FEE_ID[iPM],qrand()%1000);
         emit set_cmnd_TG_FREQ_OFFSET_requested(FT0_FEE_ID[iPM],qrand()%1000);
+
+        emit set_cmnd_TG_MODE_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_HB_RESPONSE_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_DG_MODE_requested(FT0_FEE_ID[iPM],qrand()%1000);
 
         emit set_cmnd_DG_TRG_RESPOND_MASK_requested(FT0_FEE_ID[iPM],qrand()%1000);
         emit set_cmnd_DG_BUNCH_PATTERN_requested(FT0_FEE_ID[iPM],qrand()%1000);
@@ -191,10 +222,8 @@ void Emulator::FillActRandom()
         emit set_cmnd_RDH_DET_FIELD_requested(FT0_FEE_ID[iPM],qrand()%1000);
         emit set_cmnd_CRU_TRG_COMPARE_DELAY_requested(FT0_FEE_ID[iPM],qrand()%1000);
         emit set_cmnd_BCID_DELAY_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_DATA_SEL_TRG_MASK_requested(FT0_FEE_ID[iPM],qrand()%1000);
 
-        emit set_cmnd_BOARD_STATUS_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_TEMPERATURE_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_HDMI_LINK_requested(FT0_FEE_ID[iPM],qrand()%1000);
         emit set_cmnd_BITS_requested(FT0_FEE_ID[iPM],qrand()%1000);
         emit set_cmnd_READOUT_MODE_requested(FT0_FEE_ID[iPM],qrand()%1000);
         emit set_cmnd_BCID_SYNC_MODE_requested(FT0_FEE_ID[iPM],qrand()%1000);

@@ -39,13 +39,19 @@ template<class T>
 QHash<QString,pm_pValSignal<T>> PMValHash;
 extern void fillPMValHash();
 template<class T>
-pm_pValSignal<T> getPMValPointerToSignal(QString PARname){ return PMValHash<T>[PARname]; };
+pm_pValSignal<T> getPMValPointerToSignal(QString PARname){
+//    if(PMValHash<T>[PARname] == nullptr) qDebug() << "Can't find" << PARname << "in PMValHash";
+    return PMValHash<T>[PARname];
+};
 
 template<class T>
 QHash<QString,pmch_pValSignal<T>> PMCHValHash;
 extern void fillPMCHValHash();
 template<class T>
-pmch_pValSignal<T> getPMCHValPointerToSignal(QString PARname){ return PMCHValHash<T>[PARname]; };
+pmch_pValSignal<T> getPMCHValPointerToSignal(QString PARname){
+//    if(PMCHValHash<T>[PARname] == nullptr) qDebug() << "Can't find" << PARname << "in PMCHValHash";
+    return PMCHValHash<T>[PARname];
+};
 
 extern QHash<QString,pm_pNonValSignal> PMNonValHash;
 extern void fillPMNonValHash();
@@ -67,18 +73,16 @@ const QMap<quint16,QString> DIM_name{
                                         {0x00A5,"FT0/PMA5"},
                                         {0x00A6,"FT0/PMA6"},
                                         {0x00A7,"FT0/PMA7"},
-                                        {0x00A8,"FT0/PMA8"},
-                                        {0x00A9,"FT0/PMA9"},
-                                        {0x00A0,"FT0/PMC0"},
-                                        {0x00A1,"FT0/PMC1"},
-                                        {0x00A2,"FT0/PMC2"},
-                                        {0x00A3,"FT0/PMC3"},
-                                        {0x00A4,"FT0/PMC4"},
-                                        {0x00A5,"FT0/PMC5"},
-                                        {0x00A6,"FT0/PMC6"},
-                                        {0x00A7,"FT0/PMC7"},
-                                        {0x00A8,"FT0/PMC8"},
-                                        {0x00A9,"FT0/PMC9"}
+                                        {0x00C0,"FT0/PMC0"},
+                                        {0x00C1,"FT0/PMC1"},
+                                        {0x00C2,"FT0/PMC2"},
+                                        {0x00C3,"FT0/PMC3"},
+                                        {0x00C4,"FT0/PMC4"},
+                                        {0x00C5,"FT0/PMC5"},
+                                        {0x00C6,"FT0/PMC6"},
+                                        {0x00C7,"FT0/PMC7"},
+                                        {0x00C8,"FT0/PMC8"},
+                                        {0x00C9,"FT0/PMC9"}
                                     };
 
 const QMap<quint8,quint16> FT0_FEE_ID{  {0,0x0000},

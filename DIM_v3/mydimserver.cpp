@@ -110,7 +110,6 @@ PMPars::PMPars(MyDimServer* _server):
 {
 //    cout << "PMPARS" << Nchannels << endl;
 
-
     adczero.resize(Nchannels);
     adcdelay.resize(Nchannels);
     adc0offset.resize(Nchannels);
@@ -121,15 +120,16 @@ PMPars::PMPars(MyDimServer* _server):
     cfdthreshold.resize(Nchannels);
     cfdzero.resize(Nchannels);
     thresholdcalibr.resize(Nchannels);
-    alltoch.resize(Nchannels);
 
     adc0meanampl.resize(Nchannels);
     adc1meanampl.resize(Nchannels);
     adc0zerolvl.resize(Nchannels);
     adc1zerolvl.resize(Nchannels);
-    cfdcnt.resize(Nchannels);
-    trgcnt.resize(Nchannels);
     rawtdcdata.resize(Nchannels);
+    cntcfd.resize(Nchannels);
+    cntcfdrate.resize(Nchannels);
+    cnttrg.resize(Nchannels);
+    cnttrgrate.resize(Nchannels);
 
     for( quint8 i=0; i<Nchannels; i++){
         adczero[i]          = new PMCHfullPar<qint16>("ADC_ZERO",_server);
@@ -142,23 +142,37 @@ PMPars::PMPars(MyDimServer* _server):
         cfdthreshold[i]     = new PMCHfullPar<qint16>("CFD_THRESHOLD",_server);
         cfdzero[i]          = new PMCHfullPar<qint16>("CFD_ZERO",_server);
         thresholdcalibr[i]  = new PMCHfullPar<qint16>("THRESHOLD_CALIBR",_server);
-        alltoch[i]          = new PMCHonlyAppPar("ALLtoCh",_server);
 
         adc0meanampl[i]     = new  PMCHonlyActPar<quint16>("ADC0_MEANAMPL",_server);
         adc1meanampl[i]     = new  PMCHonlyActPar<quint16>("ADC1_MEANAMPL",_server);
         adc0zerolvl[i]      = new  PMCHonlyActPar<quint16>("ADC0_ZEROLVL",_server);
         adc1zerolvl[i]      = new  PMCHonlyActPar<quint16>("ADC1_ZEROLVL",_server);
-        cfdcnt[i]           = new  PMCHonlyActPar<quint32>("CFD_CNT",_server);
-        trgcnt[i]           = new  PMCHonlyActPar<quint32>("TRG_CNT",_server);
         rawtdcdata[i]       = new  PMCHonlyActPar<quint16>("RAW_TDC_DATA",_server);
+        cntcfd[i]           = new  PMCHonlyActPar<quint32>("CNT_CFD",_server);
+        cntcfdrate[i]       = new  PMCHonlyActPar<quint32>("CNT_CFD_RATE",_server);
+        cnttrg[i]           = new  PMCHonlyActPar<quint32>("CNT_TRG",_server);
+        cnttrgrate[i]       = new  PMCHonlyActPar<quint32>("CNT_TRG_RATE",_server);
     }
 
-    chmask              = new PMfullPar<quint16>("CH_MASK",_server);    chmask->prefix = "/control";
-    cfdsatr             = new PMfullPar<quint16>("CFD_SATR",_server);   cfdsatr->prefix = "/control";
-    orgate              = new PMfullPar<quint8>("OR_GATE",_server);     orgate->prefix = "/control";
+    //  PM
 
-    resetcounters       = new PMonlyAppPar("RESET_COUNTERS",_server);       resetcounters->prefix = "/control";
-    zerolvlcalibration  = new PMonlyAppPar("ZERO_LVL_CALIBR",_server);      zerolvlcalibration->prefix = "/control";
+    orgate              = new PMfullPar<quint16>("OR_GATE",_server);    orgate->prefix = "/control";
+    cfdsatr             = new PMfullPar<quint16>("CFD_SATR",_server);   cfdsatr->prefix = "/control";
+    chmask              = new PMfullPar<quint8>("CH_MASK",_server);     chmask->prefix = "/control";
+    swchon              = new PMonlyValAppPar<quint8>("SwChOn",_server);     swchon->prefix = "/control";
+    swchoff             = new PMonlyValAppPar<quint8>("SwChOff",_server);     swchoff->prefix = "/control";
+    resetcounters       = new PMonlyAppPar("RESET_COUNTERS",_server);   resetcounters->prefix = "/control";
+    zerolvlcalibr       = new PMonlyAppPar("ZERO_LVL_CALIBR",_server);  zerolvlcalibr->prefix = "/control";
+    alltopm             = new PMonlyAppPar("ALLtoPM",_server);          alltopm->prefix = "/control";
+
+    linkstatus          = new PMonlyActPar<quint32>("LINK_STATUS",_server);     linkstatus->prefix = "/status";
+    boardstatus         = new PMonlyActPar<quint16>("BOARD_STATUS",_server);    boardstatus->prefix = "/status";
+    temperature         = new PMonlyActPar<quint16>("TEMPERATURE",_server);     temperature->prefix = "/status";
+    serialnum           = new PMonlyActPar<quint16>("SERIAL_NUM",_server);     serialnum->prefix = "/status";
+    fwversion           = new PMonlyActPar<quint32>("FW_VERSION",_server);     fwversion->prefix = "/status";
+
+    //  GBT Readout unit
+
     resetorbitsync      = new PMonlyAppPar("RESET_ORBIT_SYNC",_server);
     resetdrophitcnts    = new PMonlyAppPar("RESET_DROPPING_HIT_COUNTERS",_server);
     resetgenbunchoffset = new PMonlyAppPar("RESET_GEN_BUNCH_OFFSET",_server);
@@ -166,15 +180,16 @@ PMPars::PMPars(MyDimServer* _server):
     resetgbt            = new PMonlyAppPar("RESET_GBT",_server);
     resetrxphaseerror   = new PMonlyAppPar("RESET_RX_PHASE_ERROR",_server);
     sendreadoutcommand  = new PMonlyValAppPar<quint8>("SEND_READOUT_COMMAND",_server);
+    tgsendsingle        = new PMonlyValAppPar<quint32>("TG_SEND_SINGLE",_server);
 
 
-    tgmode              = new PMActnValAppPar<quint8>("TG_MODE",_server);
     tgpattern1          = new PMfullPar<quint32>("TG_PATTERN_1",_server);
     tgpattern0          = new PMfullPar<quint32>("TG_PATTERN_0",_server);
     tgcontvalue         = new PMfullPar<quint8>("TG_CONT_VALUE",_server);
-    tgsendsingle        = new PMonlyValAppPar<quint32>("TG_SEND_SINGLE",_server);
     tgbunchfreq         = new PMfullPar<quint16>("TG_BUNCH_FREQ",_server);
     tgfreqoffset        = new PMfullPar<quint16>("TG_FREQ_OFFSET",_server);
+    tgmode              = new PMActnValAppPar<quint8>("TG_MODE",_server);
+    hbresponse          = new PMActnValAppPar<quint8>("HB_RESPONSE",_server);
     dgmode              = new PMActnValAppPar<quint8>("DG_MODE",_server);
     dgtrgrespondmask    = new PMfullPar<quint32>("DG_TRG_RESPOND_MASK",_server);
     dgbunchpattern      = new PMfullPar<quint32>("DG_BUNCH_PATTERN",_server);
@@ -186,11 +201,8 @@ PMPars::PMPars(MyDimServer* _server):
     rdhdetfield         = new PMfullPar<quint16>("RDH_DET_FIELD",_server);
     crutrgcomparedelay  = new PMfullPar<quint16>("CRU_TRG_COMPARE_DELAY",_server);
     bciddelay           = new PMfullPar<quint16>("BCID_DELAY",_server);
-    alltopm             = new PMonlyAppPar("ALLtoPM",_server);                  alltopm->prefix = "/control";
+    dataseltrgmask      = new PMfullPar<quint32>("DATA_SEL_TRG_MASK",_server);
 
-    boardstatus         = new PMonlyActPar<quint16>("BOARD_STATUS",_server);    boardstatus->prefix = "/status";
-    temperature         = new PMonlyActPar<quint16>("TEMPERATURE",_server);     temperature->prefix = "/status";
-    hdmilink            = new PMonlyActPar<quint32>("HDMI_LINK",_server);       hdmilink->prefix = "/status";
     bits                = new PMonlyActPar<quint16>("BITS",_server);
     readoutmode         = new PMonlyActPar<quint8>("READOUT_MODE",_server);
     bcidsyncmode        = new PMonlyActPar<quint8>("BCID_SYNC_MODE",_server);
@@ -200,8 +212,8 @@ PMPars::PMPars(MyDimServer* _server):
     rawfifo             = new PMonlyActPar<quint16>("RAW_FIFO",_server);
     selfifo             = new PMonlyActPar<quint16>("SEL_FIFO",_server);
     selfirsthit         = new PMonlyActPar<quint32>("SEL_FIRST_HIT_DROPPED_ORBIT",_server);
-    sellasthit          = new PMonlyActPar<quint16>("SEL_LAST_HIT_DROPPED_ORBIT",_server);
-    selhitsdropped      = new PMonlyActPar<quint16>("SEL_HITS_DROPPED",_server);
+    sellasthit          = new PMonlyActPar<quint32>("SEL_LAST_HIT_DROPPED_ORBIT",_server);
+    selhitsdropped      = new PMonlyActPar<quint32>("SEL_HITS_DROPPED",_server);
     readoutrate         = new PMonlyActPar<quint16>("READOUT_RATE",_server);
 
     pServer = _server;
@@ -220,22 +232,32 @@ PMPars::~PMPars()
         delete cfdthreshold[i];
         delete cfdzero[i];
         delete thresholdcalibr[i];
-        delete alltoch[i];
 
         delete adc0meanampl[i];
         delete adc1meanampl[i];
         delete adc0zerolvl[i];
         delete adc1zerolvl[i];
-        delete cfdcnt[i];
-        delete trgcnt[i];
         delete rawtdcdata[i];
+        delete cntcfd[i];
+        delete cntcfdrate[i];
+        delete cnttrg[i];
+        delete cnttrgrate[i];
     }
 
-    delete chmask;
-    delete cfdsatr;
     delete orgate;
+    delete cfdsatr;
+    delete chmask;
+    delete swchon;
+    delete swchoff;
     delete resetcounters;
-    delete zerolvlcalibration;
+    delete zerolvlcalibr;
+    delete alltopm;
+
+    delete linkstatus;
+    delete boardstatus;
+    delete temperature;
+    delete serialnum;
+    delete fwversion;
 
     delete resetorbitsync;
     delete resetdrophitcnts;
@@ -244,13 +266,15 @@ PMPars::~PMPars()
     delete resetgbt;
     delete resetrxphaseerror;
     delete sendreadoutcommand;
-    delete  tgmode;
+    delete tgsendsingle;
+
     delete tgpattern1;
     delete tgpattern0;
     delete  tgcontvalue;
-    delete tgsendsingle;
     delete tgbunchfreq;
     delete tgfreqoffset;
+    delete  tgmode;
+    delete  hbresponse;
     delete dgmode;
     delete dgtrgrespondmask;
     delete dgbunchpattern;
@@ -262,11 +286,8 @@ PMPars::~PMPars()
     delete rdhdetfield;
     delete crutrgcomparedelay;
     delete bciddelay;
-    delete alltopm;
+    delete dataseltrgmask;
 
-    delete boardstatus;
-    delete temperature;
-    delete hdmilink;
     delete bits;
     delete readoutmode;
     delete bcidsyncmode;
@@ -284,7 +305,23 @@ PMPars::~PMPars()
 
 void PMPars::publish()
 {
-        //  loop for channels
+
+    orgate->SetFEEid(PM_FEE_id);                   orgate->publishCommands();                    orgate->publishServices();
+    cfdsatr->SetFEEid(PM_FEE_id);                  cfdsatr->publishCommands();                   cfdsatr->publishServices();
+    chmask->SetFEEid(PM_FEE_id);                   chmask->publishCommands();                    chmask->publishServices();
+    swchon->SetFEEid(PM_FEE_id);                   swchon->publishCommands();
+    swchoff->SetFEEid(PM_FEE_id);                   swchoff->publishCommands();
+    resetcounters->SetFEEid(PM_FEE_id);            resetcounters->publishCommands();
+    zerolvlcalibr->SetFEEid(PM_FEE_id);            zerolvlcalibr->publishCommands();
+    alltopm->SetFEEid(PM_FEE_id);                  alltopm->publishCommands();
+
+    linkstatus->SetFEEid(PM_FEE_id);                                                           linkstatus->publishServices();
+    boardstatus->SetFEEid(PM_FEE_id);                                                          boardstatus->publishServices();
+    temperature->SetFEEid(PM_FEE_id);                                                          temperature->publishServices();
+    serialnum->SetFEEid(PM_FEE_id);                                                            serialnum->publishServices();
+    fwversion->SetFEEid(PM_FEE_id);                                                            fwversion->publishServices();
+
+    //  loop for channels
         for(quint8 i=0; i<Nchannels; i++) {
 
             adczero[i]->SetCHid(i+1);        adczero[i]->SetFEEid(PM_FEE_id);       adczero[i]->publishCommands();        adczero[i]->publishServices();
@@ -298,23 +335,18 @@ void PMPars::publish()
             cfdzero[i]->SetCHid(i+1);        cfdzero[i]->SetFEEid(PM_FEE_id);       cfdzero[i]->publishCommands();        cfdzero[i]->publishServices();
             thresholdcalibr[i]->SetCHid(i+1); thresholdcalibr[i]->SetFEEid(PM_FEE_id);thresholdcalibr[i]->publishCommands(); thresholdcalibr[i]->publishServices();
 
-            alltoch[i]->SetCHid(i+1);        alltoch[i]->SetFEEid(PM_FEE_id);       alltoch[i]->publishCommands();
-
             adc0meanampl[i]->SetCHid(i+1);   adc0meanampl[i]->SetFEEid(PM_FEE_id);                                      adc0meanampl[i]->publishServices();
             adc1meanampl[i]->SetCHid(i+1);   adc1meanampl[i]->SetFEEid(PM_FEE_id);                                      adc1meanampl[i]->publishServices();
             adc0zerolvl[i]->SetCHid(i+1);    adc0zerolvl[i]->SetFEEid(PM_FEE_id);                                       adc0zerolvl[i]->publishServices();
             adc1zerolvl[i]->SetCHid(i+1);    adc1zerolvl[i]->SetFEEid(PM_FEE_id);                                       adc1zerolvl[i]->publishServices();
-            cfdcnt[i]->SetCHid(i+1);         cfdcnt[i]->SetFEEid(PM_FEE_id);                                            cfdcnt[i]->publishServices();
-            trgcnt[i]->SetCHid(i+1);         trgcnt[i]->SetFEEid(PM_FEE_id);                                            trgcnt[i]->publishServices();
             rawtdcdata[i]->SetCHid(i+1);     rawtdcdata[i]->SetFEEid(PM_FEE_id);                                        rawtdcdata[i]->publishServices();
+            cntcfd[i]->SetCHid(i+1);         cntcfd[i]->SetFEEid(PM_FEE_id);                                            cntcfd[i]->publishServices();
+            cntcfdrate[i]->SetCHid(i+1);     cntcfdrate[i]->SetFEEid(PM_FEE_id);                                        cntcfdrate[i]->publishServices();
+            cnttrg[i]->SetCHid(i+1);         cnttrg[i]->SetFEEid(PM_FEE_id);                                            cnttrg[i]->publishServices();
+            cnttrgrate[i]->SetCHid(i+1);     cnttrgrate[i]->SetFEEid(PM_FEE_id);                                        cnttrgrate[i]->publishServices();
 
         }
 
-        chmask->SetFEEid(PM_FEE_id);                   chmask->publishCommands();                    chmask->publishServices();
-        cfdsatr->SetFEEid(PM_FEE_id);                  cfdsatr->publishCommands();                   cfdsatr->publishServices();
-        orgate->SetFEEid(PM_FEE_id);                   orgate->publishCommands();                    orgate->publishServices();
-        resetcounters->SetFEEid(PM_FEE_id);            resetcounters->publishCommands();
-        zerolvlcalibration->SetFEEid(PM_FEE_id);       zerolvlcalibration->publishCommands();
 
         resetorbitsync->SetFEEid(PM_FEE_id);           resetorbitsync->publishCommands();
         resetdrophitcnts->SetFEEid(PM_FEE_id);         resetdrophitcnts->publishCommands();
@@ -323,13 +355,15 @@ void PMPars::publish()
         resetgbt->SetFEEid(PM_FEE_id);                 resetgbt->publishCommands();
         resetrxphaseerror->SetFEEid(PM_FEE_id);        resetrxphaseerror->publishCommands();
         sendreadoutcommand->SetFEEid(PM_FEE_id);       sendreadoutcommand->publishCommands();
-        tgmode->SetFEEid(PM_FEE_id);                   tgmode->publishCommands();                    tgmode->publishServices();
+        tgsendsingle->SetFEEid(PM_FEE_id);             tgsendsingle->publishCommands();
+
         tgpattern1->SetFEEid(PM_FEE_id);               tgpattern1->publishCommands();                tgpattern1->publishServices();
         tgpattern0->SetFEEid(PM_FEE_id);               tgpattern0->publishCommands();                tgpattern0->publishServices();
         tgcontvalue->SetFEEid(PM_FEE_id);              tgcontvalue->publishCommands();               tgcontvalue->publishServices();
-        tgsendsingle->SetFEEid(PM_FEE_id);             tgsendsingle->publishCommands();
         tgbunchfreq->SetFEEid(PM_FEE_id);              tgbunchfreq->publishCommands();               tgbunchfreq->publishServices();
         tgfreqoffset->SetFEEid(PM_FEE_id);             tgfreqoffset->publishCommands();              tgfreqoffset->publishServices();
+        tgmode->SetFEEid(PM_FEE_id);                   tgmode->publishCommands();                    tgmode->publishServices();
+        hbresponse->SetFEEid(PM_FEE_id);               hbresponse->publishCommands();                hbresponse->publishServices();
         dgmode->SetFEEid(PM_FEE_id);                   dgmode->publishCommands();                    dgmode->publishServices();
         dgtrgrespondmask->SetFEEid(PM_FEE_id);         dgtrgrespondmask->publishCommands();          dgtrgrespondmask->publishServices();
         dgbunchpattern->SetFEEid(PM_FEE_id);           dgbunchpattern->publishCommands();            dgbunchpattern->publishServices();
@@ -341,12 +375,9 @@ void PMPars::publish()
         rdhdetfield->SetFEEid(PM_FEE_id);              rdhdetfield->publishCommands();               rdhdetfield->publishServices();
         crutrgcomparedelay->SetFEEid(PM_FEE_id);       crutrgcomparedelay->publishCommands();        crutrgcomparedelay->publishServices();
         bciddelay->SetFEEid(PM_FEE_id);                bciddelay->publishCommands();                 bciddelay->publishServices();
-        alltopm->SetFEEid(PM_FEE_id);                  alltopm->publishCommands();
+        dataseltrgmask->SetFEEid(PM_FEE_id);           dataseltrgmask->publishCommands();            dataseltrgmask->publishServices();
 
 
-        boardstatus->SetFEEid(PM_FEE_id);                                                          boardstatus->publishServices();
-        temperature->SetFEEid(PM_FEE_id);                                                          temperature->publishServices();
-        hdmilink->SetFEEid(PM_FEE_id);                                                             hdmilink->publishServices();
         bits->SetFEEid(PM_FEE_id);                                                                 bits->publishServices();
         readoutmode->SetFEEid(PM_FEE_id);                                                          readoutmode->publishServices();
         bcidsyncmode->SetFEEid(PM_FEE_id);                                                         bcidsyncmode->publishServices();
@@ -372,16 +403,14 @@ void PMPars::publish()
 
 void fillPMValHash()
 {
-    PMValHash<quint16>.insert("CH_MASK",                &MyDimServer::set_CH_MASK_requested);
+    PMValHash<quint8>.insert("CH_MASK",                &MyDimServer::set_CH_MASK_requested);
     PMValHash<quint16>.insert("CFD_SATR",               &MyDimServer::set_CFD_SATR_requested);
-    PMValHash<quint8>.insert("OR_GATE",                 &MyDimServer::set_OR_GATE_requested);
-///////////////////////////////////////// PMSetHash<quint8>.insert("TG_MODE",                nullptr);
+    PMValHash<quint16>.insert("OR_GATE",                 &MyDimServer::set_OR_GATE_requested);
     PMValHash<quint32>.insert("TG_PATTERN_1",             &MyDimServer::set_TG_PATTERN_1_requested);
     PMValHash<quint32>.insert("TG_PATTERN_0",             &MyDimServer::set_TG_PATTERN_0_requested);
     PMValHash<quint8>.insert("TG_CONT_VALUE",           &MyDimServer::set_TG_CONT_VALUE_requested);
     PMValHash<quint16>.insert("TG_BUNCH_FREQ",          &MyDimServer::set_TG_BUNCH_FREQ_requested);
     PMValHash<quint16>.insert("TG_FREQ_OFFSET",         &MyDimServer::set_TG_FREQ_OFFSET_requested);
-///////////////////////////////////////// PMValHash<quint16>.insert("DG_MODE",                nullptr);
     PMValHash<quint32>.insert("DG_TRG_RESPOND_MASK",    &MyDimServer::set_DG_TRG_RESPOND_MASK_requested);
     PMValHash<quint32>.insert("DG_BUNCH_PATTERN",       &MyDimServer::set_DG_BUNCH_PATTERN_requested);
     PMValHash<quint16>.insert("DG_BUNCH_FREQ",          &MyDimServer::set_DG_BUNCH_FREQ_requested);
@@ -392,12 +421,16 @@ void fillPMValHash()
     PMValHash<quint16>.insert("RDH_DET_FIELD",          &MyDimServer::set_RDH_DET_FIELD_requested);
     PMValHash<quint16>.insert("CRU_TRG_COMPARE_DELAY",  &MyDimServer::set_CRU_TRG_COMPARE_DELAY_requested);
     PMValHash<quint16>.insert("BCID_DELAY",             &MyDimServer::set_BCID_DELAY_requested);
+    PMValHash<quint32>.insert("DATA_SEL_TRG_MASK",      &MyDimServer::set_DATA_SEL_TRG_MASK_requested);
 
 
     PMValHash<quint8>.insert("SEND_READOUT_COMMAND",    &MyDimServer::apply_SEND_READOUT_COMMAND_requested);
     PMValHash<quint32>.insert("TG_SEND_SINGLE",         &MyDimServer::apply_TG_SEND_SINGLE_requested);
     PMValHash<quint8>.insert("TG_MODE",                 &MyDimServer::apply_TG_MODE_requested);
     PMValHash<quint8>.insert("DG_MODE",                 &MyDimServer::apply_DG_MODE_requested);
+    PMValHash<quint8>.insert("SwChOn",                  &MyDimServer::apply_SwChOn_requested);
+    PMValHash<quint8>.insert("SwChOff",                 &MyDimServer::apply_SwChOff_requested);
+    PMValHash<quint8>.insert("HB_RESPONSE",             &MyDimServer::apply_HB_RESPONSE_requested);
 
 };
 
@@ -431,15 +464,11 @@ void fillPMNonValHash()
     PMNonValHash.insert("RESET_GBT_ERRORS",            &MyDimServer::apply_RESET_GBT_ERRORS_requested);
     PMNonValHash.insert("RESET_GBT",                   &MyDimServer::apply_RESET_GBT_requested);
     PMNonValHash.insert("RESET_RX_PHASE_ERROR",        &MyDimServer::apply_RESET_RX_PHASE_ERROR_requested);
-//////////////////////////////    PMNonValHash.insert("SEND_COMMAND",                &MyDimServer::apply_SEND_COMMAND_requested);
-//////////////////////////////    PMNonValHash.insert("TG_MODE",                     &MyDimServer::apply_TG_MODE_requested);
     PMNonValHash.insert("TG_PATTERN_1",                 &MyDimServer::apply_TG_PATTERN_1_requested);
     PMNonValHash.insert("TG_PATTERN_0",                 &MyDimServer::apply_TG_PATTERN_0_requested);
     PMNonValHash.insert("TG_CONT_VALUE",               &MyDimServer::apply_TG_CONT_VALUE_requested);
-//////////////////////////////    PMNonValHash.insert("TG_SEND_SINGLE",              &MyDimServer::apply_TG_SEND_SINGLE_requested);
     PMNonValHash.insert("TG_BUNCH_FREQ",               &MyDimServer::apply_TG_BUNCH_FREQ_requested);
     PMNonValHash.insert("TG_FREQ_OFFSET",              &MyDimServer::apply_TG_FREQ_OFFSET_requested);
-//////////////////////////////    PMNonValHash.insert("DG_MODE",                     &MyDimServer::apply_DG_MODE_requested);
     PMNonValHash.insert("DG_TRG_RESPOND_MASK",         &MyDimServer::apply_DG_TRG_RESPOND_MASK_requested);
     PMNonValHash.insert("DG_BUNCH_PATTERN",            &MyDimServer::apply_DG_BUNCH_PATTERN_requested);
     PMNonValHash.insert("DG_BUNCH_FREQ",               &MyDimServer::apply_DG_BUNCH_FREQ_requested);
@@ -451,6 +480,8 @@ void fillPMNonValHash()
     PMNonValHash.insert("CRU_TRG_COMPARE_DELAY",       &MyDimServer::apply_CRU_TRG_COMPARE_DELAY_requested);
     PMNonValHash.insert("BCID_DELAY",                  &MyDimServer::apply_BCID_DELAY_requested);
     PMNonValHash.insert("ALLtoPM",                     &MyDimServer::apply_ALLtoPM_requested);
+
+    PMNonValHash.insert("DATA_SEL_TRG_MASK",           &MyDimServer::apply_DATA_SEL_TRG_MASK_requested);
 
 }
 
@@ -468,9 +499,5 @@ void fillPMCHNonValHash()
      PMCHNonValHash.insert("CFD_TRHESHOLD",&MyDimServer::apply_CFD_THRESHOLD_requested);
      PMCHNonValHash.insert("CFD_ZERO",    &MyDimServer::apply_CFD_ZERO_requested);
      PMCHNonValHash.insert("THRESHOLD_CALIBR",&MyDimServer::apply_THRESHOLD_CALIBR_requested);
-     PMCHNonValHash.insert("ALLtoCh",     &MyDimServer::apply_ALLtoCh_requested);
-
-//     qDebug() << (PMCHNonValHash["ADC0_OFFSET"] == nullptr);
-//     qDebug() << (&MyDimServer::apply_ADC0_OFFSET_requested == nullptr);
 
 }

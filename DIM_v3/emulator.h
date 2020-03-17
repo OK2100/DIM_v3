@@ -20,6 +20,8 @@ public:
 
 signals:
 
+    //  These signals used for randomize ACTvalues
+
     void set_cmnd_ADC_ZERO_requested     (quint16 FEEid, quint8 CHid, qint16 val);
     void set_cmnd_ADC_DELAY_requested    (quint16 FEEid, quint8 CHid, qint16 val);
     void set_cmnd_ADC0_OFFSET_requested  (quint16 FEEid, quint8 CHid, quint16 val);
@@ -35,21 +37,31 @@ signals:
     void set_cmnd_ADC1_MEANAMPL_requested(quint16 FEEid, quint8 CHid, quint16 val);
     void set_cmnd_ADC0_ZEROLVL_requested(quint16 FEEid, quint8 CHid, quint16 val);
     void set_cmnd_ADC1_ZEROLVL_requested(quint16 FEEid, quint8 CHid, quint16 val);
-    void set_cmnd_CFD_CNT_requested(quint16 FEEid, quint8 CHid, quint32 val);
-    void set_cmnd_TRG_CNT_requested(quint16 FEEid, quint8 CHid, quint32 val);
     void set_cmnd_RAW_TDC_DATA_requested(quint16 FEEid, quint8 CHid, quint16 val);
+    void set_cmnd_CNT_CFD_requested     (quint16 FEEid, quint8 CHid, quint32 val);
+    void set_cmnd_CNT_CFD_RATE_requested(quint16 FEEid, quint8 CHid, quint32 val);
+    void set_cmnd_CNT_TRG_requested     (quint16 FEEid, quint8 CHid, quint32 val);
+    void set_cmnd_CNT_TRG_RATE_requested(quint16 FEEid, quint8 CHid, quint32 val);
 
-
-
-    void set_cmnd_CH_MASK_requested  (quint16 FEEid, quint16 val);
+    void set_cmnd_OR_GATE_requested  (quint16 FEEid, quint16 val);
     void set_cmnd_CFD_SATR_requested (quint16 FEEid, quint16 val);
-    void set_cmnd_OR_GATE_requested  (quint16 FEEid, quint8 val);
+    void set_cmnd_CH_MASK_requested  (quint16 FEEid, quint8 val);
+
+    void set_cmnd_LINK_STATUS_requested                   (quint16 FEEid, quint32 val);
+    void set_cmnd_BOARD_STATUS_requested                  (quint16 FEEid, quint16 val);
+    void set_cmnd_TEMPERATURE_requested                   (quint16 FEEid, quint16 val);
+    void set_cmnd_SERIAL_NUM_requested                    (quint16 FEEid, quint16 val);
+    void set_cmnd_FW_VERSION_requested                    (quint16 FEEid, quint32 val);
 
     void set_cmnd_TG_PATTERN_1_requested      (quint16 FEEid, quint32 val);
     void set_cmnd_TG_PATTERN_0_requested      (quint16 FEEid, quint32 val);
     void set_cmnd_TG_CONT_VALUE_requested    (quint16 FEEid, quint8 val);
     void set_cmnd_TG_BUNCH_FREQ_requested    (quint16 FEEid, quint16 val);
     void set_cmnd_TG_FREQ_OFFSET_requested   (quint16 FEEid, quint16 val);
+    void set_cmnd_TG_MODE_requested          (quint16 FEEid, quint8 val);
+    void set_cmnd_HB_RESPONSE_requested      (quint16 FEEid, quint8 val);
+    void set_cmnd_DG_MODE_requested          (quint16 FEEid, quint8 val);
+
 
     void set_cmnd_DG_TRG_RESPOND_MASK_requested  (quint16 FEEid, quint32 val);
     void set_cmnd_DG_BUNCH_PATTERN_requested     (quint16 FEEid, quint32 val);
@@ -61,10 +73,8 @@ signals:
     void set_cmnd_RDH_DET_FIELD_requested        (quint16 FEEid, quint16 val);
     void set_cmnd_CRU_TRG_COMPARE_DELAY_requested(quint16 FEEid, quint16 val);
     void set_cmnd_BCID_DELAY_requested           (quint16 FEEid, quint16 val);
+    void set_cmnd_DATA_SEL_TRG_MASK_requested    (quint16 FEEid, quint32 val);
 
-    void set_cmnd_BOARD_STATUS_requested                  (quint16 FEEid, quint16 val);
-    void set_cmnd_TEMPERATURE_requested                   (quint16 FEEid, quint16 val);
-    void set_cmnd_HDMI_LINK_requested                     (quint16 FEEid, quint32 val);
     void set_cmnd_BITS_requested                          (quint16 FEEid, quint16 val);
     void set_cmnd_READOUT_MODE_requested                  (quint16 FEEid, quint8 val);
     void set_cmnd_BCID_SYNC_MODE_requested                (quint16 FEEid, quint8 val);
@@ -80,6 +90,17 @@ signals:
 
 
 public slots:
+    //      Slot update_requested_act<> called when apply_<> signal arrived from DIMserver;
+    //      Emulator gets new value from server with function GetNewValue(); Real server will not do it;
+    //      It will store NEWvalues inside;
+    //      Emulator sends signal set_cmnd_<>; This signal is connected with update_act_<> slot of DIMserver;
+
+    //      Exeption - parameters without NEWvalue (f.e. TG_MODE and DG_MODE); These parameters are connected
+    //      directly with update_act<> DIMserver's slot
+
+    void update_request_act_OR_GATE(quint16 FEEid){ emit set_cmnd_OR_GATE_requested(FEEid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->orgate->GetNewValue());}
+    void update_request_act_CFD_SATR(quint16 FEEid){ emit set_cmnd_CFD_SATR_requested(FEEid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->cfdsatr->GetNewValue());}
+    void update_request_act_CH_MASK(quint16 FEEid){ emit set_cmnd_CH_MASK_requested(FEEid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->chmask->GetNewValue());}
 
     void update_request_act_ADC_ZERO(quint16 FEEid,quint8 CHid){ emit set_cmnd_ADC_ZERO_requested(FEEid,CHid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->adczero[CHid-1]->GetNewValue());}
     void update_request_act_ADC_DELAY(quint16 FEEid,quint8 CHid){ emit set_cmnd_ADC_DELAY_requested(FEEid,CHid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->adcdelay[CHid-1]->GetNewValue());}
@@ -92,30 +113,15 @@ public slots:
     void update_request_act_CFD_ZERO(quint16 FEEid,quint8 CHid){ emit set_cmnd_CFD_ZERO_requested(FEEid,CHid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->cfdzero[CHid-1]->GetNewValue());}
     void update_request_act_THRESHOLD_CALIBR(quint16 FEEid,quint8 CHid){ emit set_cmnd_THRESHOLD_CALIBR_requested(FEEid,CHid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->thresholdcalibr[CHid-1]->GetNewValue());}
 
-    void update_request_act_AlltoCh(quint16 FEEid,quint8 CHid){
-        serv->emitSignal(&MyDimServer::apply_ADC_ZERO_requested,FEEid,CHid);
-        serv->emitSignal(&MyDimServer::apply_ADC_DELAY_requested,FEEid,CHid);
-        serv->emitSignal(&MyDimServer::apply_ADC0_OFFSET_requested,FEEid,CHid);
-        serv->emitSignal(&MyDimServer::apply_ADC1_OFFSET_requested,FEEid,CHid);
-        serv->emitSignal(&MyDimServer::apply_ADC0_RANGE_requested,FEEid,CHid);
-        serv->emitSignal(&MyDimServer::apply_ADC1_RANGE_requested,FEEid,CHid);
-        serv->emitSignal(&MyDimServer::apply_TIME_ALIGN_requested,FEEid,CHid);
-        serv->emitSignal(&MyDimServer::apply_CFD_THRESHOLD_requested,FEEid,CHid);
-        serv->emitSignal(&MyDimServer::apply_CFD_ZERO_requested,FEEid,CHid);
-        serv->emitSignal(&MyDimServer::apply_THRESHOLD_CALIBR_requested,FEEid,CHid);
-    }
-
-    void update_request_act_CH_MASK(quint16 FEEid){ emit set_cmnd_CH_MASK_requested(FEEid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->chmask->GetNewValue());}
-    void update_request_act_CFD_SATR(quint16 FEEid){ emit set_cmnd_CFD_SATR_requested(FEEid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->cfdsatr->GetNewValue());}
-    void update_request_act_OR_GATE(quint16 FEEid){ emit set_cmnd_OR_GATE_requested(FEEid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->orgate->GetNewValue());}
-//////////////////////    void update_request_act_TG_MODE(quint16 FEEid){ emit set_cmnd_(FEEid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->GetNewValue());}
     void update_request_act_TG_PATTERN_1(quint16 FEEid){ emit set_cmnd_TG_PATTERN_1_requested(FEEid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->tgpattern1->GetNewValue());}
     void update_request_act_TG_PATTERN_0(quint16 FEEid){ emit set_cmnd_TG_PATTERN_0_requested(FEEid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->tgpattern0->GetNewValue());}
     void update_request_act_TG_CONT_VALUE(quint16 FEEid){ emit set_cmnd_TG_CONT_VALUE_requested(FEEid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->tgcontvalue->GetNewValue());}
 
     void update_request_act_TG_BUNCH_FREQ(quint16 FEEid){ emit set_cmnd_TG_BUNCH_FREQ_requested(FEEid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->tgbunchfreq->GetNewValue());}
     void update_request_act_TG_FREQ_OFFSET(quint16 FEEid){ emit set_cmnd_TG_FREQ_OFFSET_requested(FEEid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->tgfreqoffset->GetNewValue());}
-//////////////////////    void update_request_act_DG_MODE(quint16 FEEid){ emit set_cmnd_(FEEid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->GetNewValue());}
+    //  TG_MODE
+    //  HB_RESPONSE
+    //  DG_MODE
     void update_request_act_DG_TRG_RESPOND_MASK(quint16 FEEid){ emit set_cmnd_DG_TRG_RESPOND_MASK_requested(FEEid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->dgtrgrespondmask->GetNewValue());}
     void update_request_act_DG_BUNCH_PATTERN(quint16 FEEid){ emit set_cmnd_DG_BUNCH_PATTERN_requested(FEEid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->dgbunchpattern->GetNewValue());}
     void update_request_act_DG_BUNCH_FREQ(quint16 FEEid){ emit set_cmnd_DG_BUNCH_FREQ_requested(FEEid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->dgbunchfreq->GetNewValue());}
@@ -126,9 +132,28 @@ public slots:
     void update_request_act_RDH_DET_FIELD(quint16 FEEid){ emit set_cmnd_RDH_DET_FIELD_requested(FEEid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->rdhdetfield->GetNewValue());}
     void update_request_act_CRU_TRG_COMPARE_DELAY(quint16 FEEid){ emit set_cmnd_CRU_TRG_COMPARE_DELAY_requested(FEEid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->crutrgcomparedelay->GetNewValue());}
     void update_request_act_BCID_DELAY(quint16 FEEid){ emit set_cmnd_BCID_DELAY_requested(FEEid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->bciddelay->GetNewValue());}
+    void update_request_act_DATA_SEL_TRG_MASK(quint16 FEEid){ emit set_cmnd_DATA_SEL_TRG_MASK_requested(FEEid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->dataseltrgmask->GetNewValue());}
+
 
     void update_request_act_AlltoPM(quint16 FEEid){
-        for(quint8 i=0; i<serv->pm[FT0_FEE_ID.key(FEEid)-1]->Nchannels;i++){ serv->emitSignal(&MyDimServer::apply_ALLtoCh_requested,FEEid,i+1); }
+
+        serv->emitSignal(&MyDimServer::apply_OR_GATE_requested,FEEid);
+        serv->emitSignal(&MyDimServer::apply_CFD_SATR_requested,FEEid);
+        serv->emitSignal(&MyDimServer::apply_CH_MASK_requested,FEEid);
+
+
+        for(quint8 i=0; i<serv->pm[FT0_FEE_ID.key(FEEid)-1]->Nchannels;i++){
+            serv->emitSignal(&MyDimServer::apply_ADC_ZERO_requested,FEEid,i+1);
+            serv->emitSignal(&MyDimServer::apply_ADC_DELAY_requested,FEEid,i+1);
+            serv->emitSignal(&MyDimServer::apply_ADC0_OFFSET_requested,FEEid,i+1);
+            serv->emitSignal(&MyDimServer::apply_ADC1_OFFSET_requested,FEEid,i+1);
+            serv->emitSignal(&MyDimServer::apply_ADC0_RANGE_requested,FEEid,i+1);
+            serv->emitSignal(&MyDimServer::apply_ADC1_RANGE_requested,FEEid,i+1);
+            serv->emitSignal(&MyDimServer::apply_TIME_ALIGN_requested,FEEid,i+1);
+            serv->emitSignal(&MyDimServer::apply_CFD_THRESHOLD_requested,FEEid,i+1);
+            serv->emitSignal(&MyDimServer::apply_CFD_ZERO_requested,FEEid,i+1);
+            serv->emitSignal(&MyDimServer::apply_THRESHOLD_CALIBR_requested,FEEid,i+1);
+        }
         serv->emitSignal(&MyDimServer::apply_TG_PATTERN_1_requested,FEEid);
         serv->emitSignal(&MyDimServer::apply_TG_PATTERN_0_requested,FEEid);
         serv->emitSignal(&MyDimServer::apply_TG_CONT_VALUE_requested,FEEid);
@@ -144,6 +169,7 @@ public slots:
         serv->emitSignal(&MyDimServer::apply_RDH_DET_FIELD_requested,FEEid);
         serv->emitSignal(&MyDimServer::apply_CRU_TRG_COMPARE_DELAY_requested,FEEid);
         serv->emitSignal(&MyDimServer::apply_BCID_DELAY_requested,FEEid);
+        serv->emitSignal(&MyDimServer::apply_DATA_SEL_TRG_MASK_requested,FEEid);
 
     }
 };

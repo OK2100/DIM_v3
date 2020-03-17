@@ -181,7 +181,7 @@ class pm_ValAPP : public virtual Base, public DimCommandHandler
         if(currCmnd == appCommand) {
             cout << "@ValAPP@ recieved " << currCmnd->getName() <<
                  hex << " H:" << *static_cast<T*>(currCmnd->getData()) <<
-                 dec << " D:" << *static_cast<T*>(currCmnd->getData()) << endl;
+                 dec << " D:" << *static_cast<T*>(currCmnd->getData()) << endl << endl;
             emitSignalRequest(currCmnd);
         }
     }
@@ -290,7 +290,7 @@ template<class T>
 class PMfullPar : public pm_ACT<T>, public pm_NEW<T>, public pm_SET<T>, public pm_APP
 {
 public:
-    PMfullPar(QString t_name, MyDimServer* t_pServer) : Base(t_name,"/control/GBT"), pm_ACT<T>(t_name), pm_NEW<T>(t_name),pm_SET<T>(t_name), pm_APP(t_name)
+    PMfullPar(QString t_name, MyDimServer* t_pServer) : Base(t_name,"/GBT/control"), pm_ACT<T>(t_name), pm_NEW<T>(t_name),pm_SET<T>(t_name), pm_APP(t_name)
     {SetServer(t_pServer);}
     void publishServices(){
         pm_ACT<T>::publishService();
@@ -326,7 +326,7 @@ template<class T>
 class PMonlyActPar : public pm_ACT<T>
 {
 public:
-    PMonlyActPar(QString t_name, MyDimServer* t_pServer) : Base(t_name,"/status/GBT"), pm_ACT<T>(t_name)
+    PMonlyActPar(QString t_name, MyDimServer* t_pServer) : Base(t_name,"/GBT/status"), pm_ACT<T>(t_name)
     {this->SetServer(t_pServer);}
     void publishServices(){ pm_ACT<T>::publishService(); }
 };
@@ -366,7 +366,7 @@ template<class T>
 class PMonlyValAppPar : public pm_ValAPP<T>
 {
 public:
-    PMonlyValAppPar(QString t_name, MyDimServer* t_pServer) : Base(t_name,"/control/GBT"), pm_ValAPP<T>(t_name)
+    PMonlyValAppPar(QString t_name, MyDimServer* t_pServer) : Base(t_name,"/GBT/control"), pm_ValAPP<T>(t_name)
     {this->SetServer(t_pServer);}
     void publishCommands(){ pm_ValAPP<T>::publishCommand(); }
 };
@@ -375,7 +375,7 @@ template<class T>
 class PMActnValAppPar : public PMonlyActPar<T>, public PMonlyValAppPar<T>
 {
 public:
-    PMActnValAppPar(QString t_name, MyDimServer* t_pServer) : Base(t_name,"/control/GBT"), PMonlyActPar<T>(t_name,t_pServer), PMonlyValAppPar<T>(t_name,t_pServer)
+    PMActnValAppPar(QString t_name, MyDimServer* t_pServer) : Base(t_name,"/GBT/control"), PMonlyActPar<T>(t_name,t_pServer), PMonlyValAppPar<T>(t_name,t_pServer)
     {this->SetServer(t_pServer);}
 };
 

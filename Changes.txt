@@ -1,0 +1,24 @@
+			[New type]
+
+CH_MASK		S	->	C
+OR_GATE		C	->	S
+
+			[Rename]
+
+CFD_CNT	->	CNT_CFD
+TRG_CNT	->	CNT_TRG
+
+		[New parameters]
+
+CNT_CFD_RATE
+CNT_TRG_RATE
+
+SwChOn
+SwChOff
+
+SERIAL_NUM
+FW_VERSION
+
+DATA_SEL_TRG_MASK
+
+

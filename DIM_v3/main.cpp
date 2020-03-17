@@ -4,12 +4,13 @@
 
 int main(int argc, char *argv[])
 {
-//    OpenOutFiles();
 
+//    OpenOutFiles();
 //    MyDimServer* serv;
 //    QString node;
 //    node = "hplu-Notebook-PC";
 //    serv = new MyDimServer(node);
+//    serv->Npms = 1;
 //    serv->startServer();
 //    while (1){}
 
@@ -17,12 +18,6 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     MainWindow w;
     w.show();
-
-//    qDebug() << (PMCHNonValHash["ADC0_OFFSET"] == nullptr);
-//    qDebug() << (&MyDimServer::apply_ADC0_OFFSET_requested == nullptr);
-    qDebug() << PMCHNonValHash.isEmpty();
-
-
 
 
 ////    QObject::connect(serv,&MyDimServer::set_ADC_ZERO_requested,serv,&MyDimServer::test_slot3);

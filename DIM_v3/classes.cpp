@@ -43,7 +43,7 @@ void pmch_APP::emitSignalRequest()
 
 void pmch_APP::SetSignal(){ pAPPSignal = getPMCHNonValPointerToSignal(this->name);}
 
-PMonlyAppPar::PMonlyAppPar(QString t_name, MyDimServer* t_pServer) : Base(t_name,"/control/GBT"), pm_APP(t_name)
+PMonlyAppPar::PMonlyAppPar(QString t_name, MyDimServer* t_pServer) : Base(t_name,"/GBT/control"), pm_APP(t_name)
 {this->SetServer(t_pServer);}
 
 void PMonlyAppPar::publishCommands()
