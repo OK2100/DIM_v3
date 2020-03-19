@@ -24,8 +24,7 @@ template <class T>
 using tcm_pValSignal = void(MyDimServer::*)(T);
 using tcm_pNonValSignal = void(MyDimServer::*)();
 
-template <class T, class Y>
-using pTwoValSignal = void(MyDimServer::*)(T,Y);
+using pTwoValSignal = void(MyDimServer::*)(quint8,quint8);
 
 static QTextStream cout(stdout);
 static QTextStream cin(stdin);

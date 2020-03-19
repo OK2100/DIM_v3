@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -62,6 +63,7 @@ void MainWindow::on_Btn_Start_clicked()
     else {
         QMessageBox::question(this, "Message", "Please apply 'DNS node' and 'Server name'",QMessageBox::Ok);
     }
+
 }
 
 void MainWindow::on_Btn_Stop_clicked()
@@ -80,4 +82,5 @@ void MainWindow::on_Btn_Stop_clicked()
 
     ui->Btn_Random->setEnabled(0);
     ui->Btn_Stop->setEnabled(0);
+
 }

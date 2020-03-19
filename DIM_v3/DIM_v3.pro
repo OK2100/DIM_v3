@@ -56,3 +56,9 @@ HEADERS += \
 
 FORMS += \
     mainwindow.ui
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../dim_v20r26/bin32/ -ldim
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../dim_v20r26/bin32/ -ldim
+
+INCLUDEPATH += $$PWD/../dim_v20r26/dim
+DEPENDPATH += $$PWD/../dim_v20r26/dim

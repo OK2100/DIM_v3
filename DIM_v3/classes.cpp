@@ -87,29 +87,35 @@ void str_ACT::publishService()
             outDSs << actService->getName() << endl;
 }
 
-//twoValAPP::twoValAPP(QString t_name) : Base(t_name){}
-//twoValAPP::~twoValAPP(){ delete appCommand;}
-//void twoValAPP::publishCommand()
-//{
-//        appCommand = new DimCommand(qPrintable("APP_"+DIM_name[FEE_id]+prefix+"/"+name),"C:2",this);
-//        outDCs << appCommand->getName() << endl;
-//}
+twoValAPP::twoValAPP(QString t_name) : Base(t_name){}
+twoValAPP::~twoValAPP(){ delete appCommand;}
+void twoValAPP::publishCommand()
+{
+        appCommand = new DimCommand(qPrintable("APP_"+DIM_name[FEE_id]+prefix+"/"+name),"C:1;C:1",this);
+        outDCs << appCommand->getName() << endl;
+}
 
-//void twoValAPP::SetSignal(pTwoValSignal<quint8,quint8> pSignal)/*{ pAPPSignal = pSignal;}*/
+void twoValAPP::SetSignal(pTwoValSignal pSignal){ pAPPSignal = pSignal;}
 
-//void twoValAPP::commandHandler()
-//    {
-//        DimCommand* currCmnd = getCommand();
-//        if(currCmnd == appCommand) {
-//            twoVal* data = static_cast<twoVal*>(currCmnd->getData());
-//            cout << "@ValAPP@ recieved " << currCmnd->getName()
-//                 << hex << " H1:" << data->first
-//                 << dec << " D1:" << data->first
-//                 << hex << " H2:" << data->second
-//                 << dec << " D1:" << data->second
-//                 << endl;
-//            emitSignalRequest(currCmnd);
-//        }
+void twoValAPP::commandHandler()
+    {
+        DimCommand* currCmnd = getCommand();
+        if(currCmnd == appCommand) {
+            twoVal* data = static_cast<twoVal*>(currCmnd->getData());
+            cout << "@ValAPP@ recieved " << currCmnd->getName()
+                 << hex << " H1:" << data->first
+                 << dec << " D1:" << data->first
+                 << hex << " H2:" << data->second
+                 << dec << " D1:" << data->second
+                 << endl;
+            emitSignalRequest(currCmnd);
+        }
 
-//    }
+    }
 
+void twoValAPP::emitSignalRequest(DimCommand* currCmnd)
+{
+    twoVal* data = static_cast<twoVal*>(currCmnd->getData());
+    this->pServer->emitSignal(pAPPSignal,data->first,data->second);
+
+}

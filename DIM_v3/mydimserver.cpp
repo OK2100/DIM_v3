@@ -126,12 +126,12 @@ void MyDimServer::emitSignal(tcm_pNonValSignal pSignal)
         emit (this->*pSignal)();
 }
 
-template <class T>
-void MyDimServer::emitSignal(pTwoValSignal<quint8,quint8> pSignal,T first_data,T second_data)
+void MyDimServer::emitSignal(pTwoValSignal pSignal,quint8 first_data,quint8 second_data)
 {
-    if(this == nullptr) {}
-    else if(pSignal != nullptr)
-        emit (this->*pSignal)(first_data,second_data);
+//    if(this == nullptr) { qDebug() << "Bad thing happened";}
+//    else if(pSignal != nullptr)
+//        qDebug() << "pServer != nullptr";
+//        emit (this->*pSignal)(first_data,second_data);
 }
 
 //  ===================================================================================================
@@ -534,7 +534,7 @@ TCMPars::TCMPars(MyDimServer* _server):
     vrate = new TCMfullPar<quint32>("V_RATE",_server);          vrate->prefix = "/TRG";
 
     statusoptioncode = new str_ACT("STATUS_OPTIONCODE");        statusoptioncode->prefix = "";
-    setoptioncode = new twoValAPP<quint8>("SET_OPTIONCODE");    setoptioncode->prefix = "";     setoptioncode->SetSignal(&MyDimServer::apply_SET_OPTIONCODE_requested);
+    setoptioncode = new twoValAPP("SET_OPTIONCODE");    setoptioncode->prefix = "";     setoptioncode->SetSignal(&MyDimServer::apply_SET_OPTIONCODE_requested);
 
     orAenabled = new TCMActnValAppPar<quint8>("OR_A_ENABLED",_server);      orAenabled->prefix = "/TRG";
     orCenabled = new TCMActnValAppPar<quint8>("OR_C_ENABLED",_server);      orCenabled->prefix = "/TRG";

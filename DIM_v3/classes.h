@@ -482,38 +482,36 @@ public:
     ~str_ACT();
 };
 
-template<class T>
 class twoValAPP : public virtual Base, public DimCommandHandler
 {
     DimCommand* appCommand = nullptr;
-    pTwoValSignal<quint8,quint8> pAPPSignal = nullptr;
-    void commandHandler()
-    {
-        DimCommand* currCmnd = getCommand();
-        if(currCmnd == appCommand) {
-            twoVal* data = static_cast<twoVal*>(currCmnd->getData());
-            cout << "@ValAPP@ recieved " << currCmnd->getName()
-                 << hex << " H1:" << data->first
-                 << dec << " D1:" << data->first
-                 << hex << " H2:" << data->second
-                 << dec << " D1:" << data->second
-                 << endl;
-            emitSignalRequest(currCmnd);
-        }
-
-    }
+    pTwoValSignal pAPPSignal = nullptr;
+    void commandHandler();
+//    {
+//        DimCommand* currCmnd = getCommand();
+//        if(currCmnd == appCommand) {
+//            twoVal* data = static_cast<twoVal*>(currCmnd->getData());
+//            cout << "@ValAPP@ recieved " << currCmnd->getName()
+//                 << hex << " H1:" << data->first
+//                 << dec << " D1:" << data->first
+//                 << hex << " H2:" << data->second
+//                 << dec << " D1:" << data->second
+//                 << endl;
+//            emitSignalRequest(currCmnd);
+//        }
+//    }
 
     virtual void emitSignalRequest(DimCommand* currCmnd);
 public:
-    void publishCommand()
-    {
-            appCommand = new DimCommand(qPrintable("APP_"+DIM_name[FEE_id]+prefix+"/"+name),"C:2",this);
-            outDCs << appCommand->getName() << endl;
-    }
+    void publishCommand();
+//    {
+//            appCommand = new DimCommand(qPrintable("APP_"+DIM_name[FEE_id]+prefix+"/"+name),"C:2",this);
+//            outDCs << appCommand->getName() << endl;
+//    }
 
-    void SetSignal(pTwoValSignal<quint8,quint8> pSignal){ pAPPSignal = pSignal;}
-    twoValAPP(QString t_name): Base(t_name){}
-    virtual ~twoValAPP(){ delete appCommand;}
+    void SetSignal(pTwoValSignal pSignal);//{ pAPPSignal = pSignal;}
+    twoValAPP(QString t_name);//: Base(t_name){}
+    virtual ~twoValAPP();//{ delete appCommand;}
 };
 
 

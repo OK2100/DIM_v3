@@ -128,7 +128,7 @@ public:
     TCMActnValAppPar<quint8>* venabled;
 
     str_ACT* statusoptioncode;
-    twoValAPP<quint8>* setoptioncode;
+    twoValAPP* setoptioncode;
 
     TCMActnValAppPar<quint8>* laseron;
     TCMfullPar<quint32>* laserdiv;
@@ -289,8 +289,7 @@ public:
 
     void emitSignal(tcm_pNonValSignal pSignal);
 
-    template<class T>
-    void emitSignal(pTwoValSignal<quint8,quint8>,T,T);
+    void emitSignal(pTwoValSignal,quint8,quint8);
 
 
 signals:
@@ -673,13 +672,13 @@ void pm_ValAPP<T>::emitSignalRequest(DimCommand* currCmnd){
     pServer->emitSignal(pAPPSignal,FEE_id,*static_cast<T*>(currCmnd->getData()));
 }
 
-template<class T>
-void twoValAPP<T>::emitSignalRequest(DimCommand* currCmnd)
-{
-    twoVal* data = static_cast<twoVal*>(currCmnd->getData());
-    this->pServer->emitSignal(pAPPSignal,static_cast<T>(data->first),static_cast<T>(data->second));
+//template<class T>
+//void twoValAPP<T>::emitSignalRequest(DimCommand* currCmnd)
+//{
+//    twoVal* data = static_cast<twoVal*>(currCmnd->getData());
+//    this->pServer->emitSignal(pAPPSignal,static_cast<T>(data->first),static_cast<T>(data->second));
 
-}
+//}
 
 
 #endif // MYDIMSERVER_H
