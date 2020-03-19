@@ -5,7 +5,6 @@
 int main(int argc, char *argv[])
 {
 
-//    OpenOutFiles();
 //    MyDimServer* serv;
 //    QString node;
 //    node = "hplu-Notebook-PC";

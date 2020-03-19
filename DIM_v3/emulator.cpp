@@ -310,74 +310,74 @@ void Emulator::SetupConnection()
 void Emulator::FillActRandom()
 {
 
-//    for(quint8 iPM=1;iPM<=serv->Npms;iPM++) {
-//        for(quint8 iCH=1;iCH<=serv->pm[iPM-1]->Nchannels;iCH++) {
-//            emit set_cmnd_ADC_ZERO_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-//            emit set_cmnd_ADC_DELAY_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-//            emit set_cmnd_ADC0_OFFSET_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-//            emit set_cmnd_ADC1_OFFSET_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-//            emit set_cmnd_ADC0_RANGE_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-//            emit set_cmnd_ADC1_RANGE_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-//            emit set_cmnd_TIME_ALIGN_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-//            emit set_cmnd_CFD_THRESHOLD_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-//            emit set_cmnd_CFD_ZERO_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-//            emit set_cmnd_THRESHOLD_CALIBR_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+    for(quint8 iPM=1;iPM<=serv->Npms;iPM++) {
+        for(quint8 iCH=1;iCH<=serv->pm[iPM-1]->Nchannels;iCH++) {
+            emit set_cmnd_ADC_ZERO_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+            emit set_cmnd_ADC_DELAY_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+            emit set_cmnd_ADC0_OFFSET_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+            emit set_cmnd_ADC1_OFFSET_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+            emit set_cmnd_ADC0_RANGE_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+            emit set_cmnd_ADC1_RANGE_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+            emit set_cmnd_TIME_ALIGN_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+            emit set_cmnd_CFD_THRESHOLD_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+            emit set_cmnd_CFD_ZERO_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+            emit set_cmnd_THRESHOLD_CALIBR_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
 
-//            emit set_cmnd_ADC0_MEANAMPL_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-//            emit set_cmnd_ADC1_MEANAMPL_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-//            emit set_cmnd_ADC0_ZEROLVL_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-//            emit set_cmnd_ADC1_ZEROLVL_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-//            emit set_cmnd_RAW_TDC_DATA_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-//            emit set_cmnd_CNT_CFD_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-//            emit set_cmnd_CNT_CFD_RATE_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-//            emit set_cmnd_CNT_TRG_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-//            emit set_cmnd_CNT_TRG_RATE_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-//        }
+            emit set_cmnd_ADC0_MEANAMPL_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+            emit set_cmnd_ADC1_MEANAMPL_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+            emit set_cmnd_ADC0_ZEROLVL_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+            emit set_cmnd_ADC1_ZEROLVL_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+            emit set_cmnd_RAW_TDC_DATA_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+            emit set_cmnd_CNT_CFD_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+            emit set_cmnd_CNT_CFD_RATE_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+            emit set_cmnd_CNT_TRG_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+            emit set_cmnd_CNT_TRG_RATE_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+        }
 
-//        emit set_cmnd_OR_GATE_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_CFD_SATR_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_CH_MASK_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_OR_GATE_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_CFD_SATR_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_CH_MASK_requested(FT0_FEE_ID[iPM],qrand()%1000);
 
-//        emit set_cmnd_LINK_STATUS_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_BOARD_STATUS_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_TEMPERATURE_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_SERIAL_NUM_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_FW_VERSION_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_LINK_STATUS_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_BOARD_STATUS_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_TEMPERATURE_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_SERIAL_NUM_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_FW_VERSION_requested(FT0_FEE_ID[iPM],qrand()%1000);
 
-//        emit set_cmnd_TG_PATTERN_1_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_TG_PATTERN_0_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_TG_CONT_VALUE_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_TG_BUNCH_FREQ_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_TG_FREQ_OFFSET_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_TG_PATTERN_1_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_TG_PATTERN_0_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_TG_CONT_VALUE_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_TG_BUNCH_FREQ_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_TG_FREQ_OFFSET_requested(FT0_FEE_ID[iPM],qrand()%1000);
 
-//        emit set_cmnd_TG_MODE_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_HB_RESPONSE_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_DG_MODE_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_TG_MODE_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_HB_RESPONSE_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_DG_MODE_requested(FT0_FEE_ID[iPM],qrand()%1000);
 
-//        emit set_cmnd_DG_TRG_RESPOND_MASK_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_DG_BUNCH_PATTERN_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_DG_BUNCH_FREQ_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_DG_FREQ_OFFSET_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_RDH_FEE_ID_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_RDH_PAR_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_RDH_MAX_PAYLOAD_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_RDH_DET_FIELD_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_CRU_TRG_COMPARE_DELAY_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_BCID_DELAY_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_DATA_SEL_TRG_MASK_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_DG_TRG_RESPOND_MASK_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_DG_BUNCH_PATTERN_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_DG_BUNCH_FREQ_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_DG_FREQ_OFFSET_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_RDH_FEE_ID_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_RDH_PAR_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_RDH_MAX_PAYLOAD_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_RDH_DET_FIELD_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_CRU_TRG_COMPARE_DELAY_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_BCID_DELAY_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_DATA_SEL_TRG_MASK_requested(FT0_FEE_ID[iPM],qrand()%1000);
 
-//        emit set_cmnd_BITS_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_READOUT_MODE_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_BCID_SYNC_MODE_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_RX_PHASE_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_CRU_ORBIT_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_CRU_BC_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_RAW_FIFO_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_SEL_FIFO_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_SEL_FIRST_HIT_DROPPED_ORBIT_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_SEL_LAST_HIT_DROPPED_ORBIT_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_SEL_HITS_DROPPED_requested(FT0_FEE_ID[iPM],qrand()%1000);
-//        emit set_cmnd_READOUT_RATE_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_BITS_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_READOUT_MODE_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_BCID_SYNC_MODE_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_RX_PHASE_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_CRU_ORBIT_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_CRU_BC_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_RAW_FIFO_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_SEL_FIFO_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_SEL_FIRST_HIT_DROPPED_ORBIT_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_SEL_LAST_HIT_DROPPED_ORBIT_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_SEL_HITS_DROPPED_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        emit set_cmnd_READOUT_RATE_requested(FT0_FEE_ID[iPM],qrand()%1000);
 
         //  TCM
         emit set_cmnd_COUNTERS_UPD_RATE_requested(qrand()%1000);
@@ -440,7 +440,7 @@ void Emulator::FillActRandom()
 
     }
 
-//}
+}
 
 
 //((qrand() % ((h+1)-l))+l)

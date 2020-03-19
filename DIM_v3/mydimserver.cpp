@@ -5,7 +5,6 @@
 MyDimServer::MyDimServer(QString dns_node,QString server_name)  :
     QObject(nullptr)//,
 {
-//    OpenOutFile();
     dnsNode = dns_node;
     serverName = server_name;
     setDnsNode(qPrintable(dnsNode));
@@ -46,15 +45,17 @@ void MyDimServer::startServer()
     cout << "###################################################" << endl
           << "Start DIM server on " << dnsNode << endl
           << "###################################################" << endl;
-    for(quint8 i=0;i<Npms;i++) {
-         pm[i] = new PMPars(this);
-         pm[i]->PM_FEE_id = FT0_FEE_ID[i+1];
-//         pm[i]->publish();
-     }
 
     tcm = new TCMPars(this);
     tcm->TCM_FEE_id = 0xF000;
     tcm->publish();
+
+    for(quint8 i=0;i<Npms;i++) {
+         pm[i] = new PMPars(this);
+         pm[i]->PM_FEE_id = FT0_FEE_ID[i+1];
+         pm[i]->publish();
+     }
+
 }
 
 void MyDimServer::stopServer()

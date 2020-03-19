@@ -111,7 +111,7 @@ public:
         SpinBox_Npms = new QSpinBox(centralwidget);
         SpinBox_Npms->setObjectName(QString::fromUtf8("SpinBox_Npms"));
         SpinBox_Npms->setMinimum(1);
-        SpinBox_Npms->setMaximum(20);
+        SpinBox_Npms->setMaximum(18);
         SpinBox_Npms->setValue(1);
         SpinBox_Npms->setDisplayIntegerBase(10);
 

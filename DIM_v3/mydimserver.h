@@ -255,7 +255,7 @@ class MyDimServer   :  public  QObject, public DimServer
 {
     Q_OBJECT
 public:
-    MyDimServer(QString dns_node, QString server_name="FIT DIM SERVER");
+    MyDimServer(QString dns_node = "localhost", QString server_name="FIT DIM SERVER");
     ~MyDimServer();
 
 //    QFile* DimServicesFile;
@@ -265,7 +265,7 @@ public:
     QString serverName;
     QString dnsNode;
     quint8 Npms = 1;
-    PMPars* pm[20];
+    PMPars* pm[18];
     TCMPars* tcm;
 
     void startServer();

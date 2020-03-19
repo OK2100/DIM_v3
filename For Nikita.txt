@@ -1,0 +1,15 @@
+
+In this version one signal doesn't work - apply_SET_OPTIONCODE_requested(quint8,quint8)
+I will fix it in near future.
+
+To start DIMServer as separate process:
+
+1)	Don't  create MainWindow object in main
+2)	Add in main:
+
+	MyDimServer* serv = new MyDimServer();	//	optinal arguments (QString node, QString name)
+	//	serv->Npms = 18;							//	default value is 1 
+	serv->startServer();
+	while (1){}
+
+
