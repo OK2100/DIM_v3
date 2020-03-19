@@ -1,29 +1,35 @@
-			[New type]
+[New type]
 
-CH_MASK		S	->	C
-OR_GATE		C	->	S
+	CH_MASK		S	->	C
+	OR_GATE		C	->	S
 
-			[Rename]
+[Rename]
 
-CFD_CNT	->	CNT_CFD
-TRG_CNT	->	CNT_TRG
+			CFD_CNT	->	CNT_CFD
+			TRG_CNT	->	CNT_TRG
 
-HDMI_LINK	->	LINK_STATUS
+		HDMI_LINK	->	LINK_STATUS
 
-		[New parameters]
+all 		/control/GBT	->	/GBT/control
+all		/status/GBT	->	/GBT/status
 
-CNT_CFD_RATE
-CNT_TRG_RATE
 
-SwChOn
-SwChOff
+[New parameters]
 
-SERIAL_NUM
-FW_VERSION
+	CNT_CFD_RATE
+	CNT_TRG_RATE
 
-DATA_SEL_TRG_MASK
+	SwChOn
+	SwChOff
 
-		[Deleted parameters]
+	SERIAL_NUM
+	FW_VERSION
 
-ALLtoCh
+	DATA_SEL_TRG_MASK
+	
+	all TCM parameters
+
+[Deleted parameters]
+
+	ALLtoCh
 

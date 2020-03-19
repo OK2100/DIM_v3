@@ -181,7 +181,7 @@ class pm_ValAPP : public virtual Base, public DimCommandHandler
         if(currCmnd == appCommand) {
             cout << "@ValAPP@ recieved " << currCmnd->getName() <<
                  hex << " H:" << *static_cast<T*>(currCmnd->getData()) <<
-                 dec << " D:" << *static_cast<T*>(currCmnd->getData()) << endl << endl;
+                 dec << " D:" << *static_cast<T*>(currCmnd->getData()) << endl;
             emitSignalRequest(currCmnd);
         }
     }
@@ -235,6 +235,7 @@ class pm_SET : public virtual Base, public DimCommandHandler
         }
     }
     virtual void emitSignalRequest(DimCommand* currCmnd);
+
 public:
     void publishCommand()
     {
@@ -379,51 +380,141 @@ public:
     {this->SetServer(t_pServer);}
 };
 
+
+
+
 template<class T>
-class tcm_ACT : public virtual Base
+class tcm_SET : public pm_SET<T>
 {
-protected:
-    T actValue;
-    DimService* actService = nullptr;
+    tcm_pValSignal<T> pSETSignal = nullptr;
 public:
-    void updateAct(T val)
-    {
-        actValue = val;
-        actService->updateService();
-        cout << "# " << actService->getName() << " updated to" <<
-              hex << " H:" << val << dec << " D:" << val << endl << endl;
+    void emitSignalRequest(DimCommand* currCmnd){
+        this->pServer->emitSignal(pSETSignal,*static_cast<T*>(currCmnd->getData()));
     }
 
-    void publishService()
+    void SetSignal(){ pSETSignal = getTCMValPointerToSignal<T>(this->name);}
+
+    tcm_SET(QString t_name) : Base(t_name), pm_SET<T>::pm_SET(t_name)
     {
-        switch (sizeof(T)) {
-        case 1:
-            actService = new DimService(qPrintable("ACT_"+DIM_name[FEE_id]+prefix+"/"+name),"C:1",&actValue,1);
-            outDSs << actService->getName() << endl;
-            break;
-        case 2:
-            actService = new DimService(qPrintable("ACT_"+DIM_name[FEE_id]+prefix+"/"+name),"S:1",&actValue,2);
-            outDSs << actService->getName() << endl;
-            break;
-        case 4:
-            actService = new DimService(qPrintable("ACT_"+DIM_name[FEE_id]+prefix+"/"+name),"I:1",&actValue,4);
-            outDSs << actService->getName() << endl;
-            break;
-        case 8:
-            actService = new DimService(qPrintable("ACT_"+DIM_name[FEE_id]+prefix+"/"+name),"X:1",&actValue,8);
-            outDSs << actService->getName() << endl;
-            break;
-        default:
-            cerr << "\n## Underfined size of T\n";
-            Q_ASSERT(1);
-        }
+        SetSignal();
     }
 
-
-    tcm_ACT(QString t_name) : Base(t_name), actValue(0){}
-    ~tcm_ACT(){ delete actService; }
 };
 
+
+class tcm_APP : public pm_APP
+{
+    tcm_pNonValSignal pAPPSignal = nullptr;
+public:
+    tcm_APP(QString t_name);
+    void emitSignalRequest();
+    void SetSignal();
+};
+
+template<class T>
+class tcm_ValAPP : public pm_ValAPP<T>
+{
+    tcm_pValSignal<T> pAPPSignal = nullptr;
+public:
+    void emitSignalRequest(DimCommand* currCmnd){
+        this->pServer->emitSignal(pAPPSignal,*static_cast<T*>(currCmnd->getData()));
+    }
+
+    void SetSignal(){ pAPPSignal = getTCMValPointerToSignal<T>(this->name);}
+
+    tcm_ValAPP(QString t_name) : Base(t_name), pm_ValAPP<T>(t_name)
+    {
+        SetSignal();
+    }
+};
+
+
+
+template<class T>
+class TCMfullPar : public pm_ACT<T>, public pm_NEW<T>, public tcm_APP, public tcm_SET<T>
+{
+public:
+    TCMfullPar(QString t_name, MyDimServer* t_pServer) : Base(t_name,"/control"), pm_ACT<T>(t_name), pm_NEW<T>(t_name), tcm_APP(t_name), tcm_SET<T>(t_name)
+    {this->SetServer(t_pServer);}
+
+    void publishServices(){
+        pm_ACT<T>::publishService();
+        pm_NEW<T>::publishService();
+    }
+    void publishCommands(){
+        tcm_SET<T>::publishCommand();
+        tcm_APP::publishCommand();
+    }
+};
+
+
+template<class T>
+class TCMonlyValAppPar : public tcm_ValAPP<T>
+{
+public:
+    TCMonlyValAppPar(QString t_name, MyDimServer* t_pServer) : Base(t_name,"/control"), tcm_ValAPP<T>(t_name)
+    {this->SetServer(t_pServer);}
+    void publishCommands(){ tcm_ValAPP<T>::publishCommand(); }
+};
+
+
+template<class T>
+class TCMActnValAppPar : public PMonlyActPar<T>, public TCMonlyValAppPar<T>
+{
+public:
+    TCMActnValAppPar(QString t_name, MyDimServer* t_pServer) : Base(t_name,"/control"), PMonlyActPar<T>(t_name,t_pServer), TCMonlyValAppPar<T>(t_name,t_pServer)
+    {this->SetServer(t_pServer);}
+};
+
+
+class str_ACT : public virtual Base
+{
+protected:
+    char actValue[500];
+//    std::string actValue;
+    DimService* actService = nullptr;
+public:
+    void updateAct(QString val);
+
+    void publishService();
+
+    str_ACT(QString t_name);
+    ~str_ACT();
+};
+
+template<class T>
+class twoValAPP : public virtual Base, public DimCommandHandler
+{
+    DimCommand* appCommand = nullptr;
+    pTwoValSignal<quint8,quint8> pAPPSignal = nullptr;
+    void commandHandler()
+    {
+        DimCommand* currCmnd = getCommand();
+        if(currCmnd == appCommand) {
+            twoVal* data = static_cast<twoVal*>(currCmnd->getData());
+            cout << "@ValAPP@ recieved " << currCmnd->getName()
+                 << hex << " H1:" << data->first
+                 << dec << " D1:" << data->first
+                 << hex << " H2:" << data->second
+                 << dec << " D1:" << data->second
+                 << endl;
+            emitSignalRequest(currCmnd);
+        }
+
+    }
+
+    virtual void emitSignalRequest(DimCommand* currCmnd);
+public:
+    void publishCommand()
+    {
+            appCommand = new DimCommand(qPrintable("APP_"+DIM_name[FEE_id]+prefix+"/"+name),"C:2",this);
+            outDCs << appCommand->getName() << endl;
+    }
+
+    void SetSignal(pTwoValSignal<quint8,quint8> pSignal){ pAPPSignal = pSignal;}
+    twoValAPP(QString t_name): Base(t_name){}
+    virtual ~twoValAPP(){ delete appCommand;}
+};
 
 
 

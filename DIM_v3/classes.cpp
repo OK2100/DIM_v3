@@ -54,3 +54,62 @@ PMCHonlyAppPar::PMCHonlyAppPar(QString t_name, MyDimServer* t_pServer) : Base(t_
 
 void PMCHonlyAppPar::publishCommands()
 { pmch_APP::publishCommand(); }
+
+
+tcm_APP::tcm_APP(QString t_name) : Base(t_name), pm_APP::pm_APP(t_name)
+{
+    SetSignal();
+}
+
+void tcm_APP::emitSignalRequest()
+{
+    this->pServer->emitSignal(pAPPSignal);
+}
+
+void tcm_APP::SetSignal(){ pAPPSignal = getTCMNonValPointerToSignal(this->name);}
+
+
+str_ACT::str_ACT(QString t_name) : Base(t_name), actValue("My default string"){}
+
+str_ACT::~str_ACT(){ delete actService; }
+
+void str_ACT::updateAct(QString val)
+{
+    qstrncpy(actValue,qPrintable(val),499);
+        actService->updateService();
+        cout << "# " << actService->getName() << " updated to "
+             << "\"" << val << "\"" << endl << endl;
+}
+
+void str_ACT::publishService()
+{
+            actService = new DimService(qPrintable("ACT_"+DIM_name[FEE_id]+prefix+"/"+name),actValue);
+            outDSs << actService->getName() << endl;
+}
+
+//twoValAPP::twoValAPP(QString t_name) : Base(t_name){}
+//twoValAPP::~twoValAPP(){ delete appCommand;}
+//void twoValAPP::publishCommand()
+//{
+//        appCommand = new DimCommand(qPrintable("APP_"+DIM_name[FEE_id]+prefix+"/"+name),"C:2",this);
+//        outDCs << appCommand->getName() << endl;
+//}
+
+//void twoValAPP::SetSignal(pTwoValSignal<quint8,quint8> pSignal)/*{ pAPPSignal = pSignal;}*/
+
+//void twoValAPP::commandHandler()
+//    {
+//        DimCommand* currCmnd = getCommand();
+//        if(currCmnd == appCommand) {
+//            twoVal* data = static_cast<twoVal*>(currCmnd->getData());
+//            cout << "@ValAPP@ recieved " << currCmnd->getName()
+//                 << hex << " H1:" << data->first
+//                 << dec << " D1:" << data->first
+//                 << hex << " H2:" << data->second
+//                 << dec << " D1:" << data->second
+//                 << endl;
+//            emitSignalRequest(currCmnd);
+//        }
+
+//    }
+

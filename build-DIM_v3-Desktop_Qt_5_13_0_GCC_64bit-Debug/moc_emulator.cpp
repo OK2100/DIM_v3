@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Emulator_t {
-    QByteArrayData data[93];
-    char stringdata0[2815];
+    QByteArrayData data[174];
+    char stringdata0[5156];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -95,36 +95,117 @@ QT_MOC_LITERAL(59, 1700, 46), // "set_cmnd_SEL_FIRST_HIT_DROPPE..."
 QT_MOC_LITERAL(60, 1747, 45), // "set_cmnd_SEL_LAST_HIT_DROPPED..."
 QT_MOC_LITERAL(61, 1793, 35), // "set_cmnd_SEL_HITS_DROPPED_req..."
 QT_MOC_LITERAL(62, 1829, 31), // "set_cmnd_READOUT_RATE_requested"
-QT_MOC_LITERAL(63, 1861, 26), // "update_request_act_OR_GATE"
-QT_MOC_LITERAL(64, 1888, 27), // "update_request_act_CFD_SATR"
-QT_MOC_LITERAL(65, 1916, 26), // "update_request_act_CH_MASK"
-QT_MOC_LITERAL(66, 1943, 27), // "update_request_act_ADC_ZERO"
-QT_MOC_LITERAL(67, 1971, 28), // "update_request_act_ADC_DELAY"
-QT_MOC_LITERAL(68, 2000, 30), // "update_request_act_ADC0_OFFSET"
-QT_MOC_LITERAL(69, 2031, 30), // "update_request_act_ADC1_OFFSET"
-QT_MOC_LITERAL(70, 2062, 29), // "update_request_act_ADC0_RANGE"
-QT_MOC_LITERAL(71, 2092, 29), // "update_request_act_ADC1_RANGE"
-QT_MOC_LITERAL(72, 2122, 29), // "update_request_act_TIME_ALIGN"
-QT_MOC_LITERAL(73, 2152, 32), // "update_request_act_CFD_THRESHOLD"
-QT_MOC_LITERAL(74, 2185, 27), // "update_request_act_CFD_ZERO"
-QT_MOC_LITERAL(75, 2213, 35), // "update_request_act_THRESHOLD_..."
-QT_MOC_LITERAL(76, 2249, 31), // "update_request_act_TG_PATTERN_1"
-QT_MOC_LITERAL(77, 2281, 31), // "update_request_act_TG_PATTERN_0"
-QT_MOC_LITERAL(78, 2313, 32), // "update_request_act_TG_CONT_VALUE"
-QT_MOC_LITERAL(79, 2346, 32), // "update_request_act_TG_BUNCH_FREQ"
-QT_MOC_LITERAL(80, 2379, 33), // "update_request_act_TG_FREQ_OF..."
-QT_MOC_LITERAL(81, 2413, 38), // "update_request_act_DG_TRG_RES..."
-QT_MOC_LITERAL(82, 2452, 35), // "update_request_act_DG_BUNCH_P..."
-QT_MOC_LITERAL(83, 2488, 32), // "update_request_act_DG_BUNCH_FREQ"
-QT_MOC_LITERAL(84, 2521, 33), // "update_request_act_DG_FREQ_OF..."
-QT_MOC_LITERAL(85, 2555, 29), // "update_request_act_RDH_FEE_ID"
-QT_MOC_LITERAL(86, 2585, 26), // "update_request_act_RDH_PAR"
-QT_MOC_LITERAL(87, 2612, 34), // "update_request_act_RDH_MAX_PA..."
-QT_MOC_LITERAL(88, 2647, 32), // "update_request_act_RDH_DET_FIELD"
-QT_MOC_LITERAL(89, 2680, 40), // "update_request_act_CRU_TRG_CO..."
-QT_MOC_LITERAL(90, 2721, 29), // "update_request_act_BCID_DELAY"
-QT_MOC_LITERAL(91, 2751, 36), // "update_request_act_DATA_SEL_T..."
-QT_MOC_LITERAL(92, 2788, 26) // "update_request_act_AlltoPM"
+QT_MOC_LITERAL(63, 1861, 36), // "set_cmnd_COUNTERS_UPD_RATE_re..."
+QT_MOC_LITERAL(64, 1898, 35), // "set_cmnd_EXTENDED_READOUT_req..."
+QT_MOC_LITERAL(65, 1934, 4), // "isOn"
+QT_MOC_LITERAL(66, 1939, 31), // "set_cmnd_SC_SUM_SIDES_requested"
+QT_MOC_LITERAL(67, 1971, 30), // "set_cmnd_C_SUM_SIDES_requested"
+QT_MOC_LITERAL(68, 2002, 30), // "set_cmnd_ADD_C_DELAY_requested"
+QT_MOC_LITERAL(69, 2033, 27), // "set_cmnd_RES_SW_1_requested"
+QT_MOC_LITERAL(70, 2061, 27), // "set_cmnd_RES_SW_2_requested"
+QT_MOC_LITERAL(71, 2089, 27), // "set_cmnd_RES_SW_3_requested"
+QT_MOC_LITERAL(72, 2117, 27), // "set_cmnd_RES_SW_4_requested"
+QT_MOC_LITERAL(73, 2145, 26), // "set_cmnd_DELAY_A_requested"
+QT_MOC_LITERAL(74, 2172, 26), // "set_cmnd_DELAY_C_requested"
+QT_MOC_LITERAL(75, 2199, 28), // "set_cmnd_VTIME_LOW_requested"
+QT_MOC_LITERAL(76, 2228, 29), // "set_cmnd_VTIME_HIGH_requested"
+QT_MOC_LITERAL(77, 2258, 29), // "set_cmnd_SC_LEVEL_A_requested"
+QT_MOC_LITERAL(78, 2288, 29), // "set_cmnd_SC_LEVEL_C_requested"
+QT_MOC_LITERAL(79, 2318, 28), // "set_cmnd_C_LEVEL_A_requested"
+QT_MOC_LITERAL(80, 2347, 28), // "set_cmnd_C_LEVEL_C_requested"
+QT_MOC_LITERAL(81, 2376, 28), // "set_cmnd_CH_MASK_A_requested"
+QT_MOC_LITERAL(82, 2405, 28), // "set_cmnd_CH_MASK_C_requested"
+QT_MOC_LITERAL(83, 2434, 32), // "set_cmnd_SIDE_A_STATUS_requested"
+QT_MOC_LITERAL(84, 2467, 32), // "set_cmnd_SIDE_C_STATUS_requested"
+QT_MOC_LITERAL(85, 2500, 27), // "set_cmnd_CNT_OR_A_requested"
+QT_MOC_LITERAL(86, 2528, 32), // "set_cmnd_CNT_OR_A_RATE_requested"
+QT_MOC_LITERAL(87, 2561, 27), // "set_cmnd_CNT_OR_C_requested"
+QT_MOC_LITERAL(88, 2589, 32), // "set_cmnd_CNT_OR_C_RATE_requested"
+QT_MOC_LITERAL(89, 2622, 25), // "set_cmnd_CNT_SC_requested"
+QT_MOC_LITERAL(90, 2648, 30), // "set_cmnd_CNT_SC_RATE_requested"
+QT_MOC_LITERAL(91, 2679, 24), // "set_cmnd_CNT_C_requested"
+QT_MOC_LITERAL(92, 2704, 29), // "set_cmnd_CNT_C_RATE_requested"
+QT_MOC_LITERAL(93, 2734, 24), // "set_cmnd_CNT_V_requested"
+QT_MOC_LITERAL(94, 2759, 29), // "set_cmnd_CNT_V_RATE_requested"
+QT_MOC_LITERAL(95, 2789, 36), // "set_cmnd_STATUS_OPTIONCODE_re..."
+QT_MOC_LITERAL(96, 2826, 4), // "mode"
+QT_MOC_LITERAL(97, 2831, 28), // "set_cmnd_OR_A_SIGN_requested"
+QT_MOC_LITERAL(98, 2860, 28), // "set_cmnd_OR_A_RATE_requested"
+QT_MOC_LITERAL(99, 2889, 28), // "set_cmnd_OR_C_SIGN_requested"
+QT_MOC_LITERAL(100, 2918, 28), // "set_cmnd_OR_C_RATE_requested"
+QT_MOC_LITERAL(101, 2947, 26), // "set_cmnd_SC_SIGN_requested"
+QT_MOC_LITERAL(102, 2974, 26), // "set_cmnd_SC_RATE_requested"
+QT_MOC_LITERAL(103, 3001, 25), // "set_cmnd_C_SIGN_requested"
+QT_MOC_LITERAL(104, 3027, 25), // "set_cmnd_C_RATE_requested"
+QT_MOC_LITERAL(105, 3053, 25), // "set_cmnd_V_SIGN_requested"
+QT_MOC_LITERAL(106, 3079, 25), // "set_cmnd_V_RATE_requested"
+QT_MOC_LITERAL(107, 3105, 31), // "set_cmnd_OR_A_ENABLED_requested"
+QT_MOC_LITERAL(108, 3137, 31), // "set_cmnd_OR_C_ENABLED_requested"
+QT_MOC_LITERAL(109, 3169, 29), // "set_cmnd_SC_ENABLED_requested"
+QT_MOC_LITERAL(110, 3199, 28), // "set_cmnd_C_ENABLED_requested"
+QT_MOC_LITERAL(111, 3228, 28), // "set_cmnd_V_ENABLED_requested"
+QT_MOC_LITERAL(112, 3257, 27), // "set_cmnd_LASER_ON_requested"
+QT_MOC_LITERAL(113, 3285, 28), // "set_cmnd_LASER_DIV_requested"
+QT_MOC_LITERAL(114, 3314, 30), // "set_cmnd_LASER_DELAY_requested"
+QT_MOC_LITERAL(115, 3345, 34), // "set_cmnd_LASER_PATTERN_1_requ..."
+QT_MOC_LITERAL(116, 3380, 34), // "set_cmnd_LASER_PATTERN_0_requ..."
+QT_MOC_LITERAL(117, 3415, 30), // "set_cmnd_ATTEN_VALUE_requested"
+QT_MOC_LITERAL(118, 3446, 31), // "set_cmnd_ATTEN_STATUS_requested"
+QT_MOC_LITERAL(119, 3478, 26), // "update_request_act_OR_GATE"
+QT_MOC_LITERAL(120, 3505, 27), // "update_request_act_CFD_SATR"
+QT_MOC_LITERAL(121, 3533, 26), // "update_request_act_CH_MASK"
+QT_MOC_LITERAL(122, 3560, 27), // "update_request_act_ADC_ZERO"
+QT_MOC_LITERAL(123, 3588, 28), // "update_request_act_ADC_DELAY"
+QT_MOC_LITERAL(124, 3617, 30), // "update_request_act_ADC0_OFFSET"
+QT_MOC_LITERAL(125, 3648, 30), // "update_request_act_ADC1_OFFSET"
+QT_MOC_LITERAL(126, 3679, 29), // "update_request_act_ADC0_RANGE"
+QT_MOC_LITERAL(127, 3709, 29), // "update_request_act_ADC1_RANGE"
+QT_MOC_LITERAL(128, 3739, 29), // "update_request_act_TIME_ALIGN"
+QT_MOC_LITERAL(129, 3769, 32), // "update_request_act_CFD_THRESHOLD"
+QT_MOC_LITERAL(130, 3802, 27), // "update_request_act_CFD_ZERO"
+QT_MOC_LITERAL(131, 3830, 35), // "update_request_act_THRESHOLD_..."
+QT_MOC_LITERAL(132, 3866, 31), // "update_request_act_TG_PATTERN_1"
+QT_MOC_LITERAL(133, 3898, 31), // "update_request_act_TG_PATTERN_0"
+QT_MOC_LITERAL(134, 3930, 32), // "update_request_act_TG_CONT_VALUE"
+QT_MOC_LITERAL(135, 3963, 32), // "update_request_act_TG_BUNCH_FREQ"
+QT_MOC_LITERAL(136, 3996, 33), // "update_request_act_TG_FREQ_OF..."
+QT_MOC_LITERAL(137, 4030, 38), // "update_request_act_DG_TRG_RES..."
+QT_MOC_LITERAL(138, 4069, 35), // "update_request_act_DG_BUNCH_P..."
+QT_MOC_LITERAL(139, 4105, 32), // "update_request_act_DG_BUNCH_FREQ"
+QT_MOC_LITERAL(140, 4138, 33), // "update_request_act_DG_FREQ_OF..."
+QT_MOC_LITERAL(141, 4172, 29), // "update_request_act_RDH_FEE_ID"
+QT_MOC_LITERAL(142, 4202, 26), // "update_request_act_RDH_PAR"
+QT_MOC_LITERAL(143, 4229, 34), // "update_request_act_RDH_MAX_PA..."
+QT_MOC_LITERAL(144, 4264, 32), // "update_request_act_RDH_DET_FIELD"
+QT_MOC_LITERAL(145, 4297, 40), // "update_request_act_CRU_TRG_CO..."
+QT_MOC_LITERAL(146, 4338, 29), // "update_request_act_BCID_DELAY"
+QT_MOC_LITERAL(147, 4368, 36), // "update_request_act_DATA_SEL_T..."
+QT_MOC_LITERAL(148, 4405, 26), // "update_request_act_AlltoPM"
+QT_MOC_LITERAL(149, 4432, 26), // "update_request_act_DELAY_A"
+QT_MOC_LITERAL(150, 4459, 26), // "update_request_act_DELAY_C"
+QT_MOC_LITERAL(151, 4486, 28), // "update_request_act_VTIME_LOW"
+QT_MOC_LITERAL(152, 4515, 29), // "update_request_act_VTIME_HIGH"
+QT_MOC_LITERAL(153, 4545, 29), // "update_request_act_SC_LEVEL_A"
+QT_MOC_LITERAL(154, 4575, 29), // "update_request_act_SC_LEVEL_C"
+QT_MOC_LITERAL(155, 4605, 28), // "update_request_act_C_LEVEL_A"
+QT_MOC_LITERAL(156, 4634, 28), // "update_request_act_C_LEVEL_C"
+QT_MOC_LITERAL(157, 4663, 28), // "update_request_act_CH_MASK_A"
+QT_MOC_LITERAL(158, 4692, 28), // "update_request_act_CH_MASK_C"
+QT_MOC_LITERAL(159, 4721, 28), // "update_request_act_OR_A_SIGN"
+QT_MOC_LITERAL(160, 4750, 28), // "update_request_act_OR_A_RATE"
+QT_MOC_LITERAL(161, 4779, 28), // "update_request_act_OR_C_SIGN"
+QT_MOC_LITERAL(162, 4808, 28), // "update_request_act_OR_C_RATE"
+QT_MOC_LITERAL(163, 4837, 26), // "update_request_act_SC_SIGN"
+QT_MOC_LITERAL(164, 4864, 26), // "update_request_act_SC_RATE"
+QT_MOC_LITERAL(165, 4891, 25), // "update_request_act_C_SIGN"
+QT_MOC_LITERAL(166, 4917, 25), // "update_request_act_C_RATE"
+QT_MOC_LITERAL(167, 4943, 25), // "update_request_act_V_SIGN"
+QT_MOC_LITERAL(168, 4969, 25), // "update_request_act_V_RATE"
+QT_MOC_LITERAL(169, 4995, 28), // "update_request_act_LASER_DIV"
+QT_MOC_LITERAL(170, 5024, 30), // "update_request_act_LASER_DELAY"
+QT_MOC_LITERAL(171, 5055, 34), // "update_request_act_LASER_PATT..."
+QT_MOC_LITERAL(172, 5090, 34), // "update_request_act_LASER_PATT..."
+QT_MOC_LITERAL(173, 5125, 30) // "update_request_act_ATTEN_VALUE"
 
     },
     "Emulator\0set_cmnd_ADC_ZERO_requested\0"
@@ -185,6 +266,60 @@ QT_MOC_LITERAL(92, 2788, 26) // "update_request_act_AlltoPM"
     "set_cmnd_SEL_LAST_HIT_DROPPED_ORBIT_requested\0"
     "set_cmnd_SEL_HITS_DROPPED_requested\0"
     "set_cmnd_READOUT_RATE_requested\0"
+    "set_cmnd_COUNTERS_UPD_RATE_requested\0"
+    "set_cmnd_EXTENDED_READOUT_requested\0"
+    "isOn\0set_cmnd_SC_SUM_SIDES_requested\0"
+    "set_cmnd_C_SUM_SIDES_requested\0"
+    "set_cmnd_ADD_C_DELAY_requested\0"
+    "set_cmnd_RES_SW_1_requested\0"
+    "set_cmnd_RES_SW_2_requested\0"
+    "set_cmnd_RES_SW_3_requested\0"
+    "set_cmnd_RES_SW_4_requested\0"
+    "set_cmnd_DELAY_A_requested\0"
+    "set_cmnd_DELAY_C_requested\0"
+    "set_cmnd_VTIME_LOW_requested\0"
+    "set_cmnd_VTIME_HIGH_requested\0"
+    "set_cmnd_SC_LEVEL_A_requested\0"
+    "set_cmnd_SC_LEVEL_C_requested\0"
+    "set_cmnd_C_LEVEL_A_requested\0"
+    "set_cmnd_C_LEVEL_C_requested\0"
+    "set_cmnd_CH_MASK_A_requested\0"
+    "set_cmnd_CH_MASK_C_requested\0"
+    "set_cmnd_SIDE_A_STATUS_requested\0"
+    "set_cmnd_SIDE_C_STATUS_requested\0"
+    "set_cmnd_CNT_OR_A_requested\0"
+    "set_cmnd_CNT_OR_A_RATE_requested\0"
+    "set_cmnd_CNT_OR_C_requested\0"
+    "set_cmnd_CNT_OR_C_RATE_requested\0"
+    "set_cmnd_CNT_SC_requested\0"
+    "set_cmnd_CNT_SC_RATE_requested\0"
+    "set_cmnd_CNT_C_requested\0"
+    "set_cmnd_CNT_C_RATE_requested\0"
+    "set_cmnd_CNT_V_requested\0"
+    "set_cmnd_CNT_V_RATE_requested\0"
+    "set_cmnd_STATUS_OPTIONCODE_requested\0"
+    "mode\0set_cmnd_OR_A_SIGN_requested\0"
+    "set_cmnd_OR_A_RATE_requested\0"
+    "set_cmnd_OR_C_SIGN_requested\0"
+    "set_cmnd_OR_C_RATE_requested\0"
+    "set_cmnd_SC_SIGN_requested\0"
+    "set_cmnd_SC_RATE_requested\0"
+    "set_cmnd_C_SIGN_requested\0"
+    "set_cmnd_C_RATE_requested\0"
+    "set_cmnd_V_SIGN_requested\0"
+    "set_cmnd_V_RATE_requested\0"
+    "set_cmnd_OR_A_ENABLED_requested\0"
+    "set_cmnd_OR_C_ENABLED_requested\0"
+    "set_cmnd_SC_ENABLED_requested\0"
+    "set_cmnd_C_ENABLED_requested\0"
+    "set_cmnd_V_ENABLED_requested\0"
+    "set_cmnd_LASER_ON_requested\0"
+    "set_cmnd_LASER_DIV_requested\0"
+    "set_cmnd_LASER_DELAY_requested\0"
+    "set_cmnd_LASER_PATTERN_1_requested\0"
+    "set_cmnd_LASER_PATTERN_0_requested\0"
+    "set_cmnd_ATTEN_VALUE_requested\0"
+    "set_cmnd_ATTEN_STATUS_requested\0"
     "update_request_act_OR_GATE\0"
     "update_request_act_CFD_SATR\0"
     "update_request_act_CH_MASK\0"
@@ -214,7 +349,32 @@ QT_MOC_LITERAL(92, 2788, 26) // "update_request_act_AlltoPM"
     "update_request_act_CRU_TRG_COMPARE_DELAY\0"
     "update_request_act_BCID_DELAY\0"
     "update_request_act_DATA_SEL_TRG_MASK\0"
-    "update_request_act_AlltoPM"
+    "update_request_act_AlltoPM\0"
+    "update_request_act_DELAY_A\0"
+    "update_request_act_DELAY_C\0"
+    "update_request_act_VTIME_LOW\0"
+    "update_request_act_VTIME_HIGH\0"
+    "update_request_act_SC_LEVEL_A\0"
+    "update_request_act_SC_LEVEL_C\0"
+    "update_request_act_C_LEVEL_A\0"
+    "update_request_act_C_LEVEL_C\0"
+    "update_request_act_CH_MASK_A\0"
+    "update_request_act_CH_MASK_C\0"
+    "update_request_act_OR_A_SIGN\0"
+    "update_request_act_OR_A_RATE\0"
+    "update_request_act_OR_C_SIGN\0"
+    "update_request_act_OR_C_RATE\0"
+    "update_request_act_SC_SIGN\0"
+    "update_request_act_SC_RATE\0"
+    "update_request_act_C_SIGN\0"
+    "update_request_act_C_RATE\0"
+    "update_request_act_V_SIGN\0"
+    "update_request_act_V_RATE\0"
+    "update_request_act_LASER_DIV\0"
+    "update_request_act_LASER_DELAY\0"
+    "update_request_act_LASER_PATTERN_1\0"
+    "update_request_act_LASER_PATTERN_0\0"
+    "update_request_act_ATTEN_VALUE"
 };
 #undef QT_MOC_LITERAL
 
@@ -224,104 +384,183 @@ static const uint qt_meta_data_Emulator[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      88,   14, // methods
+     167,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-      58,       // signalCount
+     112,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    3,  454,    2, 0x06 /* Public */,
-       6,    3,  461,    2, 0x06 /* Public */,
-       7,    3,  468,    2, 0x06 /* Public */,
-       8,    3,  475,    2, 0x06 /* Public */,
-       9,    3,  482,    2, 0x06 /* Public */,
-      10,    3,  489,    2, 0x06 /* Public */,
-      11,    3,  496,    2, 0x06 /* Public */,
-      12,    3,  503,    2, 0x06 /* Public */,
-      13,    3,  510,    2, 0x06 /* Public */,
-      14,    3,  517,    2, 0x06 /* Public */,
-      15,    3,  524,    2, 0x06 /* Public */,
-      16,    3,  531,    2, 0x06 /* Public */,
-      17,    3,  538,    2, 0x06 /* Public */,
-      18,    3,  545,    2, 0x06 /* Public */,
-      19,    3,  552,    2, 0x06 /* Public */,
-      20,    3,  559,    2, 0x06 /* Public */,
-      21,    3,  566,    2, 0x06 /* Public */,
-      22,    3,  573,    2, 0x06 /* Public */,
-      23,    3,  580,    2, 0x06 /* Public */,
-      24,    2,  587,    2, 0x06 /* Public */,
-      25,    2,  592,    2, 0x06 /* Public */,
-      26,    2,  597,    2, 0x06 /* Public */,
-      27,    2,  602,    2, 0x06 /* Public */,
-      28,    2,  607,    2, 0x06 /* Public */,
-      29,    2,  612,    2, 0x06 /* Public */,
-      30,    2,  617,    2, 0x06 /* Public */,
-      31,    2,  622,    2, 0x06 /* Public */,
-      32,    2,  627,    2, 0x06 /* Public */,
-      33,    2,  632,    2, 0x06 /* Public */,
-      34,    2,  637,    2, 0x06 /* Public */,
-      35,    2,  642,    2, 0x06 /* Public */,
-      36,    2,  647,    2, 0x06 /* Public */,
-      37,    2,  652,    2, 0x06 /* Public */,
-      38,    2,  657,    2, 0x06 /* Public */,
-      39,    2,  662,    2, 0x06 /* Public */,
-      40,    2,  667,    2, 0x06 /* Public */,
-      41,    2,  672,    2, 0x06 /* Public */,
-      42,    2,  677,    2, 0x06 /* Public */,
-      43,    2,  682,    2, 0x06 /* Public */,
-      44,    2,  687,    2, 0x06 /* Public */,
-      45,    2,  692,    2, 0x06 /* Public */,
-      46,    2,  697,    2, 0x06 /* Public */,
-      47,    2,  702,    2, 0x06 /* Public */,
-      48,    2,  707,    2, 0x06 /* Public */,
-      49,    2,  712,    2, 0x06 /* Public */,
-      50,    2,  717,    2, 0x06 /* Public */,
-      51,    2,  722,    2, 0x06 /* Public */,
-      52,    2,  727,    2, 0x06 /* Public */,
-      53,    2,  732,    2, 0x06 /* Public */,
-      54,    2,  737,    2, 0x06 /* Public */,
-      55,    2,  742,    2, 0x06 /* Public */,
-      56,    2,  747,    2, 0x06 /* Public */,
-      57,    2,  752,    2, 0x06 /* Public */,
-      58,    2,  757,    2, 0x06 /* Public */,
-      59,    2,  762,    2, 0x06 /* Public */,
-      60,    2,  767,    2, 0x06 /* Public */,
-      61,    2,  772,    2, 0x06 /* Public */,
-      62,    2,  777,    2, 0x06 /* Public */,
+       1,    3,  849,    2, 0x06 /* Public */,
+       6,    3,  856,    2, 0x06 /* Public */,
+       7,    3,  863,    2, 0x06 /* Public */,
+       8,    3,  870,    2, 0x06 /* Public */,
+       9,    3,  877,    2, 0x06 /* Public */,
+      10,    3,  884,    2, 0x06 /* Public */,
+      11,    3,  891,    2, 0x06 /* Public */,
+      12,    3,  898,    2, 0x06 /* Public */,
+      13,    3,  905,    2, 0x06 /* Public */,
+      14,    3,  912,    2, 0x06 /* Public */,
+      15,    3,  919,    2, 0x06 /* Public */,
+      16,    3,  926,    2, 0x06 /* Public */,
+      17,    3,  933,    2, 0x06 /* Public */,
+      18,    3,  940,    2, 0x06 /* Public */,
+      19,    3,  947,    2, 0x06 /* Public */,
+      20,    3,  954,    2, 0x06 /* Public */,
+      21,    3,  961,    2, 0x06 /* Public */,
+      22,    3,  968,    2, 0x06 /* Public */,
+      23,    3,  975,    2, 0x06 /* Public */,
+      24,    2,  982,    2, 0x06 /* Public */,
+      25,    2,  987,    2, 0x06 /* Public */,
+      26,    2,  992,    2, 0x06 /* Public */,
+      27,    2,  997,    2, 0x06 /* Public */,
+      28,    2, 1002,    2, 0x06 /* Public */,
+      29,    2, 1007,    2, 0x06 /* Public */,
+      30,    2, 1012,    2, 0x06 /* Public */,
+      31,    2, 1017,    2, 0x06 /* Public */,
+      32,    2, 1022,    2, 0x06 /* Public */,
+      33,    2, 1027,    2, 0x06 /* Public */,
+      34,    2, 1032,    2, 0x06 /* Public */,
+      35,    2, 1037,    2, 0x06 /* Public */,
+      36,    2, 1042,    2, 0x06 /* Public */,
+      37,    2, 1047,    2, 0x06 /* Public */,
+      38,    2, 1052,    2, 0x06 /* Public */,
+      39,    2, 1057,    2, 0x06 /* Public */,
+      40,    2, 1062,    2, 0x06 /* Public */,
+      41,    2, 1067,    2, 0x06 /* Public */,
+      42,    2, 1072,    2, 0x06 /* Public */,
+      43,    2, 1077,    2, 0x06 /* Public */,
+      44,    2, 1082,    2, 0x06 /* Public */,
+      45,    2, 1087,    2, 0x06 /* Public */,
+      46,    2, 1092,    2, 0x06 /* Public */,
+      47,    2, 1097,    2, 0x06 /* Public */,
+      48,    2, 1102,    2, 0x06 /* Public */,
+      49,    2, 1107,    2, 0x06 /* Public */,
+      50,    2, 1112,    2, 0x06 /* Public */,
+      51,    2, 1117,    2, 0x06 /* Public */,
+      52,    2, 1122,    2, 0x06 /* Public */,
+      53,    2, 1127,    2, 0x06 /* Public */,
+      54,    2, 1132,    2, 0x06 /* Public */,
+      55,    2, 1137,    2, 0x06 /* Public */,
+      56,    2, 1142,    2, 0x06 /* Public */,
+      57,    2, 1147,    2, 0x06 /* Public */,
+      58,    2, 1152,    2, 0x06 /* Public */,
+      59,    2, 1157,    2, 0x06 /* Public */,
+      60,    2, 1162,    2, 0x06 /* Public */,
+      61,    2, 1167,    2, 0x06 /* Public */,
+      62,    2, 1172,    2, 0x06 /* Public */,
+      63,    1, 1177,    2, 0x06 /* Public */,
+      64,    1, 1180,    2, 0x06 /* Public */,
+      66,    1, 1183,    2, 0x06 /* Public */,
+      67,    1, 1186,    2, 0x06 /* Public */,
+      68,    1, 1189,    2, 0x06 /* Public */,
+      69,    1, 1192,    2, 0x06 /* Public */,
+      70,    1, 1195,    2, 0x06 /* Public */,
+      71,    1, 1198,    2, 0x06 /* Public */,
+      72,    1, 1201,    2, 0x06 /* Public */,
+      73,    1, 1204,    2, 0x06 /* Public */,
+      74,    1, 1207,    2, 0x06 /* Public */,
+      75,    1, 1210,    2, 0x06 /* Public */,
+      76,    1, 1213,    2, 0x06 /* Public */,
+      77,    1, 1216,    2, 0x06 /* Public */,
+      78,    1, 1219,    2, 0x06 /* Public */,
+      79,    1, 1222,    2, 0x06 /* Public */,
+      80,    1, 1225,    2, 0x06 /* Public */,
+      81,    1, 1228,    2, 0x06 /* Public */,
+      82,    1, 1231,    2, 0x06 /* Public */,
+      83,    1, 1234,    2, 0x06 /* Public */,
+      84,    1, 1237,    2, 0x06 /* Public */,
+      85,    1, 1240,    2, 0x06 /* Public */,
+      86,    1, 1243,    2, 0x06 /* Public */,
+      87,    1, 1246,    2, 0x06 /* Public */,
+      88,    1, 1249,    2, 0x06 /* Public */,
+      89,    1, 1252,    2, 0x06 /* Public */,
+      90,    1, 1255,    2, 0x06 /* Public */,
+      91,    1, 1258,    2, 0x06 /* Public */,
+      92,    1, 1261,    2, 0x06 /* Public */,
+      93,    1, 1264,    2, 0x06 /* Public */,
+      94,    1, 1267,    2, 0x06 /* Public */,
+      95,    1, 1270,    2, 0x06 /* Public */,
+      97,    1, 1273,    2, 0x06 /* Public */,
+      98,    1, 1276,    2, 0x06 /* Public */,
+      99,    1, 1279,    2, 0x06 /* Public */,
+     100,    1, 1282,    2, 0x06 /* Public */,
+     101,    1, 1285,    2, 0x06 /* Public */,
+     102,    1, 1288,    2, 0x06 /* Public */,
+     103,    1, 1291,    2, 0x06 /* Public */,
+     104,    1, 1294,    2, 0x06 /* Public */,
+     105,    1, 1297,    2, 0x06 /* Public */,
+     106,    1, 1300,    2, 0x06 /* Public */,
+     107,    1, 1303,    2, 0x06 /* Public */,
+     108,    1, 1306,    2, 0x06 /* Public */,
+     109,    1, 1309,    2, 0x06 /* Public */,
+     110,    1, 1312,    2, 0x06 /* Public */,
+     111,    1, 1315,    2, 0x06 /* Public */,
+     112,    1, 1318,    2, 0x06 /* Public */,
+     113,    1, 1321,    2, 0x06 /* Public */,
+     114,    1, 1324,    2, 0x06 /* Public */,
+     115,    1, 1327,    2, 0x06 /* Public */,
+     116,    1, 1330,    2, 0x06 /* Public */,
+     117,    1, 1333,    2, 0x06 /* Public */,
+     118,    1, 1336,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      63,    1,  782,    2, 0x0a /* Public */,
-      64,    1,  785,    2, 0x0a /* Public */,
-      65,    1,  788,    2, 0x0a /* Public */,
-      66,    2,  791,    2, 0x0a /* Public */,
-      67,    2,  796,    2, 0x0a /* Public */,
-      68,    2,  801,    2, 0x0a /* Public */,
-      69,    2,  806,    2, 0x0a /* Public */,
-      70,    2,  811,    2, 0x0a /* Public */,
-      71,    2,  816,    2, 0x0a /* Public */,
-      72,    2,  821,    2, 0x0a /* Public */,
-      73,    2,  826,    2, 0x0a /* Public */,
-      74,    2,  831,    2, 0x0a /* Public */,
-      75,    2,  836,    2, 0x0a /* Public */,
-      76,    1,  841,    2, 0x0a /* Public */,
-      77,    1,  844,    2, 0x0a /* Public */,
-      78,    1,  847,    2, 0x0a /* Public */,
-      79,    1,  850,    2, 0x0a /* Public */,
-      80,    1,  853,    2, 0x0a /* Public */,
-      81,    1,  856,    2, 0x0a /* Public */,
-      82,    1,  859,    2, 0x0a /* Public */,
-      83,    1,  862,    2, 0x0a /* Public */,
-      84,    1,  865,    2, 0x0a /* Public */,
-      85,    1,  868,    2, 0x0a /* Public */,
-      86,    1,  871,    2, 0x0a /* Public */,
-      87,    1,  874,    2, 0x0a /* Public */,
-      88,    1,  877,    2, 0x0a /* Public */,
-      89,    1,  880,    2, 0x0a /* Public */,
-      90,    1,  883,    2, 0x0a /* Public */,
-      91,    1,  886,    2, 0x0a /* Public */,
-      92,    1,  889,    2, 0x0a /* Public */,
+     119,    1, 1339,    2, 0x0a /* Public */,
+     120,    1, 1342,    2, 0x0a /* Public */,
+     121,    1, 1345,    2, 0x0a /* Public */,
+     122,    2, 1348,    2, 0x0a /* Public */,
+     123,    2, 1353,    2, 0x0a /* Public */,
+     124,    2, 1358,    2, 0x0a /* Public */,
+     125,    2, 1363,    2, 0x0a /* Public */,
+     126,    2, 1368,    2, 0x0a /* Public */,
+     127,    2, 1373,    2, 0x0a /* Public */,
+     128,    2, 1378,    2, 0x0a /* Public */,
+     129,    2, 1383,    2, 0x0a /* Public */,
+     130,    2, 1388,    2, 0x0a /* Public */,
+     131,    2, 1393,    2, 0x0a /* Public */,
+     132,    1, 1398,    2, 0x0a /* Public */,
+     133,    1, 1401,    2, 0x0a /* Public */,
+     134,    1, 1404,    2, 0x0a /* Public */,
+     135,    1, 1407,    2, 0x0a /* Public */,
+     136,    1, 1410,    2, 0x0a /* Public */,
+     137,    1, 1413,    2, 0x0a /* Public */,
+     138,    1, 1416,    2, 0x0a /* Public */,
+     139,    1, 1419,    2, 0x0a /* Public */,
+     140,    1, 1422,    2, 0x0a /* Public */,
+     141,    1, 1425,    2, 0x0a /* Public */,
+     142,    1, 1428,    2, 0x0a /* Public */,
+     143,    1, 1431,    2, 0x0a /* Public */,
+     144,    1, 1434,    2, 0x0a /* Public */,
+     145,    1, 1437,    2, 0x0a /* Public */,
+     146,    1, 1440,    2, 0x0a /* Public */,
+     147,    1, 1443,    2, 0x0a /* Public */,
+     148,    1, 1446,    2, 0x0a /* Public */,
+     149,    0, 1449,    2, 0x0a /* Public */,
+     150,    0, 1450,    2, 0x0a /* Public */,
+     151,    0, 1451,    2, 0x0a /* Public */,
+     152,    0, 1452,    2, 0x0a /* Public */,
+     153,    0, 1453,    2, 0x0a /* Public */,
+     154,    0, 1454,    2, 0x0a /* Public */,
+     155,    0, 1455,    2, 0x0a /* Public */,
+     156,    0, 1456,    2, 0x0a /* Public */,
+     157,    0, 1457,    2, 0x0a /* Public */,
+     158,    0, 1458,    2, 0x0a /* Public */,
+     159,    0, 1459,    2, 0x0a /* Public */,
+     160,    0, 1460,    2, 0x0a /* Public */,
+     161,    0, 1461,    2, 0x0a /* Public */,
+     162,    0, 1462,    2, 0x0a /* Public */,
+     163,    0, 1463,    2, 0x0a /* Public */,
+     164,    0, 1464,    2, 0x0a /* Public */,
+     165,    0, 1465,    2, 0x0a /* Public */,
+     166,    0, 1466,    2, 0x0a /* Public */,
+     167,    0, 1467,    2, 0x0a /* Public */,
+     168,    0, 1468,    2, 0x0a /* Public */,
+     169,    0, 1469,    2, 0x0a /* Public */,
+     170,    0, 1470,    2, 0x0a /* Public */,
+     171,    0, 1471,    2, 0x0a /* Public */,
+     172,    0, 1472,    2, 0x0a /* Public */,
+     173,    0, 1473,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::UShort, QMetaType::UChar, QMetaType::Short,    3,    4,    5,
@@ -382,6 +621,60 @@ static const uint qt_meta_data_Emulator[] = {
     QMetaType::Void, QMetaType::UShort, QMetaType::UInt,    3,    5,
     QMetaType::Void, QMetaType::UShort, QMetaType::UInt,    3,    5,
     QMetaType::Void, QMetaType::UShort, QMetaType::UShort,    3,    5,
+    QMetaType::Void, QMetaType::UChar,    5,
+    QMetaType::Void, QMetaType::UChar,   65,
+    QMetaType::Void, QMetaType::UChar,   65,
+    QMetaType::Void, QMetaType::UChar,   65,
+    QMetaType::Void, QMetaType::UChar,   65,
+    QMetaType::Void, QMetaType::UChar,   65,
+    QMetaType::Void, QMetaType::UChar,   65,
+    QMetaType::Void, QMetaType::UChar,   65,
+    QMetaType::Void, QMetaType::UChar,   65,
+    QMetaType::Void, QMetaType::Short,    5,
+    QMetaType::Void, QMetaType::Short,    5,
+    QMetaType::Void, QMetaType::Short,    5,
+    QMetaType::Void, QMetaType::Short,    5,
+    QMetaType::Void, QMetaType::UShort,    5,
+    QMetaType::Void, QMetaType::UShort,    5,
+    QMetaType::Void, QMetaType::UShort,    5,
+    QMetaType::Void, QMetaType::UShort,    5,
+    QMetaType::Void, QMetaType::UShort,    5,
+    QMetaType::Void, QMetaType::UShort,    5,
+    QMetaType::Void, QMetaType::UShort,    5,
+    QMetaType::Void, QMetaType::UShort,    5,
+    QMetaType::Void, QMetaType::UInt,    5,
+    QMetaType::Void, QMetaType::UInt,    5,
+    QMetaType::Void, QMetaType::UInt,    5,
+    QMetaType::Void, QMetaType::UInt,    5,
+    QMetaType::Void, QMetaType::UInt,    5,
+    QMetaType::Void, QMetaType::UInt,    5,
+    QMetaType::Void, QMetaType::UInt,    5,
+    QMetaType::Void, QMetaType::UInt,    5,
+    QMetaType::Void, QMetaType::UInt,    5,
+    QMetaType::Void, QMetaType::UInt,    5,
+    QMetaType::Void, QMetaType::QString,   96,
+    QMetaType::Void, QMetaType::UShort,    5,
+    QMetaType::Void, QMetaType::UInt,    5,
+    QMetaType::Void, QMetaType::UShort,    5,
+    QMetaType::Void, QMetaType::UInt,    5,
+    QMetaType::Void, QMetaType::UShort,    5,
+    QMetaType::Void, QMetaType::UInt,    5,
+    QMetaType::Void, QMetaType::UShort,    5,
+    QMetaType::Void, QMetaType::UInt,    5,
+    QMetaType::Void, QMetaType::UShort,    5,
+    QMetaType::Void, QMetaType::UInt,    5,
+    QMetaType::Void, QMetaType::UChar,   65,
+    QMetaType::Void, QMetaType::UChar,   65,
+    QMetaType::Void, QMetaType::UChar,   65,
+    QMetaType::Void, QMetaType::UChar,   65,
+    QMetaType::Void, QMetaType::UChar,   65,
+    QMetaType::Void, QMetaType::UChar,   65,
+    QMetaType::Void, QMetaType::UInt,    5,
+    QMetaType::Void, QMetaType::Short,    5,
+    QMetaType::Void, QMetaType::UInt,    5,
+    QMetaType::Void, QMetaType::UInt,    5,
+    QMetaType::Void, QMetaType::UShort,    5,
+    QMetaType::Void, QMetaType::UChar,    5,
 
  // slots: parameters
     QMetaType::Void, QMetaType::UShort,    3,
@@ -414,6 +707,31 @@ static const uint qt_meta_data_Emulator[] = {
     QMetaType::Void, QMetaType::UShort,    3,
     QMetaType::Void, QMetaType::UShort,    3,
     QMetaType::Void, QMetaType::UShort,    3,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -482,36 +800,115 @@ void Emulator::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         case 55: _t->set_cmnd_SEL_LAST_HIT_DROPPED_ORBIT_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
         case 56: _t->set_cmnd_SEL_HITS_DROPPED_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint32(*)>(_a[2]))); break;
         case 57: _t->set_cmnd_READOUT_RATE_requested((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 58: _t->update_request_act_OR_GATE((*reinterpret_cast< quint16(*)>(_a[1]))); break;
-        case 59: _t->update_request_act_CFD_SATR((*reinterpret_cast< quint16(*)>(_a[1]))); break;
-        case 60: _t->update_request_act_CH_MASK((*reinterpret_cast< quint16(*)>(_a[1]))); break;
-        case 61: _t->update_request_act_ADC_ZERO((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 62: _t->update_request_act_ADC_DELAY((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 63: _t->update_request_act_ADC0_OFFSET((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 64: _t->update_request_act_ADC1_OFFSET((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 65: _t->update_request_act_ADC0_RANGE((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 66: _t->update_request_act_ADC1_RANGE((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 67: _t->update_request_act_TIME_ALIGN((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 68: _t->update_request_act_CFD_THRESHOLD((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 69: _t->update_request_act_CFD_ZERO((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 70: _t->update_request_act_THRESHOLD_CALIBR((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
-        case 71: _t->update_request_act_TG_PATTERN_1((*reinterpret_cast< quint16(*)>(_a[1]))); break;
-        case 72: _t->update_request_act_TG_PATTERN_0((*reinterpret_cast< quint16(*)>(_a[1]))); break;
-        case 73: _t->update_request_act_TG_CONT_VALUE((*reinterpret_cast< quint16(*)>(_a[1]))); break;
-        case 74: _t->update_request_act_TG_BUNCH_FREQ((*reinterpret_cast< quint16(*)>(_a[1]))); break;
-        case 75: _t->update_request_act_TG_FREQ_OFFSET((*reinterpret_cast< quint16(*)>(_a[1]))); break;
-        case 76: _t->update_request_act_DG_TRG_RESPOND_MASK((*reinterpret_cast< quint16(*)>(_a[1]))); break;
-        case 77: _t->update_request_act_DG_BUNCH_PATTERN((*reinterpret_cast< quint16(*)>(_a[1]))); break;
-        case 78: _t->update_request_act_DG_BUNCH_FREQ((*reinterpret_cast< quint16(*)>(_a[1]))); break;
-        case 79: _t->update_request_act_DG_FREQ_OFFSET((*reinterpret_cast< quint16(*)>(_a[1]))); break;
-        case 80: _t->update_request_act_RDH_FEE_ID((*reinterpret_cast< quint16(*)>(_a[1]))); break;
-        case 81: _t->update_request_act_RDH_PAR((*reinterpret_cast< quint16(*)>(_a[1]))); break;
-        case 82: _t->update_request_act_RDH_MAX_PAYLOAD((*reinterpret_cast< quint16(*)>(_a[1]))); break;
-        case 83: _t->update_request_act_RDH_DET_FIELD((*reinterpret_cast< quint16(*)>(_a[1]))); break;
-        case 84: _t->update_request_act_CRU_TRG_COMPARE_DELAY((*reinterpret_cast< quint16(*)>(_a[1]))); break;
-        case 85: _t->update_request_act_BCID_DELAY((*reinterpret_cast< quint16(*)>(_a[1]))); break;
-        case 86: _t->update_request_act_DATA_SEL_TRG_MASK((*reinterpret_cast< quint16(*)>(_a[1]))); break;
-        case 87: _t->update_request_act_AlltoPM((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 58: _t->set_cmnd_COUNTERS_UPD_RATE_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
+        case 59: _t->set_cmnd_EXTENDED_READOUT_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
+        case 60: _t->set_cmnd_SC_SUM_SIDES_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
+        case 61: _t->set_cmnd_C_SUM_SIDES_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
+        case 62: _t->set_cmnd_ADD_C_DELAY_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
+        case 63: _t->set_cmnd_RES_SW_1_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
+        case 64: _t->set_cmnd_RES_SW_2_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
+        case 65: _t->set_cmnd_RES_SW_3_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
+        case 66: _t->set_cmnd_RES_SW_4_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
+        case 67: _t->set_cmnd_DELAY_A_requested((*reinterpret_cast< qint16(*)>(_a[1]))); break;
+        case 68: _t->set_cmnd_DELAY_C_requested((*reinterpret_cast< qint16(*)>(_a[1]))); break;
+        case 69: _t->set_cmnd_VTIME_LOW_requested((*reinterpret_cast< qint16(*)>(_a[1]))); break;
+        case 70: _t->set_cmnd_VTIME_HIGH_requested((*reinterpret_cast< qint16(*)>(_a[1]))); break;
+        case 71: _t->set_cmnd_SC_LEVEL_A_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 72: _t->set_cmnd_SC_LEVEL_C_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 73: _t->set_cmnd_C_LEVEL_A_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 74: _t->set_cmnd_C_LEVEL_C_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 75: _t->set_cmnd_CH_MASK_A_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 76: _t->set_cmnd_CH_MASK_C_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 77: _t->set_cmnd_SIDE_A_STATUS_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 78: _t->set_cmnd_SIDE_C_STATUS_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 79: _t->set_cmnd_CNT_OR_A_requested((*reinterpret_cast< quint32(*)>(_a[1]))); break;
+        case 80: _t->set_cmnd_CNT_OR_A_RATE_requested((*reinterpret_cast< quint32(*)>(_a[1]))); break;
+        case 81: _t->set_cmnd_CNT_OR_C_requested((*reinterpret_cast< quint32(*)>(_a[1]))); break;
+        case 82: _t->set_cmnd_CNT_OR_C_RATE_requested((*reinterpret_cast< quint32(*)>(_a[1]))); break;
+        case 83: _t->set_cmnd_CNT_SC_requested((*reinterpret_cast< quint32(*)>(_a[1]))); break;
+        case 84: _t->set_cmnd_CNT_SC_RATE_requested((*reinterpret_cast< quint32(*)>(_a[1]))); break;
+        case 85: _t->set_cmnd_CNT_C_requested((*reinterpret_cast< quint32(*)>(_a[1]))); break;
+        case 86: _t->set_cmnd_CNT_C_RATE_requested((*reinterpret_cast< quint32(*)>(_a[1]))); break;
+        case 87: _t->set_cmnd_CNT_V_requested((*reinterpret_cast< quint32(*)>(_a[1]))); break;
+        case 88: _t->set_cmnd_CNT_V_RATE_requested((*reinterpret_cast< quint32(*)>(_a[1]))); break;
+        case 89: _t->set_cmnd_STATUS_OPTIONCODE_requested((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 90: _t->set_cmnd_OR_A_SIGN_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 91: _t->set_cmnd_OR_A_RATE_requested((*reinterpret_cast< quint32(*)>(_a[1]))); break;
+        case 92: _t->set_cmnd_OR_C_SIGN_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 93: _t->set_cmnd_OR_C_RATE_requested((*reinterpret_cast< quint32(*)>(_a[1]))); break;
+        case 94: _t->set_cmnd_SC_SIGN_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 95: _t->set_cmnd_SC_RATE_requested((*reinterpret_cast< quint32(*)>(_a[1]))); break;
+        case 96: _t->set_cmnd_C_SIGN_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 97: _t->set_cmnd_C_RATE_requested((*reinterpret_cast< quint32(*)>(_a[1]))); break;
+        case 98: _t->set_cmnd_V_SIGN_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 99: _t->set_cmnd_V_RATE_requested((*reinterpret_cast< quint32(*)>(_a[1]))); break;
+        case 100: _t->set_cmnd_OR_A_ENABLED_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
+        case 101: _t->set_cmnd_OR_C_ENABLED_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
+        case 102: _t->set_cmnd_SC_ENABLED_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
+        case 103: _t->set_cmnd_C_ENABLED_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
+        case 104: _t->set_cmnd_V_ENABLED_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
+        case 105: _t->set_cmnd_LASER_ON_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
+        case 106: _t->set_cmnd_LASER_DIV_requested((*reinterpret_cast< quint32(*)>(_a[1]))); break;
+        case 107: _t->set_cmnd_LASER_DELAY_requested((*reinterpret_cast< qint16(*)>(_a[1]))); break;
+        case 108: _t->set_cmnd_LASER_PATTERN_1_requested((*reinterpret_cast< quint32(*)>(_a[1]))); break;
+        case 109: _t->set_cmnd_LASER_PATTERN_0_requested((*reinterpret_cast< quint32(*)>(_a[1]))); break;
+        case 110: _t->set_cmnd_ATTEN_VALUE_requested((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 111: _t->set_cmnd_ATTEN_STATUS_requested((*reinterpret_cast< quint8(*)>(_a[1]))); break;
+        case 112: _t->update_request_act_OR_GATE((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 113: _t->update_request_act_CFD_SATR((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 114: _t->update_request_act_CH_MASK((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 115: _t->update_request_act_ADC_ZERO((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 116: _t->update_request_act_ADC_DELAY((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 117: _t->update_request_act_ADC0_OFFSET((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 118: _t->update_request_act_ADC1_OFFSET((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 119: _t->update_request_act_ADC0_RANGE((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 120: _t->update_request_act_ADC1_RANGE((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 121: _t->update_request_act_TIME_ALIGN((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 122: _t->update_request_act_CFD_THRESHOLD((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 123: _t->update_request_act_CFD_ZERO((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 124: _t->update_request_act_THRESHOLD_CALIBR((*reinterpret_cast< quint16(*)>(_a[1])),(*reinterpret_cast< quint8(*)>(_a[2]))); break;
+        case 125: _t->update_request_act_TG_PATTERN_1((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 126: _t->update_request_act_TG_PATTERN_0((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 127: _t->update_request_act_TG_CONT_VALUE((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 128: _t->update_request_act_TG_BUNCH_FREQ((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 129: _t->update_request_act_TG_FREQ_OFFSET((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 130: _t->update_request_act_DG_TRG_RESPOND_MASK((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 131: _t->update_request_act_DG_BUNCH_PATTERN((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 132: _t->update_request_act_DG_BUNCH_FREQ((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 133: _t->update_request_act_DG_FREQ_OFFSET((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 134: _t->update_request_act_RDH_FEE_ID((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 135: _t->update_request_act_RDH_PAR((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 136: _t->update_request_act_RDH_MAX_PAYLOAD((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 137: _t->update_request_act_RDH_DET_FIELD((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 138: _t->update_request_act_CRU_TRG_COMPARE_DELAY((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 139: _t->update_request_act_BCID_DELAY((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 140: _t->update_request_act_DATA_SEL_TRG_MASK((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 141: _t->update_request_act_AlltoPM((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 142: _t->update_request_act_DELAY_A(); break;
+        case 143: _t->update_request_act_DELAY_C(); break;
+        case 144: _t->update_request_act_VTIME_LOW(); break;
+        case 145: _t->update_request_act_VTIME_HIGH(); break;
+        case 146: _t->update_request_act_SC_LEVEL_A(); break;
+        case 147: _t->update_request_act_SC_LEVEL_C(); break;
+        case 148: _t->update_request_act_C_LEVEL_A(); break;
+        case 149: _t->update_request_act_C_LEVEL_C(); break;
+        case 150: _t->update_request_act_CH_MASK_A(); break;
+        case 151: _t->update_request_act_CH_MASK_C(); break;
+        case 152: _t->update_request_act_OR_A_SIGN(); break;
+        case 153: _t->update_request_act_OR_A_RATE(); break;
+        case 154: _t->update_request_act_OR_C_SIGN(); break;
+        case 155: _t->update_request_act_OR_C_RATE(); break;
+        case 156: _t->update_request_act_SC_SIGN(); break;
+        case 157: _t->update_request_act_SC_RATE(); break;
+        case 158: _t->update_request_act_C_SIGN(); break;
+        case 159: _t->update_request_act_C_RATE(); break;
+        case 160: _t->update_request_act_V_SIGN(); break;
+        case 161: _t->update_request_act_V_RATE(); break;
+        case 162: _t->update_request_act_LASER_DIV(); break;
+        case 163: _t->update_request_act_LASER_DELAY(); break;
+        case 164: _t->update_request_act_LASER_PATTERN_1(); break;
+        case 165: _t->update_request_act_LASER_PATTERN_0(); break;
+        case 166: _t->update_request_act_ATTEN_VALUE(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -922,6 +1319,384 @@ void Emulator::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
                 return;
             }
         }
+        {
+            using _t = void (Emulator::*)(quint8 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_COUNTERS_UPD_RATE_requested)) {
+                *result = 58;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint8 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_EXTENDED_READOUT_requested)) {
+                *result = 59;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint8 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_SC_SUM_SIDES_requested)) {
+                *result = 60;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint8 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_C_SUM_SIDES_requested)) {
+                *result = 61;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint8 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_ADD_C_DELAY_requested)) {
+                *result = 62;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint8 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_RES_SW_1_requested)) {
+                *result = 63;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint8 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_RES_SW_2_requested)) {
+                *result = 64;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint8 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_RES_SW_3_requested)) {
+                *result = 65;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint8 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_RES_SW_4_requested)) {
+                *result = 66;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(qint16 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_DELAY_A_requested)) {
+                *result = 67;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(qint16 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_DELAY_C_requested)) {
+                *result = 68;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(qint16 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_VTIME_LOW_requested)) {
+                *result = 69;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(qint16 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_VTIME_HIGH_requested)) {
+                *result = 70;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint16 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_SC_LEVEL_A_requested)) {
+                *result = 71;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint16 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_SC_LEVEL_C_requested)) {
+                *result = 72;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint16 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_C_LEVEL_A_requested)) {
+                *result = 73;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint16 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_C_LEVEL_C_requested)) {
+                *result = 74;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint16 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_CH_MASK_A_requested)) {
+                *result = 75;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint16 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_CH_MASK_C_requested)) {
+                *result = 76;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint16 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_SIDE_A_STATUS_requested)) {
+                *result = 77;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint16 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_SIDE_C_STATUS_requested)) {
+                *result = 78;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint32 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_CNT_OR_A_requested)) {
+                *result = 79;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint32 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_CNT_OR_A_RATE_requested)) {
+                *result = 80;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint32 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_CNT_OR_C_requested)) {
+                *result = 81;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint32 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_CNT_OR_C_RATE_requested)) {
+                *result = 82;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint32 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_CNT_SC_requested)) {
+                *result = 83;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint32 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_CNT_SC_RATE_requested)) {
+                *result = 84;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint32 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_CNT_C_requested)) {
+                *result = 85;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint32 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_CNT_C_RATE_requested)) {
+                *result = 86;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint32 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_CNT_V_requested)) {
+                *result = 87;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint32 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_CNT_V_RATE_requested)) {
+                *result = 88;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(QString );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_STATUS_OPTIONCODE_requested)) {
+                *result = 89;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint16 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_OR_A_SIGN_requested)) {
+                *result = 90;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint32 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_OR_A_RATE_requested)) {
+                *result = 91;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint16 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_OR_C_SIGN_requested)) {
+                *result = 92;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint32 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_OR_C_RATE_requested)) {
+                *result = 93;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint16 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_SC_SIGN_requested)) {
+                *result = 94;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint32 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_SC_RATE_requested)) {
+                *result = 95;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint16 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_C_SIGN_requested)) {
+                *result = 96;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint32 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_C_RATE_requested)) {
+                *result = 97;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint16 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_V_SIGN_requested)) {
+                *result = 98;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint32 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_V_RATE_requested)) {
+                *result = 99;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint8 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_OR_A_ENABLED_requested)) {
+                *result = 100;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint8 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_OR_C_ENABLED_requested)) {
+                *result = 101;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint8 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_SC_ENABLED_requested)) {
+                *result = 102;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint8 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_C_ENABLED_requested)) {
+                *result = 103;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint8 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_V_ENABLED_requested)) {
+                *result = 104;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint8 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_LASER_ON_requested)) {
+                *result = 105;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint32 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_LASER_DIV_requested)) {
+                *result = 106;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(qint16 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_LASER_DELAY_requested)) {
+                *result = 107;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint32 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_LASER_PATTERN_1_requested)) {
+                *result = 108;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint32 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_LASER_PATTERN_0_requested)) {
+                *result = 109;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint16 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_ATTEN_VALUE_requested)) {
+                *result = 110;
+                return;
+            }
+        }
+        {
+            using _t = void (Emulator::*)(quint8 );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Emulator::set_cmnd_ATTEN_STATUS_requested)) {
+                *result = 111;
+                return;
+            }
+        }
     }
 }
 
@@ -954,13 +1729,13 @@ int Emulator::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 88)
+        if (_id < 167)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 88;
+        _id -= 167;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 88)
+        if (_id < 167)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 88;
+        _id -= 167;
     }
     return _id;
 }
@@ -1369,6 +2144,384 @@ void Emulator::set_cmnd_READOUT_RATE_requested(quint16 _t1, quint16 _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 57, _a);
+}
+
+// SIGNAL 58
+void Emulator::set_cmnd_COUNTERS_UPD_RATE_requested(quint8 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 58, _a);
+}
+
+// SIGNAL 59
+void Emulator::set_cmnd_EXTENDED_READOUT_requested(quint8 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 59, _a);
+}
+
+// SIGNAL 60
+void Emulator::set_cmnd_SC_SUM_SIDES_requested(quint8 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 60, _a);
+}
+
+// SIGNAL 61
+void Emulator::set_cmnd_C_SUM_SIDES_requested(quint8 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 61, _a);
+}
+
+// SIGNAL 62
+void Emulator::set_cmnd_ADD_C_DELAY_requested(quint8 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 62, _a);
+}
+
+// SIGNAL 63
+void Emulator::set_cmnd_RES_SW_1_requested(quint8 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 63, _a);
+}
+
+// SIGNAL 64
+void Emulator::set_cmnd_RES_SW_2_requested(quint8 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 64, _a);
+}
+
+// SIGNAL 65
+void Emulator::set_cmnd_RES_SW_3_requested(quint8 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 65, _a);
+}
+
+// SIGNAL 66
+void Emulator::set_cmnd_RES_SW_4_requested(quint8 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 66, _a);
+}
+
+// SIGNAL 67
+void Emulator::set_cmnd_DELAY_A_requested(qint16 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 67, _a);
+}
+
+// SIGNAL 68
+void Emulator::set_cmnd_DELAY_C_requested(qint16 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 68, _a);
+}
+
+// SIGNAL 69
+void Emulator::set_cmnd_VTIME_LOW_requested(qint16 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 69, _a);
+}
+
+// SIGNAL 70
+void Emulator::set_cmnd_VTIME_HIGH_requested(qint16 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 70, _a);
+}
+
+// SIGNAL 71
+void Emulator::set_cmnd_SC_LEVEL_A_requested(quint16 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 71, _a);
+}
+
+// SIGNAL 72
+void Emulator::set_cmnd_SC_LEVEL_C_requested(quint16 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 72, _a);
+}
+
+// SIGNAL 73
+void Emulator::set_cmnd_C_LEVEL_A_requested(quint16 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 73, _a);
+}
+
+// SIGNAL 74
+void Emulator::set_cmnd_C_LEVEL_C_requested(quint16 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 74, _a);
+}
+
+// SIGNAL 75
+void Emulator::set_cmnd_CH_MASK_A_requested(quint16 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 75, _a);
+}
+
+// SIGNAL 76
+void Emulator::set_cmnd_CH_MASK_C_requested(quint16 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 76, _a);
+}
+
+// SIGNAL 77
+void Emulator::set_cmnd_SIDE_A_STATUS_requested(quint16 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 77, _a);
+}
+
+// SIGNAL 78
+void Emulator::set_cmnd_SIDE_C_STATUS_requested(quint16 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 78, _a);
+}
+
+// SIGNAL 79
+void Emulator::set_cmnd_CNT_OR_A_requested(quint32 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 79, _a);
+}
+
+// SIGNAL 80
+void Emulator::set_cmnd_CNT_OR_A_RATE_requested(quint32 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 80, _a);
+}
+
+// SIGNAL 81
+void Emulator::set_cmnd_CNT_OR_C_requested(quint32 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 81, _a);
+}
+
+// SIGNAL 82
+void Emulator::set_cmnd_CNT_OR_C_RATE_requested(quint32 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 82, _a);
+}
+
+// SIGNAL 83
+void Emulator::set_cmnd_CNT_SC_requested(quint32 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 83, _a);
+}
+
+// SIGNAL 84
+void Emulator::set_cmnd_CNT_SC_RATE_requested(quint32 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 84, _a);
+}
+
+// SIGNAL 85
+void Emulator::set_cmnd_CNT_C_requested(quint32 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 85, _a);
+}
+
+// SIGNAL 86
+void Emulator::set_cmnd_CNT_C_RATE_requested(quint32 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 86, _a);
+}
+
+// SIGNAL 87
+void Emulator::set_cmnd_CNT_V_requested(quint32 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 87, _a);
+}
+
+// SIGNAL 88
+void Emulator::set_cmnd_CNT_V_RATE_requested(quint32 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 88, _a);
+}
+
+// SIGNAL 89
+void Emulator::set_cmnd_STATUS_OPTIONCODE_requested(QString _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 89, _a);
+}
+
+// SIGNAL 90
+void Emulator::set_cmnd_OR_A_SIGN_requested(quint16 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 90, _a);
+}
+
+// SIGNAL 91
+void Emulator::set_cmnd_OR_A_RATE_requested(quint32 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 91, _a);
+}
+
+// SIGNAL 92
+void Emulator::set_cmnd_OR_C_SIGN_requested(quint16 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 92, _a);
+}
+
+// SIGNAL 93
+void Emulator::set_cmnd_OR_C_RATE_requested(quint32 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 93, _a);
+}
+
+// SIGNAL 94
+void Emulator::set_cmnd_SC_SIGN_requested(quint16 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 94, _a);
+}
+
+// SIGNAL 95
+void Emulator::set_cmnd_SC_RATE_requested(quint32 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 95, _a);
+}
+
+// SIGNAL 96
+void Emulator::set_cmnd_C_SIGN_requested(quint16 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 96, _a);
+}
+
+// SIGNAL 97
+void Emulator::set_cmnd_C_RATE_requested(quint32 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 97, _a);
+}
+
+// SIGNAL 98
+void Emulator::set_cmnd_V_SIGN_requested(quint16 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 98, _a);
+}
+
+// SIGNAL 99
+void Emulator::set_cmnd_V_RATE_requested(quint32 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 99, _a);
+}
+
+// SIGNAL 100
+void Emulator::set_cmnd_OR_A_ENABLED_requested(quint8 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 100, _a);
+}
+
+// SIGNAL 101
+void Emulator::set_cmnd_OR_C_ENABLED_requested(quint8 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 101, _a);
+}
+
+// SIGNAL 102
+void Emulator::set_cmnd_SC_ENABLED_requested(quint8 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 102, _a);
+}
+
+// SIGNAL 103
+void Emulator::set_cmnd_C_ENABLED_requested(quint8 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 103, _a);
+}
+
+// SIGNAL 104
+void Emulator::set_cmnd_V_ENABLED_requested(quint8 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 104, _a);
+}
+
+// SIGNAL 105
+void Emulator::set_cmnd_LASER_ON_requested(quint8 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 105, _a);
+}
+
+// SIGNAL 106
+void Emulator::set_cmnd_LASER_DIV_requested(quint32 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 106, _a);
+}
+
+// SIGNAL 107
+void Emulator::set_cmnd_LASER_DELAY_requested(qint16 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 107, _a);
+}
+
+// SIGNAL 108
+void Emulator::set_cmnd_LASER_PATTERN_1_requested(quint32 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 108, _a);
+}
+
+// SIGNAL 109
+void Emulator::set_cmnd_LASER_PATTERN_0_requested(quint32 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 109, _a);
+}
+
+// SIGNAL 110
+void Emulator::set_cmnd_ATTEN_VALUE_requested(quint16 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 110, _a);
+}
+
+// SIGNAL 111
+void Emulator::set_cmnd_ATTEN_STATUS_requested(quint8 _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 111, _a);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

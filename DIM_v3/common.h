@@ -20,12 +20,19 @@ template <class T>
 using pmch_pValSignal = void(MyDimServer::*)(quint16,quint8,T);
 using pmch_pNonValSignal = void(MyDimServer::*)(quint16,quint8);
 
+template <class T>
+using tcm_pValSignal = void(MyDimServer::*)(T);
+using tcm_pNonValSignal = void(MyDimServer::*)();
+
+template <class T, class Y>
+using pTwoValSignal = void(MyDimServer::*)(T,Y);
+
 static QTextStream cout(stdout);
 static QTextStream cin(stdin);
 static QTextStream cerr(stderr);
 
-static QFile DimServicesFile("ServicesList_v1_0.txt");
-static QFile DimCommandsFile("CommandsList_v1_0.txt");
+extern QFile DimServicesFile;
+extern QFile DimCommandsFile;
 
 //static QTextStream outDSs;
 //static QTextStream outDCs;
@@ -63,48 +70,67 @@ pmch_pNonValSignal getPMCHNonValPointerToSignal(QString PARname);
 
 
 
+template<class T>
+QHash<QString,tcm_pValSignal<T>> TCMValHash;
+extern void fillTCMValHash();
+template<class T>
+tcm_pValSignal<T> getTCMValPointerToSignal(QString PARname){
+    if(TCMValHash<T>[PARname] == nullptr) qDebug() << "Can't find" << PARname << "in TCMValHash";
+    return TCMValHash<T>[PARname];
+};
+
+extern QHash<QString,tcm_pNonValSignal> TCMNonValHash;
+extern void fillTCMNonValHash();
+tcm_pNonValSignal getTCMNonValPointerToSignal(QString PARname);
+
+
 const QMap<quint16,QString> DIM_name{
-                                        {0x0000,"FT0/TCM"},
-                                        {0x00A0,"FT0/PMA0"},
-                                        {0x00A1,"FT0/PMA1"},
-                                        {0x00A2,"FT0/PMA2"},
-                                        {0x00A3,"FT0/PMA3"},
-                                        {0x00A4,"FT0/PMA4"},
-                                        {0x00A5,"FT0/PMA5"},
-                                        {0x00A6,"FT0/PMA6"},
-                                        {0x00A7,"FT0/PMA7"},
-                                        {0x00C0,"FT0/PMC0"},
-                                        {0x00C1,"FT0/PMC1"},
-                                        {0x00C2,"FT0/PMC2"},
-                                        {0x00C3,"FT0/PMC3"},
-                                        {0x00C4,"FT0/PMC4"},
-                                        {0x00C5,"FT0/PMC5"},
-                                        {0x00C6,"FT0/PMC6"},
-                                        {0x00C7,"FT0/PMC7"},
-                                        {0x00C8,"FT0/PMC8"},
-                                        {0x00C9,"FT0/PMC9"}
+                                        {0xF000,"FT0/TCM"},
+                                        {0xF0A0,"FT0/PMA0"},
+                                        {0xF0A1,"FT0/PMA1"},
+                                        {0xF0A2,"FT0/PMA2"},
+                                        {0xF0A3,"FT0/PMA3"},
+                                        {0xF0A4,"FT0/PMA4"},
+                                        {0xF0A5,"FT0/PMA5"},
+                                        {0xF0A6,"FT0/PMA6"},
+                                        {0xF0A7,"FT0/PMA7"},
+                                        {0xF0C0,"FT0/PMC0"},
+                                        {0xF0C1,"FT0/PMC1"},
+                                        {0xF0C2,"FT0/PMC2"},
+                                        {0xF0C3,"FT0/PMC3"},
+                                        {0xF0C4,"FT0/PMC4"},
+                                        {0xF0C5,"FT0/PMC5"},
+                                        {0xF0C6,"FT0/PMC6"},
+                                        {0xF0C7,"FT0/PMC7"},
+                                        {0xF0C8,"FT0/PMC8"},
+                                        {0xF0C9,"FT0/PMC9"}
                                     };
 
-const QMap<quint8,quint16> FT0_FEE_ID{  {0,0x0000},
-                                        {1,0x00A0},
-                                        {2,0x00A1},
-                                        {3,0x00A2},
-                                        {4,0x00A3},
-                                        {5,0x00A4},
-                                        {6,0x00A5},
-                                        {7,0x00A6},
-                                        {8,0x00A7},
-                                        {9,0x00C0},
-                                        {10,0x00C1},
-                                        {11,0x00C2},
-                                        {12,0x00C3},
-                                        {13,0x00C4},
-                                        {14,0x00C5},
-                                        {15,0x00C6},
-                                        {16,0x00C7},
-                                        {17,0x00C8},
-                                        {18,0x00C9}
+const QMap<quint8,quint16> FT0_FEE_ID{  {0,0xF000},
+                                        {1,0xF0A0},
+                                        {2,0xF0A1},
+                                        {3,0xF0A2},
+                                        {4,0xF0A3},
+                                        {5,0xF0A4},
+                                        {6,0xF0A5},
+                                        {7,0xF0A6},
+                                        {8,0xF0A7},
+                                        {9,0xF0C0},
+                                        {10,0xF0C1},
+                                        {11,0xF0C2},
+                                        {12,0xF0C3},
+                                        {13,0xF0C4},
+                                        {14,0xF0C5},
+                                        {15,0xF0C6},
+                                        {16,0xF0C7},
+                                        {17,0xF0C8},
+                                        {18,0xF0C9}
                                      };
 
+struct twoVal
+{
+  quint8 first;
+  quint8 second;
+};
 
 #endif // COMMON_H

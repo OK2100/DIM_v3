@@ -245,6 +245,7 @@ DIST          = /home/hplu/Programms/Qt/5.13.0/gcc_64/mkspecs/features/spec_pre.
 		/home/hplu/Programms/Qt/5.13.0/gcc_64/mkspecs/features/qt_config.prf \
 		/home/hplu/Programms/Qt/5.13.0/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/home/hplu/Programms/Qt/5.13.0/gcc_64/mkspecs/features/spec_post.prf \
+		../DIM_v3/.qmake.stash \
 		/home/hplu/Programms/Qt/5.13.0/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/hplu/Programms/Qt/5.13.0/gcc_64/mkspecs/features/toolchain.prf \
 		/home/hplu/Programms/Qt/5.13.0/gcc_64/mkspecs/features/default_pre.prf \
@@ -461,6 +462,7 @@ Makefile: ../DIM_v3/DIM_v3.pro /home/hplu/Programms/Qt/5.13.0/gcc_64/mkspecs/lin
 		/home/hplu/Programms/Qt/5.13.0/gcc_64/mkspecs/features/qt_config.prf \
 		/home/hplu/Programms/Qt/5.13.0/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/home/hplu/Programms/Qt/5.13.0/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/home/hplu/Programms/Qt/5.13.0/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/hplu/Programms/Qt/5.13.0/gcc_64/mkspecs/features/toolchain.prf \
 		/home/hplu/Programms/Qt/5.13.0/gcc_64/mkspecs/features/default_pre.prf \
@@ -658,6 +660,7 @@ Makefile: ../DIM_v3/DIM_v3.pro /home/hplu/Programms/Qt/5.13.0/gcc_64/mkspecs/lin
 /home/hplu/Programms/Qt/5.13.0/gcc_64/mkspecs/features/qt_config.prf:
 /home/hplu/Programms/Qt/5.13.0/gcc_64/mkspecs/linux-g++/qmake.conf:
 /home/hplu/Programms/Qt/5.13.0/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /home/hplu/Programms/Qt/5.13.0/gcc_64/mkspecs/features/exclusive_builds.prf:
 /home/hplu/Programms/Qt/5.13.0/gcc_64/mkspecs/features/toolchain.prf:
 /home/hplu/Programms/Qt/5.13.0/gcc_64/mkspecs/features/default_pre.prf:

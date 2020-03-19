@@ -5,7 +5,7 @@
 MyDimServer::MyDimServer(QString dns_node,QString server_name)  :
     QObject(nullptr)//,
 {
-
+//    OpenOutFile();
     dnsNode = dns_node;
     serverName = server_name;
     setDnsNode(qPrintable(dnsNode));
@@ -14,14 +14,20 @@ MyDimServer::MyDimServer(QString dns_node,QString server_name)  :
     fillPMCHValHash();
     fillPMNonValHash();
     fillPMCHNonValHash();
+    fillTCMValHash();
+    fillTCMNonValHash();
+
+    emit apply_SET_OPTIONCODE_requested(1,1);
 }
 
 MyDimServer::~MyDimServer()
 {
+    stopServer();
     for(quint8 i=0;i<Npms;i++){
         delete pm[i];
-
     }
+    delete tcm;
+
     PMValHash<quint8>.clear();      PMValHash<quint16>.clear();     PMValHash<quint32>.clear();
     PMValHash<qint8>.clear();       PMValHash<qint16>.clear();      PMValHash<qint32>.clear();
     PMCHValHash<quint8>.clear();    PMCHValHash<quint16>.clear();   PMCHValHash<quint32>.clear();
@@ -29,30 +35,35 @@ MyDimServer::~MyDimServer()
     PMNonValHash.clear();
     PMCHNonValHash.clear();
 
-    CloseOutFile();
 }
 
 void MyDimServer::startServer()
 {
+    OpenOutFile();
+
     setDnsNode(qPrintable(dnsNode));
     start(qPrintable(serverName));
-     cout << "###################################################" << endl
+    cout << "###################################################" << endl
           << "Start DIM server on " << dnsNode << endl
           << "###################################################" << endl;
-     for(quint8 i=0;i<Npms;i++) {
+    for(quint8 i=0;i<Npms;i++) {
          pm[i] = new PMPars(this);
          pm[i]->PM_FEE_id = FT0_FEE_ID[i+1];
-         pm[i]->publish();
+//         pm[i]->publish();
      }
+
+    tcm = new TCMPars(this);
+    tcm->TCM_FEE_id = 0xF000;
+    tcm->publish();
 }
 
 void MyDimServer::stopServer()
 {
+    CloseOutFile();
     this->stop();
     cout << "###################################################" << endl
          << "Stop DIM server "  << endl
          << "###################################################" << endl;
-
 }
 
 void MyDimServer::OpenOutFile()
@@ -99,6 +110,27 @@ void MyDimServer::emitSignal(pm_pNonValSignal pSignal, quint16 _FEEid)
 {
     if(pSignal != nullptr)
         emit (this->*pSignal)(_FEEid);
+}
+
+template <class Y>
+void MyDimServer::emitSignal(tcm_pValSignal<Y> pSignal, Y val)
+{
+    if(pSignal != nullptr)
+        emit (this->*pSignal)(val);
+}
+
+void MyDimServer::emitSignal(tcm_pNonValSignal pSignal)
+{
+    if(pSignal != nullptr)
+        emit (this->*pSignal)();
+}
+
+template <class T>
+void MyDimServer::emitSignal(pTwoValSignal<quint8,quint8> pSignal,T first_data,T second_data)
+{
+    if(this == nullptr) {}
+    else if(pSignal != nullptr)
+        emit (this->*pSignal)(first_data,second_data);
 }
 
 //  ===================================================================================================
@@ -395,6 +427,373 @@ void PMPars::publish()
 //  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 //  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 //  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+TCMPars::TCMPars(MyDimServer* _server):
+            TCM_FEE_id(0xFFFF)                   //  0xffff is initial value instead of zero value
+{
+    countersupdrate = new TCMActnValAppPar<quint8>("COUNTERS_UPD_RATE",_server);
+    extendedreadout = new TCMActnValAppPar<quint8>("EXTENDED_READOUT",_server);
+    scsumsides = new TCMActnValAppPar<quint8>("SC_SUM_SIDES",_server);
+    csumsides = new TCMActnValAppPar<quint8>("C_SUM_SIDES",_server);
+    addcdelay = new TCMActnValAppPar<quint8>("ADD_C_DELAY",_server);
+    ressw1 = new TCMActnValAppPar<quint8>("RES_SW_1",_server);
+    ressw2 = new TCMActnValAppPar<quint8>("RES_SW_2",_server);
+    ressw3 = new TCMActnValAppPar<quint8>("RES_SW_3",_server);
+    ressw4 = new TCMActnValAppPar<quint8>("RES_SW_4",_server);
+
+    delayA = new TCMfullPar<qint16>("DELAY_A",_server);
+    delayC = new TCMfullPar<qint16>("DELAY_C",_server);
+    vtimelow = new TCMfullPar<qint16>("VTIME_LOW",_server);
+    vtimehight = new TCMfullPar<qint16>("VTIME_HIGH",_server);
+    sclevelA = new TCMfullPar<quint16>("SC_LEVEL_A",_server);
+    sclevelC = new TCMfullPar<quint16>("SC_LEVEL_C",_server);
+    clevelA = new TCMfullPar<quint16>("C_LEVEL_A",_server);
+    clevelC = new TCMfullPar<quint16>("C_LEVEL_C",_server);
+    chmfskA = new TCMfullPar<quint16>("CH_MASK_A",_server);
+    chmfskC = new TCMfullPar<quint16>("CH_MASK_C",_server);
+
+    swchon              = new PMonlyValAppPar<quint8>("SwChOn",_server);     swchon->prefix = "/control";
+    swchoff             = new PMonlyValAppPar<quint8>("SwChOff",_server);     swchoff->prefix = "/control";
+    resetcounters       = new PMonlyAppPar("RESET_COUNTERS",_server);   resetcounters->prefix = "/control";
+    resetsystem         = new PMonlyAppPar("RESET_SYSTEM",_server);   resetsystem->prefix = "/control";
+
+    boardstatus         = new PMonlyActPar<quint16>("BOARD_STATUS",_server);    boardstatus->prefix = "/status";
+    temperature         = new PMonlyActPar<quint16>("TEMPERATURE",_server);     temperature->prefix = "/status";
+    serialnum           = new PMonlyActPar<quint16>("SERIAL_NUM",_server);     serialnum->prefix = "/status";
+    fwversion           = new PMonlyActPar<quint32>("FW_VERSION",_server);     fwversion->prefix = "/status";
+
+    sideAstatus = new PMonlyActPar<quint16>("SIDE_A_STATUS",_server);       sideAstatus->prefix = "/status";
+    sideCstatus = new PMonlyActPar<quint16>("SIDE_C_STATUS",_server);       sideCstatus->prefix = "/status";
+    cntorA = new PMonlyActPar<quint32>("CNT_OR_A",_server);                 cntorA->prefix = "/status";
+    cntorArate = new PMonlyActPar<quint32>("CNT_OR_A_RATE",_server);        cntorArate->prefix = "/status";
+    cntorC = new PMonlyActPar<quint32>("CNT_OR_C",_server);                 cntorC->prefix = "/status";
+    cntorCrate = new PMonlyActPar<quint32>("CNT_OR_C_RATE",_server);        cntorCrate->prefix = "/status";
+    cntsc = new PMonlyActPar<quint32>("CNT_SC",_server);                    cntsc->prefix = "/status";
+    cntscrate = new PMonlyActPar<quint32>("CNT_SC_RATE",_server);           cntscrate->prefix = "/status";
+    cntc = new PMonlyActPar<quint32>("CNT_C",_server);                      cntc->prefix = "/status";
+    cntcrate = new PMonlyActPar<quint32>("CNT_C_RATE",_server);             cntcrate->prefix = "/status";
+    cntv = new PMonlyActPar<quint32>("CNT_V",_server);                      cntv->prefix = "/status";
+    cntvrate = new PMonlyActPar<quint32>("CNT_V_RATE",_server);             cntvrate->prefix = "/status";
+
+    //  GBT Readout unit
+
+    resetorbitsync      = new PMonlyAppPar("RESET_ORBIT_SYNC",_server);
+    resetdrophitcnts    = new PMonlyAppPar("RESET_DROPPING_HIT_COUNTERS",_server);
+    resetgenbunchoffset = new PMonlyAppPar("RESET_GEN_BUNCH_OFFSET",_server);
+    resetgbterrors      = new PMonlyAppPar("RESET_GBT_ERRORS",_server);
+    resetgbt            = new PMonlyAppPar("RESET_GBT",_server);
+    resetrxphaseerror   = new PMonlyAppPar("RESET_RX_PHASE_ERROR",_server);
+    sendreadoutcommand  = new PMonlyValAppPar<quint8>("SEND_READOUT_COMMAND",_server);
+    tgsendsingle        = new PMonlyValAppPar<quint32>("TG_SEND_SINGLE",_server);
+
+
+    tgpattern1          = new PMfullPar<quint32>("TG_PATTERN_1",_server);
+    tgpattern0          = new PMfullPar<quint32>("TG_PATTERN_0",_server);
+    tgcontvalue         = new PMfullPar<quint8>("TG_CONT_VALUE",_server);
+    tgbunchfreq         = new PMfullPar<quint16>("TG_BUNCH_FREQ",_server);
+    tgfreqoffset        = new PMfullPar<quint16>("TG_FREQ_OFFSET",_server);
+    tgmode              = new PMActnValAppPar<quint8>("TG_MODE",_server);
+    hbresponse          = new PMActnValAppPar<quint8>("HB_RESPONSE",_server);
+    dgmode              = new PMActnValAppPar<quint8>("DG_MODE",_server);
+    dgtrgrespondmask    = new PMfullPar<quint32>("DG_TRG_RESPOND_MASK",_server);
+    dgbunchpattern      = new PMfullPar<quint32>("DG_BUNCH_PATTERN",_server);
+    dgbunchfreq         = new PMfullPar<quint16>("DG_BUNCH_FREQ",_server);
+    dgfreqoffset        = new PMfullPar<quint16>("DG_FREQ_OFFSET",_server);
+    rdhfeeid            = new PMfullPar<quint16>("RDH_FEE_ID",_server);
+    rdhpar              = new PMfullPar<quint16>("RDH_PAR",_server);
+    rdhmaxpayload       = new PMfullPar<quint16>("RDH_MAX_PAYLOAD",_server);
+    rdhdetfield         = new PMfullPar<quint16>("RDH_DET_FIELD",_server);
+    crutrgcomparedelay  = new PMfullPar<quint16>("CRU_TRG_COMPARE_DELAY",_server);
+    bciddelay           = new PMfullPar<quint16>("BCID_DELAY",_server);
+    dataseltrgmask      = new PMfullPar<quint32>("DATA_SEL_TRG_MASK",_server);
+
+    bits                = new PMonlyActPar<quint16>("BITS",_server);
+    readoutmode         = new PMonlyActPar<quint8>("READOUT_MODE",_server);
+    bcidsyncmode        = new PMonlyActPar<quint8>("BCID_SYNC_MODE",_server);
+    rxphase             = new PMonlyActPar<quint8>("RX_PHASE",_server);
+    cruorbit            = new PMonlyActPar<quint32>("CRU_ORBIT",_server);
+    crubc               = new PMonlyActPar<quint16>("CRU_BC",_server);
+    rawfifo             = new PMonlyActPar<quint16>("RAW_FIFO",_server);
+    selfifo             = new PMonlyActPar<quint16>("SEL_FIFO",_server);
+    selfirsthit         = new PMonlyActPar<quint32>("SEL_FIRST_HIT_DROPPED_ORBIT",_server);
+    sellasthit          = new PMonlyActPar<quint32>("SEL_LAST_HIT_DROPPED_ORBIT",_server);
+    selhitsdropped      = new PMonlyActPar<quint32>("SEL_HITS_DROPPED",_server);
+    readoutrate         = new PMonlyActPar<quint16>("READOUT_RATE",_server);
+
+
+    orAsign = new TCMfullPar<quint16>("OR_A_SIGN",_server);     orAsign->prefix = "/TRG";
+    orArate = new TCMfullPar<quint32>("OR_A_RATE",_server);     orArate->prefix = "/TRG";
+    orCsign = new TCMfullPar<quint16>("OR_C_SIGN",_server);     orCsign->prefix = "/TRG";
+    orCrate = new TCMfullPar<quint32>("OR_C_RATE",_server);     orCrate->prefix = "/TRG";
+    scsign = new TCMfullPar<quint16>("SC_SIGN",_server);        scsign->prefix = "/TRG";
+    scrate = new TCMfullPar<quint32>("SC_RATE",_server);        scrate->prefix = "/TRG";
+    csign = new TCMfullPar<quint16>("C_SIGN",_server);          csign->prefix = "/TRG";
+    crate = new TCMfullPar<quint32>("C_RATE",_server);          crate->prefix = "/TRG";
+    vsign = new TCMfullPar<quint16>("V_SIGN",_server);          vsign->prefix = "/TRG";
+    vrate = new TCMfullPar<quint32>("V_RATE",_server);          vrate->prefix = "/TRG";
+
+    statusoptioncode = new str_ACT("STATUS_OPTIONCODE");        statusoptioncode->prefix = "";
+    setoptioncode = new twoValAPP<quint8>("SET_OPTIONCODE");    setoptioncode->prefix = "";     setoptioncode->SetSignal(&MyDimServer::apply_SET_OPTIONCODE_requested);
+
+    orAenabled = new TCMActnValAppPar<quint8>("OR_A_ENABLED",_server);      orAenabled->prefix = "/TRG";
+    orCenabled = new TCMActnValAppPar<quint8>("OR_C_ENABLED",_server);      orCenabled->prefix = "/TRG";
+    scenabled = new TCMActnValAppPar<quint8>("SC_ENABLED",_server);         scenabled->prefix = "/TRG";
+    cenabled = new TCMActnValAppPar<quint8>("C_ENABLED",_server);           cenabled->prefix = "/TRG";
+    venabled = new TCMActnValAppPar<quint8>("V_ENABLED",_server);           venabled->prefix = "/TRG";
+
+    laseron = new TCMActnValAppPar<quint8>("LASER_ON",_server);             laseron->prefix = "";
+    laserdiv = new TCMfullPar<quint32>("LASER_DIV",_server);                laserdiv->prefix = "";
+    laserdelay = new TCMfullPar<qint16>("LASER_DELAY",_server);            laserdelay->prefix = "";
+    laserpattern1 = new TCMfullPar<quint32>("LASER_PATTERN_1",_server);     laserpattern1->prefix = "";
+    laserpattern0 = new TCMfullPar<quint32>("LASER_PATTERN_0",_server);     laserpattern0->prefix = "";
+    attenvalue = new TCMfullPar<quint16>("ATTEN_VALUE",_server);            attenvalue->prefix = "";
+    attenstatus = new PMonlyActPar<quint8>("ATTEN_STATUS",_server);         attenstatus->prefix = "";
+
+    pServer = _server;
+}
+
+TCMPars::~TCMPars()
+{
+    delete countersupdrate;
+    delete extendedreadout;
+    delete scsumsides;
+    delete csumsides;
+    delete addcdelay;
+    delete ressw1;
+    delete ressw2;
+    delete ressw3;
+    delete ressw4;
+
+    delete delayA;
+    delete delayC;
+    delete vtimelow;
+    delete vtimehight;
+    delete sclevelA;
+    delete sclevelC;
+    delete clevelA;
+    delete clevelC;
+    delete chmfskA;
+    delete chmfskC;
+
+    delete swchon;
+    delete swchoff;
+    delete resetcounters;
+    delete resetsystem;
+
+    delete boardstatus;
+    delete temperature;
+    delete serialnum;
+    delete fwversion;
+    delete sideAstatus;
+    delete sideCstatus;
+    delete cntorA;
+    delete cntorArate;
+    delete cntorC;
+    delete cntorCrate;
+    delete cntsc;
+    delete cntscrate;
+    delete cntc;
+    delete cntcrate;
+    delete cntv;
+    delete cntvrate;
+
+    delete resetorbitsync;
+    delete resetdrophitcnts;
+    delete resetgenbunchoffset;
+    delete resetgbterrors;
+    delete resetgbt;
+    delete resetrxphaseerror;
+    delete sendreadoutcommand;
+    delete tgsendsingle;
+
+    delete tgpattern1;
+    delete tgpattern0;
+    delete  tgcontvalue;
+    delete tgbunchfreq;
+    delete tgfreqoffset;
+    delete  tgmode;
+    delete  hbresponse;
+    delete dgmode;
+    delete dgtrgrespondmask;
+    delete dgbunchpattern;
+    delete dgbunchfreq;
+    delete dgfreqoffset;
+    delete rdhfeeid;
+    delete rdhpar;
+    delete rdhmaxpayload;
+    delete rdhdetfield;
+    delete crutrgcomparedelay;
+    delete bciddelay;
+    delete dataseltrgmask;
+
+    delete bits;
+    delete readoutmode;
+    delete bcidsyncmode;
+    delete rxphase;
+    delete cruorbit;
+    delete crubc;
+    delete rawfifo;
+    delete selfifo;
+    delete selfirsthit;
+    delete sellasthit;
+    delete selhitsdropped;
+    delete readoutrate;
+
+
+    delete orAsign;
+    delete orArate;
+    delete orCsign;
+    delete orCrate;
+    delete scsign;
+    delete scrate;
+    delete csign;
+    delete crate;
+    delete vsign;
+    delete vrate;
+
+    delete statusoptioncode;
+    delete setoptioncode;
+
+    delete orAenabled;
+    delete orCenabled;
+    delete scenabled;
+    delete cenabled;
+    delete venabled;
+
+    delete laseron;
+    delete laserdiv;
+    delete laserdelay;
+    delete laserpattern1;
+    delete laserpattern0;
+    delete attenvalue;
+    delete attenstatus;
+
+}
+
+
+void TCMPars::publish()
+{
+    countersupdrate->SetFEEid(TCM_FEE_id);      countersupdrate->publishCommands();     countersupdrate->publishServices();
+    extendedreadout->SetFEEid(TCM_FEE_id);               extendedreadout->publishCommands();              extendedreadout->publishServices();
+    scsumsides->SetFEEid(TCM_FEE_id);               scsumsides->publishCommands();              scsumsides->publishServices();
+    csumsides->SetFEEid(TCM_FEE_id);               csumsides->publishCommands();              csumsides->publishServices();
+    addcdelay->SetFEEid(TCM_FEE_id);               addcdelay->publishCommands();              addcdelay->publishServices();
+    ressw1->SetFEEid(TCM_FEE_id);               ressw1->publishCommands();              ressw1->publishServices();
+    ressw2->SetFEEid(TCM_FEE_id);               ressw2->publishCommands();              ressw2->publishServices();
+    ressw3->SetFEEid(TCM_FEE_id);               ressw3->publishCommands();              ressw3->publishServices();
+    ressw4->SetFEEid(TCM_FEE_id);               ressw4->publishCommands();              ressw4->publishServices();
+
+    delayA->SetFEEid(TCM_FEE_id);               delayA->publishCommands();              delayA->publishServices();
+    delayC->SetFEEid(TCM_FEE_id);               delayC->publishCommands();              delayC->publishServices();
+    vtimelow->SetFEEid(TCM_FEE_id);               vtimelow->publishCommands();              vtimelow->publishServices();
+    vtimehight->SetFEEid(TCM_FEE_id);               vtimehight->publishCommands();              vtimehight->publishServices();
+    sclevelA->SetFEEid(TCM_FEE_id);               sclevelA->publishCommands();              sclevelA->publishServices();
+    sclevelC->SetFEEid(TCM_FEE_id);               sclevelC->publishCommands();              sclevelC->publishServices();
+    clevelA->SetFEEid(TCM_FEE_id);               clevelA->publishCommands();              clevelA->publishServices();
+    clevelC->SetFEEid(TCM_FEE_id);               clevelC->publishCommands();              clevelC->publishServices();
+    chmfskA->SetFEEid(TCM_FEE_id);               chmfskA->publishCommands();              chmfskA->publishServices();
+    chmfskC->SetFEEid(TCM_FEE_id);               chmfskC->publishCommands();              chmfskC->publishServices();
+
+    swchon->SetFEEid(TCM_FEE_id);                   swchon->publishCommands();
+    swchoff->SetFEEid(TCM_FEE_id);                   swchoff->publishCommands();
+    resetcounters->SetFEEid(TCM_FEE_id);            resetcounters->publishCommands();
+    resetsystem->SetFEEid(TCM_FEE_id);            resetsystem->publishCommands();
+
+    boardstatus->SetFEEid(TCM_FEE_id);                                                          boardstatus->publishServices();
+    temperature->SetFEEid(TCM_FEE_id);                                                          temperature->publishServices();
+    serialnum->SetFEEid(TCM_FEE_id);                                                            serialnum->publishServices();
+    fwversion->SetFEEid(TCM_FEE_id);                                                            fwversion->publishServices();
+
+    sideAstatus->SetFEEid(TCM_FEE_id);                                                            sideAstatus->publishServices();
+    sideCstatus->SetFEEid(TCM_FEE_id);                                                            sideCstatus->publishServices();
+    cntorA->SetFEEid(TCM_FEE_id);                                                            cntorA->publishServices();
+    cntorArate->SetFEEid(TCM_FEE_id);                                                            cntorArate->publishServices();
+    cntorC->SetFEEid(TCM_FEE_id);                                                            cntorC->publishServices();
+    cntorCrate->SetFEEid(TCM_FEE_id);                                                            cntorCrate->publishServices();
+    cntsc->SetFEEid(TCM_FEE_id);                                                            cntsc->publishServices();
+    cntscrate->SetFEEid(TCM_FEE_id);                                                            cntscrate->publishServices();
+    cntc->SetFEEid(TCM_FEE_id);                                                            cntc->publishServices();
+    cntcrate->SetFEEid(TCM_FEE_id);                                                            cntcrate->publishServices();
+    cntv->SetFEEid(TCM_FEE_id);                                                            cntv->publishServices();
+    cntvrate->SetFEEid(TCM_FEE_id);                                                            cntvrate->publishServices();
+
+    resetorbitsync->SetFEEid(TCM_FEE_id);           resetorbitsync->publishCommands();
+    resetdrophitcnts->SetFEEid(TCM_FEE_id);         resetdrophitcnts->publishCommands();
+    resetgenbunchoffset->SetFEEid(TCM_FEE_id);      resetgenbunchoffset->publishCommands();
+    resetgbterrors->SetFEEid(TCM_FEE_id);           resetgbterrors->publishCommands();
+    resetgbt->SetFEEid(TCM_FEE_id);                 resetgbt->publishCommands();
+    resetrxphaseerror->SetFEEid(TCM_FEE_id);        resetrxphaseerror->publishCommands();
+    sendreadoutcommand->SetFEEid(TCM_FEE_id);       sendreadoutcommand->publishCommands();
+    tgsendsingle->SetFEEid(TCM_FEE_id);             tgsendsingle->publishCommands();
+
+    tgpattern1->SetFEEid(TCM_FEE_id);               tgpattern1->publishCommands();                tgpattern1->publishServices();
+    tgpattern0->SetFEEid(TCM_FEE_id);               tgpattern0->publishCommands();                tgpattern0->publishServices();
+    tgcontvalue->SetFEEid(TCM_FEE_id);              tgcontvalue->publishCommands();               tgcontvalue->publishServices();
+    tgbunchfreq->SetFEEid(TCM_FEE_id);              tgbunchfreq->publishCommands();               tgbunchfreq->publishServices();
+    tgfreqoffset->SetFEEid(TCM_FEE_id);             tgfreqoffset->publishCommands();              tgfreqoffset->publishServices();
+    tgmode->SetFEEid(TCM_FEE_id);                   tgmode->publishCommands();                    tgmode->publishServices();
+    hbresponse->SetFEEid(TCM_FEE_id);               hbresponse->publishCommands();                hbresponse->publishServices();
+    dgmode->SetFEEid(TCM_FEE_id);                   dgmode->publishCommands();                    dgmode->publishServices();
+    dgtrgrespondmask->SetFEEid(TCM_FEE_id);         dgtrgrespondmask->publishCommands();          dgtrgrespondmask->publishServices();
+    dgbunchpattern->SetFEEid(TCM_FEE_id);           dgbunchpattern->publishCommands();            dgbunchpattern->publishServices();
+    dgbunchfreq->SetFEEid(TCM_FEE_id);              dgbunchfreq->publishCommands();               dgbunchfreq->publishServices();
+    dgfreqoffset->SetFEEid(TCM_FEE_id);             dgfreqoffset->publishCommands();              dgfreqoffset->publishServices();
+    rdhfeeid->SetFEEid(TCM_FEE_id);                 rdhfeeid->publishCommands();                  rdhfeeid->publishServices();
+    rdhpar->SetFEEid(TCM_FEE_id);                   rdhpar->publishCommands();                    rdhpar->publishServices();
+    rdhmaxpayload->SetFEEid(TCM_FEE_id);            rdhmaxpayload->publishCommands();             rdhmaxpayload->publishServices();
+    rdhdetfield->SetFEEid(TCM_FEE_id);              rdhdetfield->publishCommands();               rdhdetfield->publishServices();
+    crutrgcomparedelay->SetFEEid(TCM_FEE_id);       crutrgcomparedelay->publishCommands();        crutrgcomparedelay->publishServices();
+    bciddelay->SetFEEid(TCM_FEE_id);                bciddelay->publishCommands();                 bciddelay->publishServices();
+    dataseltrgmask->SetFEEid(TCM_FEE_id);           dataseltrgmask->publishCommands();            dataseltrgmask->publishServices();
+
+
+    bits->SetFEEid(TCM_FEE_id);                                                                 bits->publishServices();
+    readoutmode->SetFEEid(TCM_FEE_id);                                                          readoutmode->publishServices();
+    bcidsyncmode->SetFEEid(TCM_FEE_id);                                                         bcidsyncmode->publishServices();
+    rxphase->SetFEEid(TCM_FEE_id);                                                              rxphase->publishServices();
+    cruorbit->SetFEEid(TCM_FEE_id);                                                             cruorbit->publishServices();
+    crubc->SetFEEid(TCM_FEE_id);                                                                crubc->publishServices();
+    rawfifo->SetFEEid(TCM_FEE_id);                                                              rawfifo->publishServices();
+    selfifo->SetFEEid(TCM_FEE_id);                                                              selfifo->publishServices();
+    selfirsthit->SetFEEid(TCM_FEE_id);                                                          selfirsthit->publishServices();
+    sellasthit->SetFEEid(TCM_FEE_id);                                                           sellasthit->publishServices();
+    selhitsdropped->SetFEEid(TCM_FEE_id);                                                       selhitsdropped->publishServices();
+    readoutrate->SetFEEid(TCM_FEE_id);                                                          readoutrate->publishServices();
+
+
+    orAsign->SetFEEid(TCM_FEE_id);      orAsign->publishCommands();     orAsign->publishServices();
+    orArate->SetFEEid(TCM_FEE_id);      orArate->publishCommands();     orArate->publishServices();
+    orCsign->SetFEEid(TCM_FEE_id);      orCsign->publishCommands();     orCsign->publishServices();
+    orCrate->SetFEEid(TCM_FEE_id);      orCrate->publishCommands();     orCrate->publishServices();
+    scsign->SetFEEid(TCM_FEE_id);      scsign->publishCommands();     scsign->publishServices();
+    scrate->SetFEEid(TCM_FEE_id);      scrate->publishCommands();     scrate->publishServices();
+    csign->SetFEEid(TCM_FEE_id);      csign->publishCommands();     csign->publishServices();
+    crate->SetFEEid(TCM_FEE_id);      crate->publishCommands();     crate->publishServices();
+    vsign->SetFEEid(TCM_FEE_id);      vsign->publishCommands();     vsign->publishServices();
+    vrate->SetFEEid(TCM_FEE_id);      vrate->publishCommands();     vrate->publishServices();
+
+    statusoptioncode->SetFEEid(TCM_FEE_id);         statusoptioncode->publishService();
+    setoptioncode->SetFEEid(TCM_FEE_id);            setoptioncode->publishCommand();
+
+    orAenabled ->SetFEEid(TCM_FEE_id);  orAenabled->publishCommands();                 orAenabled ->publishServices();
+    orCenabled ->SetFEEid(TCM_FEE_id);  orCenabled->publishCommands();                 orCenabled ->publishServices();
+    scenabled ->SetFEEid(TCM_FEE_id);   scenabled->publishCommands();                  scenabled ->publishServices();
+    cenabled->SetFEEid(TCM_FEE_id);     cenabled->publishCommands();                   cenabled->publishServices();
+    venabled->SetFEEid(TCM_FEE_id);     venabled->publishCommands();                   venabled->publishServices();
+
+    laseron->SetFEEid(TCM_FEE_id);     laseron->publishCommands();                        laseron->publishServices();
+    laserdiv->SetFEEid(TCM_FEE_id);     laserdiv->publishCommands();                      laserdiv->publishServices();
+    laserdelay->SetFEEid(TCM_FEE_id);     laserdelay->publishCommands();                  laserdelay->publishServices();
+    laserpattern1->SetFEEid(TCM_FEE_id);     laserpattern1->publishCommands();            laserpattern1->publishServices();
+    laserpattern0->SetFEEid(TCM_FEE_id);     laserpattern0->publishCommands();            laserpattern0->publishServices();
+    attenvalue->SetFEEid(TCM_FEE_id);     attenvalue->publishCommands();                  attenvalue->publishServices();
+    attenstatus->SetFEEid(TCM_FEE_id);                                                    attenstatus->publishServices();
+
+}
+
+
+
+
 //  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 //  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
@@ -483,6 +882,9 @@ void fillPMNonValHash()
 
     PMNonValHash.insert("DATA_SEL_TRG_MASK",           &MyDimServer::apply_DATA_SEL_TRG_MASK_requested);
 
+
+
+    PMNonValHash.insert("RESET_SYSTEM",  &MyDimServer::apply_RESET_SYSTEM_requested);
 }
 
 QHash<QString,pmch_pNonValSignal> PMCHNonValHash;
@@ -499,5 +901,93 @@ void fillPMCHNonValHash()
      PMCHNonValHash.insert("CFD_TRHESHOLD",&MyDimServer::apply_CFD_THRESHOLD_requested);
      PMCHNonValHash.insert("CFD_ZERO",    &MyDimServer::apply_CFD_ZERO_requested);
      PMCHNonValHash.insert("THRESHOLD_CALIBR",&MyDimServer::apply_THRESHOLD_CALIBR_requested);
+}
+
+
+
+void fillTCMValHash()
+{
+    TCMValHash<quint8>.insert("COUNTERS_UPD_RATE",&MyDimServer::apply_COUNTERS_UPD_RATE_requested);
+    TCMValHash<quint8>.insert("EXTENDED_READOUT",&MyDimServer::apply_EXTENDED_READOUT_requested);
+    TCMValHash<quint8>.insert("SC_SUM_SIDES",&MyDimServer::apply_SC_SUM_SIDES_requested);
+    TCMValHash<quint8>.insert("C_SUM_SIDES",&MyDimServer::apply_C_SUM_SIDES_requested);
+    TCMValHash<quint8>.insert("ADD_C_DELAY",&MyDimServer::apply_ADD_C_DELAY_requested);
+    TCMValHash<quint8>.insert("RES_SW_1",&MyDimServer::apply_RES_SW_1_requested);
+    TCMValHash<quint8>.insert("RES_SW_2",&MyDimServer::apply_RES_SW_2_requested);
+    TCMValHash<quint8>.insert("RES_SW_3",&MyDimServer::apply_RES_SW_3_requested);
+    TCMValHash<quint8>.insert("RES_SW_4",&MyDimServer::apply_RES_SW_4_requested);
+
+    TCMValHash<qint16>.insert("DELAY_A",&MyDimServer::set_DELAY_A_requested);
+    TCMValHash<qint16>.insert("DELAY_C",&MyDimServer::set_DELAY_C_requested);
+    TCMValHash<qint16>.insert("VTIME_LOW",&MyDimServer::set_VTIME_LOW_requested);
+    TCMValHash<qint16>.insert("VTIME_HIGH",&MyDimServer::set_VTIME_HIGH_requested);
+    TCMValHash<quint16>.insert("SC_LEVEL_A",&MyDimServer::set_SC_LEVEL_A_requested);
+    TCMValHash<quint16>.insert("SC_LEVEL_C",&MyDimServer::set_SC_LEVEL_C_requested);
+    TCMValHash<quint16>.insert("C_LEVEL_A",&MyDimServer::set_C_LEVEL_A_requested);
+    TCMValHash<quint16>.insert("C_LEVEL_C",&MyDimServer::set_C_LEVEL_C_requested);
+    TCMValHash<quint16>.insert("CH_MASK_A",&MyDimServer::set_CH_MASK_A_requested);
+    TCMValHash<quint16>.insert("CH_MASK_C",&MyDimServer::set_CH_MASK_C_requested);
+
+    TCMValHash<quint16>.insert("OR_A_SIGN",&MyDimServer::set_OR_A_SIGN_requested);
+    TCMValHash<quint32>.insert("OR_A_RATE",&MyDimServer::set_OR_A_RATE_requested);
+    TCMValHash<quint16>.insert("OR_C_SIGN",&MyDimServer::set_OR_C_SIGN_requested);
+    TCMValHash<quint32>.insert("OR_C_RATE",&MyDimServer::set_OR_C_RATE_requested);
+    TCMValHash<quint16>.insert("SC_SIGN",&MyDimServer::set_SC_SIGN_requested);
+    TCMValHash<quint32>.insert("SC_RATE",&MyDimServer::set_SC_RATE_requested);
+    TCMValHash<quint16>.insert("C_SIGN",&MyDimServer::set_C_SIGN_requested);
+    TCMValHash<quint32>.insert("C_RATE",&MyDimServer::set_C_RATE_requested);
+    TCMValHash<quint16>.insert("V_SIGN",&MyDimServer::set_V_SIGN_requested);
+    TCMValHash<quint32>.insert("V_RATE",&MyDimServer::set_V_RATE_requested);
+
+    TCMValHash<quint8>.insert("OR_A_ENABLED",&MyDimServer::apply_OR_A_ENABLED_requested);
+    TCMValHash<quint8>.insert("OR_C_ENABLED",&MyDimServer::apply_OR_C_ENABLED_requested);
+    TCMValHash<quint8>.insert("SC_ENABLED",&MyDimServer::apply_SC_ENABLED_requested);
+    TCMValHash<quint8>.insert("C_ENABLED",&MyDimServer::apply_C_ENABLED_requested);
+    TCMValHash<quint8>.insert("V_ENABLED",&MyDimServer::apply_V_ENABLED_requested);
+
+    TCMValHash<quint8>.insert("LASER_ON",&MyDimServer::apply_LASER_ON_requested);
+    TCMValHash<quint32>.insert("LASER_DIV",&MyDimServer::set_LASER_DIV_requested);
+    TCMValHash<qint16>.insert("LASER_DELAY",&MyDimServer::set_LASER_DELAY_requested);
+    TCMValHash<quint32>.insert("LASER_PATTERN_1",&MyDimServer::set_LASER_PATTERN_1_requested);
+    TCMValHash<quint32>.insert("LASER_PATTERN_0",&MyDimServer::set_LASER_PATTERN_0_requested);
+    TCMValHash<quint16>.insert("ATTEN_VALUE",&MyDimServer::set_ATTEN_VALUE_requested);
 
 }
+
+QHash<QString,tcm_pNonValSignal> TCMNonValHash;
+void fillTCMNonValHash()
+{
+    TCMNonValHash.insert("DELAY_A",&MyDimServer::apply_DELAY_A_requested);
+    TCMNonValHash.insert("DELAY_C",&MyDimServer::apply_DELAY_C_requested);
+    TCMNonValHash.insert("VTIME_LOW",&MyDimServer::apply_VTIME_LOW_requested);
+    TCMNonValHash.insert("VTIME_HIGH",&MyDimServer::apply_VTIME_HIGH_requested);
+    TCMNonValHash.insert("SC_LEVEL_A",&MyDimServer::apply_SC_LEVEL_A_requested);
+    TCMNonValHash.insert("SC_LEVEL_C",&MyDimServer::apply_SC_LEVEL_C_requested);
+    TCMNonValHash.insert("C_LEVEL_A",&MyDimServer::apply_C_LEVEL_A_requested);
+    TCMNonValHash.insert("C_LEVEL_C",&MyDimServer::apply_C_LEVEL_C_requested);
+    TCMNonValHash.insert("CH_MASK_A",&MyDimServer::apply_CH_MASK_A_requested);
+    TCMNonValHash.insert("CH_MASK_C",&MyDimServer::apply_CH_MASK_C_requested);
+
+    TCMNonValHash.insert("OR_A_SIGN",&MyDimServer::apply_OR_A_SIGN_requested);
+    TCMNonValHash.insert("OR_A_RATE",&MyDimServer::apply_OR_A_RATE_requested);
+    TCMNonValHash.insert("OR_C_SIGN",&MyDimServer::apply_OR_C_SIGN_requested);
+    TCMNonValHash.insert("OR_C_RATE",&MyDimServer::apply_OR_C_RATE_requested);
+    TCMNonValHash.insert("SC_SIGN",&MyDimServer::apply_SC_SIGN_requested);
+    TCMNonValHash.insert("SC_RATE",&MyDimServer::apply_SC_RATE_requested);
+    TCMNonValHash.insert("C_SIGN",&MyDimServer::apply_C_SIGN_requested);
+    TCMNonValHash.insert("C_RATE",&MyDimServer::apply_C_RATE_requested);
+    TCMNonValHash.insert("V_SIGN",&MyDimServer::apply_V_SIGN_requested);
+    TCMNonValHash.insert("V_RATE",&MyDimServer::apply_V_RATE_requested);
+
+    TCMNonValHash.insert("LASER_DIV",&MyDimServer::apply_LASER_DIV_requested);
+    TCMNonValHash.insert("LASER_DELAY",&MyDimServer::apply_LASER_DELAY_requested);
+    TCMNonValHash.insert("LASER_PATTERN_1",&MyDimServer::apply_LASER_PATTERN_1_requested);
+    TCMNonValHash.insert("LASER_PATTERN_0",&MyDimServer::apply_LASER_PATTERN_0_requested);
+    TCMNonValHash.insert("ATTEN_VALUE",&MyDimServer::apply_ATTEN_VALUE_requested);
+
+}
+
+
+
+
+

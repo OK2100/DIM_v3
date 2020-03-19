@@ -163,82 +163,284 @@ void Emulator::SetupConnection()
     connect(this,&Emulator::set_cmnd_SEL_LAST_HIT_DROPPED_ORBIT_requested,serv,&MyDimServer::update_act_SEL_LAST_HIT_DROPPED_ORBIT);
     connect(this,&Emulator::set_cmnd_SEL_HITS_DROPPED_requested,serv,&MyDimServer::update_act_SEL_HITS_DROPPED);
     connect(this,&Emulator::set_cmnd_READOUT_RATE_requested,serv,&MyDimServer::update_act_READOUT_RATE);
+
+
+    //  TCM parameters
+
+    //  Parameters with NEW value
+
+    connect(serv,&MyDimServer::set_DELAY_A_requested,serv,&MyDimServer::update_new_DELAY_A);
+    connect(serv,&MyDimServer::set_DELAY_C_requested,serv,&MyDimServer::update_new_DELAY_C);
+    connect(serv,&MyDimServer::set_VTIME_LOW_requested,serv,&MyDimServer::update_new_VTIME_LOW);
+    connect(serv,&MyDimServer::set_VTIME_HIGH_requested,serv,&MyDimServer::update_new_VTIME_HIGH);
+    connect(serv,&MyDimServer::set_SC_LEVEL_A_requested,serv,&MyDimServer::update_new_SC_LEVEL_A);
+    connect(serv,&MyDimServer::set_SC_LEVEL_C_requested,serv,&MyDimServer::update_new_SC_LEVEL_C);
+    connect(serv,&MyDimServer::set_C_LEVEL_A_requested,serv,&MyDimServer::update_new_C_LEVEL_A);
+    connect(serv,&MyDimServer::set_C_LEVEL_C_requested,serv,&MyDimServer::update_new_C_LEVEL_C);
+    connect(serv,&MyDimServer::set_CH_MASK_A_requested,serv,&MyDimServer::update_new_CH_MASK_A);
+    connect(serv,&MyDimServer::set_CH_MASK_C_requested,serv,&MyDimServer::update_new_CH_MASK_C);
+
+    connect(serv,&MyDimServer::set_OR_A_SIGN_requested,serv,&MyDimServer::update_new_OR_A_SIGN);
+    connect(serv,&MyDimServer::set_OR_A_RATE_requested,serv,&MyDimServer::update_new_OR_A_RATE);
+    connect(serv,&MyDimServer::set_OR_C_SIGN_requested,serv,&MyDimServer::update_new_OR_C_SIGN);
+    connect(serv,&MyDimServer::set_OR_C_RATE_requested,serv,&MyDimServer::update_new_OR_C_RATE);
+    connect(serv,&MyDimServer::set_SC_SIGN_requested,serv,&MyDimServer::update_new_SC_SIGN);
+    connect(serv,&MyDimServer::set_SC_RATE_requested,serv,&MyDimServer::update_new_SC_RATE);
+    connect(serv,&MyDimServer::set_C_SIGN_requested,serv,&MyDimServer::update_new_C_SIGN);
+    connect(serv,&MyDimServer::set_C_RATE_requested,serv,&MyDimServer::update_new_C_RATE);
+    connect(serv,&MyDimServer::set_V_SIGN_requested,serv,&MyDimServer::update_new_V_SIGN);
+    connect(serv,&MyDimServer::set_V_RATE_requested,serv,&MyDimServer::update_new_V_RATE);
+
+    connect(serv,&MyDimServer::set_LASER_DIV_requested,serv,&MyDimServer::update_new_LASER_DIV);
+    connect(serv,&MyDimServer::set_LASER_DELAY_requested,serv,&MyDimServer::update_new_LASER_DELAY);
+    connect(serv,&MyDimServer::set_LASER_PATTERN_1_requested,serv,&MyDimServer::update_new_LASER_PATTERN_1);
+    connect(serv,&MyDimServer::set_LASER_PATTERN_0_requested,serv,&MyDimServer::update_new_LASER_PATTERN_0);
+    connect(serv,&MyDimServer::set_ATTEN_VALUE_requested,serv,&MyDimServer::update_new_ATTEN_VALUE);
+
+    //  ACT+APP parameters
+
+    connect(serv,&MyDimServer::apply_COUNTERS_UPD_RATE_requested,serv,&MyDimServer::update_act_COUNTERS_UPD_RATE);
+    connect(serv,&MyDimServer::apply_EXTENDED_READOUT_requested,serv,&MyDimServer::update_act_EXTENDED_READOUT);
+    connect(serv,&MyDimServer::apply_SC_SUM_SIDES_requested,serv,&MyDimServer::update_act_SC_SUM_SIDES);
+    connect(serv,&MyDimServer::apply_C_SUM_SIDES_requested,serv,&MyDimServer::update_act_C_SUM_SIDES);
+    connect(serv,&MyDimServer::apply_ADD_C_DELAY_requested,serv,&MyDimServer::update_act_ADD_C_DELAY);
+    connect(serv,&MyDimServer::apply_RES_SW_1_requested,serv,&MyDimServer::update_act_RES_SW_1);
+    connect(serv,&MyDimServer::apply_RES_SW_2_requested,serv,&MyDimServer::update_act_RES_SW_2);
+    connect(serv,&MyDimServer::apply_RES_SW_3_requested,serv,&MyDimServer::update_act_RES_SW_3);
+    connect(serv,&MyDimServer::apply_RES_SW_4_requested,serv,&MyDimServer::update_act_RES_SW_4);
+
+    connect(serv,&MyDimServer::apply_OR_A_ENABLED_requested,serv,&MyDimServer::update_act_OR_A_ENABLED);
+    connect(serv,&MyDimServer::apply_OR_C_ENABLED_requested,serv,&MyDimServer::update_act_OR_C_ENABLED);
+    connect(serv,&MyDimServer::apply_SC_ENABLED_requested,serv,&MyDimServer::update_act_SC_ENABLED);
+    connect(serv,&MyDimServer::apply_C_ENABLED_requested,serv,&MyDimServer::update_act_C_ENABLED);
+    connect(serv,&MyDimServer::apply_V_ENABLED_requested,serv,&MyDimServer::update_act_V_ENABLED);
+
+    connect(serv,&MyDimServer::apply_LASER_ON_requested,serv,&MyDimServer::update_act_LASER_ON);
+
+    //  Parameters with NEW value
+
+    connect(serv,&MyDimServer::apply_DELAY_A_requested,this,&Emulator::update_request_act_DELAY_A);
+    connect(serv,&MyDimServer::apply_DELAY_C_requested,this,&Emulator::update_request_act_DELAY_C);
+    connect(serv,&MyDimServer::apply_VTIME_LOW_requested,this,&Emulator::update_request_act_VTIME_LOW);
+    connect(serv,&MyDimServer::apply_VTIME_HIGH_requested,this,&Emulator::update_request_act_VTIME_HIGH);
+    connect(serv,&MyDimServer::apply_SC_LEVEL_A_requested,this,&Emulator::update_request_act_SC_LEVEL_A);
+    connect(serv,&MyDimServer::apply_SC_LEVEL_C_requested,this,&Emulator::update_request_act_SC_LEVEL_C);
+    connect(serv,&MyDimServer::apply_C_LEVEL_A_requested,this,&Emulator::update_request_act_C_LEVEL_A);
+    connect(serv,&MyDimServer::apply_C_LEVEL_C_requested,this,&Emulator::update_request_act_C_LEVEL_C);
+    connect(serv,&MyDimServer::apply_CH_MASK_A_requested,this,&Emulator::update_request_act_CH_MASK_A);
+    connect(serv,&MyDimServer::apply_CH_MASK_C_requested,this,&Emulator::update_request_act_CH_MASK_C);
+
+    connect(serv,&MyDimServer::apply_OR_A_SIGN_requested,this,&Emulator::update_request_act_OR_A_SIGN);
+    connect(serv,&MyDimServer::apply_OR_A_RATE_requested,this,&Emulator::update_request_act_OR_A_RATE);
+    connect(serv,&MyDimServer::apply_OR_C_SIGN_requested,this,&Emulator::update_request_act_OR_C_SIGN);
+    connect(serv,&MyDimServer::apply_OR_C_RATE_requested,this,&Emulator::update_request_act_OR_C_RATE);
+    connect(serv,&MyDimServer::apply_SC_SIGN_requested,this,&Emulator::update_request_act_SC_SIGN);
+    connect(serv,&MyDimServer::apply_SC_RATE_requested,this,&Emulator::update_request_act_SC_RATE);
+    connect(serv,&MyDimServer::apply_C_SIGN_requested,this,&Emulator::update_request_act_C_SIGN);
+    connect(serv,&MyDimServer::apply_C_RATE_requested,this,&Emulator::update_request_act_C_RATE);
+    connect(serv,&MyDimServer::apply_V_SIGN_requested,this,&Emulator::update_request_act_V_SIGN);
+    connect(serv,&MyDimServer::apply_V_RATE_requested,this,&Emulator::update_request_act_V_RATE);
+
+    connect(serv,&MyDimServer::apply_LASER_DIV_requested,this,&Emulator::update_request_act_LASER_DIV);
+    connect(serv,&MyDimServer::apply_LASER_DELAY_requested,this,&Emulator::update_request_act_LASER_DELAY);
+    connect(serv,&MyDimServer::apply_LASER_PATTERN_1_requested,this,&Emulator::update_request_act_LASER_PATTERN_1);
+    connect(serv,&MyDimServer::apply_LASER_PATTERN_0_requested,this,&Emulator::update_request_act_LASER_PATTERN_0);
+    connect(serv,&MyDimServer::apply_ATTEN_VALUE_requested,this,&Emulator::update_request_act_ATTEN_VALUE);
+
+    //  All parameters with ACT values exept 4
+    connect(this,&Emulator::set_cmnd_COUNTERS_UPD_RATE_requested,serv,&MyDimServer::update_act_COUNTERS_UPD_RATE);
+    connect(this,&Emulator::set_cmnd_EXTENDED_READOUT_requested,serv,&MyDimServer::update_act_EXTENDED_READOUT);
+    connect(this,&Emulator::set_cmnd_SC_SUM_SIDES_requested,serv,&MyDimServer::update_act_SC_SUM_SIDES);
+    connect(this,&Emulator::set_cmnd_C_SUM_SIDES_requested,serv,&MyDimServer::update_act_C_SUM_SIDES);
+    connect(this,&Emulator::set_cmnd_ADD_C_DELAY_requested,serv,&MyDimServer::update_act_ADD_C_DELAY);
+    connect(this,&Emulator::set_cmnd_RES_SW_1_requested,serv,&MyDimServer::update_act_RES_SW_1);
+    connect(this,&Emulator::set_cmnd_RES_SW_2_requested,serv,&MyDimServer::update_act_RES_SW_2);
+    connect(this,&Emulator::set_cmnd_RES_SW_3_requested,serv,&MyDimServer::update_act_RES_SW_3);
+    connect(this,&Emulator::set_cmnd_RES_SW_4_requested,serv,&MyDimServer::update_act_RES_SW_4);
+    connect(this,&Emulator::set_cmnd_DELAY_A_requested,serv,&MyDimServer::update_act_DELAY_A);
+    connect(this,&Emulator::set_cmnd_DELAY_C_requested,serv,&MyDimServer::update_act_DELAY_C);
+    connect(this,&Emulator::set_cmnd_VTIME_LOW_requested,serv,&MyDimServer::update_act_VTIME_LOW);
+    connect(this,&Emulator::set_cmnd_VTIME_HIGH_requested,serv,&MyDimServer::update_act_VTIME_HIGH);
+    connect(this,&Emulator::set_cmnd_SC_LEVEL_A_requested,serv,&MyDimServer::update_act_SC_LEVEL_A);
+    connect(this,&Emulator::set_cmnd_SC_LEVEL_C_requested,serv,&MyDimServer::update_act_SC_LEVEL_C);
+    connect(this,&Emulator::set_cmnd_C_LEVEL_A_requested,serv,&MyDimServer::update_act_C_LEVEL_A);
+    connect(this,&Emulator::set_cmnd_C_LEVEL_C_requested,serv,&MyDimServer::update_act_C_LEVEL_C);
+    connect(this,&Emulator::set_cmnd_CH_MASK_A_requested,serv,&MyDimServer::update_act_CH_MASK_A);
+    connect(this,&Emulator::set_cmnd_CH_MASK_C_requested,serv,&MyDimServer::update_act_CH_MASK_C);
+
+    connect(this,&Emulator::set_cmnd_SIDE_A_STATUS_requested,serv,&MyDimServer::update_act_SIDE_A_STATUS);
+    connect(this,&Emulator::set_cmnd_SIDE_C_STATUS_requested,serv,&MyDimServer::update_act_SIDE_C_STATUS);
+    connect(this,&Emulator::set_cmnd_CNT_OR_A_requested,serv,&MyDimServer::update_act_CNT_OR_A);
+    connect(this,&Emulator::set_cmnd_CNT_OR_A_RATE_requested,serv,&MyDimServer::update_act_CNT_OR_A_RATE);
+    connect(this,&Emulator::set_cmnd_CNT_OR_C_requested,serv,&MyDimServer::update_act_CNT_OR_C);
+    connect(this,&Emulator::set_cmnd_CNT_OR_C_RATE_requested,serv,&MyDimServer::update_act_CNT_OR_C_RATE);
+    connect(this,&Emulator::set_cmnd_CNT_SC_requested,serv,&MyDimServer::update_act_CNT_SC);
+    connect(this,&Emulator::set_cmnd_CNT_SC_RATE_requested,serv,&MyDimServer::update_act_CNT_SC_RATE);
+    connect(this,&Emulator::set_cmnd_CNT_C_requested,serv,&MyDimServer::update_act_CNT_C);
+    connect(this,&Emulator::set_cmnd_CNT_C_RATE_requested,serv,&MyDimServer::update_act_CNT_C_RATE);
+    connect(this,&Emulator::set_cmnd_CNT_V_requested,serv,&MyDimServer::update_act_CNT_V);
+
+    connect(this,&Emulator::set_cmnd_STATUS_OPTIONCODE_requested,serv,&MyDimServer::update_act_STATUS_OPTIONCODE);
+
+    connect(this,&Emulator::set_cmnd_OR_A_SIGN_requested,serv,&MyDimServer::update_act_OR_A_SIGN);
+    connect(this,&Emulator::set_cmnd_OR_A_RATE_requested,serv,&MyDimServer::update_act_OR_A_RATE);
+    connect(this,&Emulator::set_cmnd_OR_C_SIGN_requested,serv,&MyDimServer::update_act_OR_C_SIGN);
+    connect(this,&Emulator::set_cmnd_OR_C_RATE_requested,serv,&MyDimServer::update_act_OR_C_RATE);
+    connect(this,&Emulator::set_cmnd_SC_SIGN_requested,serv,&MyDimServer::update_act_SC_SIGN);
+    connect(this,&Emulator::set_cmnd_SC_RATE_requested,serv,&MyDimServer::update_act_SC_RATE);
+    connect(this,&Emulator::set_cmnd_C_SIGN_requested,serv,&MyDimServer::update_act_C_SIGN);
+    connect(this,&Emulator::set_cmnd_C_RATE_requested,serv,&MyDimServer::update_act_C_RATE);
+    connect(this,&Emulator::set_cmnd_V_SIGN_requested,serv,&MyDimServer::update_act_V_SIGN);
+    connect(this,&Emulator::set_cmnd_V_RATE_requested,serv,&MyDimServer::update_act_V_RATE);
+    connect(this,&Emulator::set_cmnd_OR_A_ENABLED_requested,serv,&MyDimServer::update_act_OR_A_ENABLED);
+    connect(this,&Emulator::set_cmnd_OR_C_ENABLED_requested,serv,&MyDimServer::update_act_OR_C_ENABLED);
+    connect(this,&Emulator::set_cmnd_SC_ENABLED_requested,serv,&MyDimServer::update_act_SC_ENABLED);
+    connect(this,&Emulator::set_cmnd_C_ENABLED_requested,serv,&MyDimServer::update_act_C_ENABLED);
+    connect(this,&Emulator::set_cmnd_V_ENABLED_requested,serv,&MyDimServer::update_act_V_ENABLED);
+
+    connect(this,&Emulator::set_cmnd_LASER_ON_requested,serv,&MyDimServer::update_act_LASER_ON);
+    connect(this,&Emulator::set_cmnd_LASER_DIV_requested,serv,&MyDimServer::update_act_LASER_DIV);
+    connect(this,&Emulator::set_cmnd_LASER_DELAY_requested,serv,&MyDimServer::update_act_LASER_DELAY);
+    connect(this,&Emulator::set_cmnd_LASER_PATTERN_1_requested,serv,&MyDimServer::update_act_LASER_PATTERN_1);
+    connect(this,&Emulator::set_cmnd_LASER_PATTERN_0_requested,serv,&MyDimServer::update_act_LASER_PATTERN_0);
+    connect(this,&Emulator::set_cmnd_ATTEN_VALUE_requested,serv,&MyDimServer::update_act_ATTEN_VALUE);
+    connect(this,&Emulator::set_cmnd_ATTEN_STATUS_requested,serv,&MyDimServer::update_act_ATTEN_STATUS);
 }
 
 void Emulator::FillActRandom()
 {
 
-    for(quint8 iPM=1;iPM<=serv->Npms;iPM++) {
-        for(quint8 iCH=1;iCH<=serv->pm[iPM-1]->Nchannels;iCH++) {
-            emit set_cmnd_ADC_ZERO_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-            emit set_cmnd_ADC_DELAY_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-            emit set_cmnd_ADC0_OFFSET_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-            emit set_cmnd_ADC1_OFFSET_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-            emit set_cmnd_ADC0_RANGE_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-            emit set_cmnd_ADC1_RANGE_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-            emit set_cmnd_TIME_ALIGN_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-            emit set_cmnd_CFD_THRESHOLD_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-            emit set_cmnd_CFD_ZERO_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-            emit set_cmnd_THRESHOLD_CALIBR_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+//    for(quint8 iPM=1;iPM<=serv->Npms;iPM++) {
+//        for(quint8 iCH=1;iCH<=serv->pm[iPM-1]->Nchannels;iCH++) {
+//            emit set_cmnd_ADC_ZERO_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+//            emit set_cmnd_ADC_DELAY_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+//            emit set_cmnd_ADC0_OFFSET_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+//            emit set_cmnd_ADC1_OFFSET_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+//            emit set_cmnd_ADC0_RANGE_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+//            emit set_cmnd_ADC1_RANGE_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+//            emit set_cmnd_TIME_ALIGN_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+//            emit set_cmnd_CFD_THRESHOLD_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+//            emit set_cmnd_CFD_ZERO_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+//            emit set_cmnd_THRESHOLD_CALIBR_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
 
-            emit set_cmnd_ADC0_MEANAMPL_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-            emit set_cmnd_ADC1_MEANAMPL_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-            emit set_cmnd_ADC0_ZEROLVL_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-            emit set_cmnd_ADC1_ZEROLVL_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-            emit set_cmnd_RAW_TDC_DATA_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-            emit set_cmnd_CNT_CFD_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-            emit set_cmnd_CNT_CFD_RATE_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-            emit set_cmnd_CNT_TRG_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-            emit set_cmnd_CNT_TRG_RATE_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-        }
+//            emit set_cmnd_ADC0_MEANAMPL_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+//            emit set_cmnd_ADC1_MEANAMPL_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+//            emit set_cmnd_ADC0_ZEROLVL_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+//            emit set_cmnd_ADC1_ZEROLVL_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+//            emit set_cmnd_RAW_TDC_DATA_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+//            emit set_cmnd_CNT_CFD_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+//            emit set_cmnd_CNT_CFD_RATE_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+//            emit set_cmnd_CNT_TRG_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+//            emit set_cmnd_CNT_TRG_RATE_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+//        }
 
-        emit set_cmnd_OR_GATE_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_CFD_SATR_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_CH_MASK_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_OR_GATE_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_CFD_SATR_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_CH_MASK_requested(FT0_FEE_ID[iPM],qrand()%1000);
 
-        emit set_cmnd_LINK_STATUS_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_BOARD_STATUS_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_TEMPERATURE_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_SERIAL_NUM_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_FW_VERSION_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_LINK_STATUS_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_BOARD_STATUS_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_TEMPERATURE_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_SERIAL_NUM_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_FW_VERSION_requested(FT0_FEE_ID[iPM],qrand()%1000);
 
-        emit set_cmnd_TG_PATTERN_1_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_TG_PATTERN_0_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_TG_CONT_VALUE_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_TG_BUNCH_FREQ_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_TG_FREQ_OFFSET_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_TG_PATTERN_1_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_TG_PATTERN_0_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_TG_CONT_VALUE_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_TG_BUNCH_FREQ_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_TG_FREQ_OFFSET_requested(FT0_FEE_ID[iPM],qrand()%1000);
 
-        emit set_cmnd_TG_MODE_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_HB_RESPONSE_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_DG_MODE_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_TG_MODE_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_HB_RESPONSE_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_DG_MODE_requested(FT0_FEE_ID[iPM],qrand()%1000);
 
-        emit set_cmnd_DG_TRG_RESPOND_MASK_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_DG_BUNCH_PATTERN_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_DG_BUNCH_FREQ_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_DG_FREQ_OFFSET_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_RDH_FEE_ID_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_RDH_PAR_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_RDH_MAX_PAYLOAD_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_RDH_DET_FIELD_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_CRU_TRG_COMPARE_DELAY_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_BCID_DELAY_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_DATA_SEL_TRG_MASK_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_DG_TRG_RESPOND_MASK_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_DG_BUNCH_PATTERN_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_DG_BUNCH_FREQ_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_DG_FREQ_OFFSET_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_RDH_FEE_ID_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_RDH_PAR_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_RDH_MAX_PAYLOAD_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_RDH_DET_FIELD_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_CRU_TRG_COMPARE_DELAY_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_BCID_DELAY_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_DATA_SEL_TRG_MASK_requested(FT0_FEE_ID[iPM],qrand()%1000);
 
-        emit set_cmnd_BITS_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_READOUT_MODE_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_BCID_SYNC_MODE_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_RX_PHASE_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_CRU_ORBIT_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_CRU_BC_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_RAW_FIFO_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_SEL_FIFO_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_SEL_FIRST_HIT_DROPPED_ORBIT_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_SEL_LAST_HIT_DROPPED_ORBIT_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_SEL_HITS_DROPPED_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_READOUT_RATE_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_BITS_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_READOUT_MODE_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_BCID_SYNC_MODE_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_RX_PHASE_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_CRU_ORBIT_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_CRU_BC_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_RAW_FIFO_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_SEL_FIFO_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_SEL_FIRST_HIT_DROPPED_ORBIT_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_SEL_LAST_HIT_DROPPED_ORBIT_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_SEL_HITS_DROPPED_requested(FT0_FEE_ID[iPM],qrand()%1000);
+//        emit set_cmnd_READOUT_RATE_requested(FT0_FEE_ID[iPM],qrand()%1000);
+
+        //  TCM
+        emit set_cmnd_COUNTERS_UPD_RATE_requested(qrand()%1000);
+        emit set_cmnd_EXTENDED_READOUT_requested(qrand()%1000);
+        emit set_cmnd_SC_SUM_SIDES_requested(qrand()%1000);
+        emit set_cmnd_C_SUM_SIDES_requested(qrand()%1000);
+        emit set_cmnd_ADD_C_DELAY_requested(qrand()%1000);
+        emit set_cmnd_RES_SW_1_requested(qrand()%1000);
+        emit set_cmnd_RES_SW_2_requested(qrand()%1000);
+        emit set_cmnd_RES_SW_3_requested(qrand()%1000);
+        emit set_cmnd_RES_SW_4_requested(qrand()%1000);
+        emit set_cmnd_DELAY_A_requested(qrand()%1000);
+        emit set_cmnd_DELAY_C_requested(qrand()%1000);
+        emit set_cmnd_VTIME_LOW_requested(qrand()%1000);
+        emit set_cmnd_VTIME_HIGH_requested(qrand()%1000);
+        emit set_cmnd_SC_LEVEL_A_requested(qrand()%1000);
+        emit set_cmnd_SC_LEVEL_C_requested(qrand()%1000);
+        emit set_cmnd_C_LEVEL_A_requested(qrand()%1000);
+        emit set_cmnd_C_LEVEL_C_requested(qrand()%1000);
+        emit set_cmnd_CH_MASK_A_requested(qrand()%1000);
+        emit set_cmnd_CH_MASK_C_requested(qrand()%1000);
+
+        emit set_cmnd_SIDE_A_STATUS_requested(qrand()%1000);
+        emit set_cmnd_SIDE_C_STATUS_requested(qrand()%1000);
+        emit set_cmnd_CNT_OR_A_requested(qrand()%1000);
+        emit set_cmnd_CNT_OR_A_RATE_requested(qrand()%1000);
+        emit set_cmnd_CNT_OR_C_requested(qrand()%1000);
+        emit set_cmnd_CNT_OR_C_RATE_requested(qrand()%1000);
+        emit set_cmnd_CNT_SC_requested(qrand()%1000);
+        emit set_cmnd_CNT_SC_RATE_requested(qrand()%1000);
+        emit set_cmnd_CNT_C_requested(qrand()%1000);
+        emit set_cmnd_CNT_C_RATE_requested(qrand()%1000);
+        emit set_cmnd_CNT_V_requested(qrand()%1000);
+
+        emit set_cmnd_STATUS_OPTIONCODE_requested("This is check string");
+
+        emit set_cmnd_OR_A_SIGN_requested(qrand()%1000);
+        emit set_cmnd_OR_A_RATE_requested(qrand()%1000);
+        emit set_cmnd_OR_C_SIGN_requested(qrand()%1000);
+        emit set_cmnd_OR_C_RATE_requested(qrand()%1000);
+        emit set_cmnd_SC_SIGN_requested(qrand()%1000);
+        emit set_cmnd_SC_RATE_requested(qrand()%1000);
+        emit set_cmnd_C_SIGN_requested(qrand()%1000);
+        emit set_cmnd_C_RATE_requested(qrand()%1000);
+        emit set_cmnd_V_SIGN_requested(qrand()%1000);
+        emit set_cmnd_V_RATE_requested(qrand()%1000);
+        emit set_cmnd_OR_A_ENABLED_requested(qrand()%1000);
+        emit set_cmnd_OR_C_ENABLED_requested(qrand()%1000);
+        emit set_cmnd_SC_ENABLED_requested(qrand()%1000);
+        emit set_cmnd_C_ENABLED_requested(qrand()%1000);
+        emit set_cmnd_V_ENABLED_requested(qrand()%1000);
+
+        emit set_cmnd_LASER_ON_requested(qrand()%1000);
+        emit set_cmnd_LASER_DIV_requested(qrand()%1000);
+        emit set_cmnd_LASER_DELAY_requested(qrand()%1000);
+        emit set_cmnd_LASER_PATTERN_1_requested(qrand()%1000);
+        emit set_cmnd_LASER_PATTERN_0_requested(qrand()%1000);
+        emit set_cmnd_ATTEN_VALUE_requested(qrand()%1000);
+        emit set_cmnd_ATTEN_STATUS_requested(qrand()%1000);
+
     }
 
-}
+//}
 
 
 //((qrand() % ((h+1)-l))+l)
