@@ -84,7 +84,7 @@ tcm_pNonValSignal getTCMNonValPointerToSignal(QString PARname);
 
 
 const QMap<quint16,QString> DIM_name{
-                                        {0xF000,"FT0/TCM"},
+                                        {0xF000,"FT0"},
                                         {0xF0A0,"FT0/PMA0"},
                                         {0xF0A1,"FT0/PMA1"},
                                         {0xF0A2,"FT0/PMA2"},

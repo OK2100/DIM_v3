@@ -46,8 +46,12 @@ void MainWindow::on_Btn_Start_clicked()
         emulator->node = ui->lE1_node->text();
 ////        emulator->serv->setNChannels(static_cast<quint8>(ui->SpinBox_Nchs->value()));
 
+        if(ui->checkWinCC->isChecked()){emulator->serv->excludeForWinCC=1; }
+        else {emulator->serv->excludeForWinCC=0;}
         server->startServer();
 
+        ui->checkLab->setEnabled(0);
+        ui->checkWinCC->setEnabled(0);
         ui->Btn_AppNode->setEnabled(0);
         ui->Btn2_AppName->setEnabled(0);
         ui->Btn_Start->setEnabled(0);
@@ -71,6 +75,8 @@ void MainWindow::on_Btn_Stop_clicked()
     server->stopServer();
     server->CloseOutFile();
 
+    ui->checkLab->setEnabled(1);
+    ui->checkWinCC->setEnabled(1);
     ui->Btn_AppNode->setEnabled(1);     ui->Btn_AppNode->setChecked(0);
     ui->Btn2_AppName->setEnabled(1);    ui->Btn2_AppName->setChecked(0);
     ui->Btn_Start->setEnabled(1);

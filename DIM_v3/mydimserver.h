@@ -261,6 +261,7 @@ public:
 //    QFile* DimServicesFile;
 //    QFile* DimCommandsFile;
 
+    bool excludeForWinCC=0;
 
     QString serverName;
     QString dnsNode;
