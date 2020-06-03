@@ -278,7 +278,7 @@ void Emulator::SetupConnection()
     connect(this,&Emulator::set_cmnd_CNT_SC_RATE_requested,serv,&MyDimServer::update_act_CNT_SC_RATE);
     connect(this,&Emulator::set_cmnd_CNT_C_requested,serv,&MyDimServer::update_act_CNT_C);
     connect(this,&Emulator::set_cmnd_CNT_C_RATE_requested,serv,&MyDimServer::update_act_CNT_C_RATE);
-    connect(this,&Emulator::set_cmnd_CNT_V_requested,serv,&MyDimServer::update_act_CNT_V);
+    connect(this,&Emulator::set_cmnd_CNT_V_RATE_requested,serv,&MyDimServer::update_act_CNT_V_RATE);
 
     connect(this,&Emulator::set_cmnd_STATUS_OPTIONCODE_requested,serv,&MyDimServer::update_act_STATUS_OPTIONCODE);
 
@@ -323,11 +323,11 @@ void Emulator::FillActRandom()
             emit set_cmnd_CFD_ZERO_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
             emit set_cmnd_THRESHOLD_CALIBR_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
 
-            emit set_cmnd_ADC0_MEANAMPL_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-            emit set_cmnd_ADC1_MEANAMPL_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+            if(!serv->excludeForWinCC) emit set_cmnd_ADC0_MEANAMPL_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+            if(!serv->excludeForWinCC) emit set_cmnd_ADC1_MEANAMPL_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
             emit set_cmnd_ADC0_ZEROLVL_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
             emit set_cmnd_ADC1_ZEROLVL_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
-            emit set_cmnd_RAW_TDC_DATA_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
+            if(!serv->excludeForWinCC) emit set_cmnd_RAW_TDC_DATA_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
             emit set_cmnd_CNT_CFD_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
             emit set_cmnd_CNT_CFD_RATE_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
             emit set_cmnd_CNT_TRG_requested(FT0_FEE_ID[iPM],iCH,qrand()%1000);
@@ -344,25 +344,25 @@ void Emulator::FillActRandom()
         emit set_cmnd_SERIAL_NUM_requested(FT0_FEE_ID[iPM],qrand()%1000);
         emit set_cmnd_FW_VERSION_requested(FT0_FEE_ID[iPM],qrand()%1000);
 
-        emit set_cmnd_TG_PATTERN_1_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_TG_PATTERN_0_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_TG_CONT_VALUE_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_TG_BUNCH_FREQ_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_TG_FREQ_OFFSET_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        if(!serv->excludeForWinCC) emit set_cmnd_TG_PATTERN_1_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        if(!serv->excludeForWinCC) emit set_cmnd_TG_PATTERN_0_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        if(!serv->excludeForWinCC) emit set_cmnd_TG_CONT_VALUE_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        if(!serv->excludeForWinCC) emit set_cmnd_TG_BUNCH_FREQ_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        if(!serv->excludeForWinCC) emit set_cmnd_TG_FREQ_OFFSET_requested(FT0_FEE_ID[iPM],qrand()%1000);
 
-        emit set_cmnd_TG_MODE_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        if(!serv->excludeForWinCC) emit set_cmnd_TG_MODE_requested(FT0_FEE_ID[iPM],qrand()%1000);
         emit set_cmnd_HB_RESPONSE_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_DG_MODE_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        if(!serv->excludeForWinCC) emit set_cmnd_DG_MODE_requested(FT0_FEE_ID[iPM],qrand()%1000);
 
-        emit set_cmnd_DG_TRG_RESPOND_MASK_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_DG_BUNCH_PATTERN_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_DG_BUNCH_FREQ_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_DG_FREQ_OFFSET_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        if(!serv->excludeForWinCC) emit set_cmnd_DG_TRG_RESPOND_MASK_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        if(!serv->excludeForWinCC) emit set_cmnd_DG_BUNCH_PATTERN_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        if(!serv->excludeForWinCC) emit set_cmnd_DG_BUNCH_FREQ_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        if(!serv->excludeForWinCC) emit set_cmnd_DG_FREQ_OFFSET_requested(FT0_FEE_ID[iPM],qrand()%1000);
         emit set_cmnd_RDH_FEE_ID_requested(FT0_FEE_ID[iPM],qrand()%1000);
         emit set_cmnd_RDH_PAR_requested(FT0_FEE_ID[iPM],qrand()%1000);
         emit set_cmnd_RDH_MAX_PAYLOAD_requested(FT0_FEE_ID[iPM],qrand()%1000);
         emit set_cmnd_RDH_DET_FIELD_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_CRU_TRG_COMPARE_DELAY_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        if(!serv->excludeForWinCC) emit set_cmnd_CRU_TRG_COMPARE_DELAY_requested(FT0_FEE_ID[iPM],qrand()%1000);
         emit set_cmnd_BCID_DELAY_requested(FT0_FEE_ID[iPM],qrand()%1000);
         emit set_cmnd_DATA_SEL_TRG_MASK_requested(FT0_FEE_ID[iPM],qrand()%1000);
 
@@ -370,8 +370,8 @@ void Emulator::FillActRandom()
         emit set_cmnd_READOUT_MODE_requested(FT0_FEE_ID[iPM],qrand()%1000);
         emit set_cmnd_BCID_SYNC_MODE_requested(FT0_FEE_ID[iPM],qrand()%1000);
         emit set_cmnd_RX_PHASE_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_CRU_ORBIT_requested(FT0_FEE_ID[iPM],qrand()%1000);
-        emit set_cmnd_CRU_BC_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        if(!serv->excludeForWinCC) emit set_cmnd_CRU_ORBIT_requested(FT0_FEE_ID[iPM],qrand()%1000);
+        if(!serv->excludeForWinCC) emit set_cmnd_CRU_BC_requested(FT0_FEE_ID[iPM],qrand()%1000);
         emit set_cmnd_RAW_FIFO_requested(FT0_FEE_ID[iPM],qrand()%1000);
         emit set_cmnd_SEL_FIFO_requested(FT0_FEE_ID[iPM],qrand()%1000);
         emit set_cmnd_SEL_FIRST_HIT_DROPPED_ORBIT_requested(FT0_FEE_ID[iPM],qrand()%1000);
@@ -410,7 +410,7 @@ void Emulator::FillActRandom()
         emit set_cmnd_CNT_SC_RATE_requested(qrand()%1000);
         emit set_cmnd_CNT_C_requested(qrand()%1000);
         emit set_cmnd_CNT_C_RATE_requested(qrand()%1000);
-        emit set_cmnd_CNT_V_requested(qrand()%1000);
+        emit set_cmnd_CNT_V_RATE_requested(qrand()%1000);
 
         emit set_cmnd_STATUS_OPTIONCODE_requested("This is check string");
 

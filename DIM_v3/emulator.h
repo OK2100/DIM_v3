@@ -109,7 +109,7 @@ public slots:
     void update_request_act_ADC0_RANGE(quint16 FEEid,quint8 CHid){ emit set_cmnd_ADC0_RANGE_requested(FEEid,CHid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->adc0range[CHid-1]->GetNewValue());}
     void update_request_act_ADC1_RANGE(quint16 FEEid,quint8 CHid){ emit set_cmnd_ADC1_RANGE_requested(FEEid,CHid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->adc1range[CHid-1]->GetNewValue());}
     void update_request_act_TIME_ALIGN(quint16 FEEid,quint8 CHid){ emit set_cmnd_TIME_ALIGN_requested(FEEid,CHid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->timealign[CHid-1]->GetNewValue());}
-    void update_request_act_CFD_THRESHOLD(quint16 FEEid,quint8 CHid){ emit set_cmnd_CFD_THRESHOLD_requested(FEEid,CHid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->cfdthreshold[CHid-1]->GetNewValue());}
+    void update_request_act_CFD_THRESHOLD(quint16 FEEid,quint8 CHid){emit set_cmnd_CFD_THRESHOLD_requested(FEEid,CHid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->cfdthreshold[CHid-1]->GetNewValue());}
     void update_request_act_CFD_ZERO(quint16 FEEid,quint8 CHid){ emit set_cmnd_CFD_ZERO_requested(FEEid,CHid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->cfdzero[CHid-1]->GetNewValue());}
     void update_request_act_THRESHOLD_CALIBR(quint16 FEEid,quint8 CHid){ emit set_cmnd_THRESHOLD_CALIBR_requested(FEEid,CHid,serv->pm[FT0_FEE_ID.key(FEEid)-1]->thresholdcalibr[CHid-1]->GetNewValue());}
 

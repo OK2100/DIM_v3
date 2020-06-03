@@ -899,7 +899,7 @@ void fillPMCHNonValHash()
      PMCHNonValHash.insert("ADC0_RANGE",  &MyDimServer::apply_ADC0_RANGE_requested);
      PMCHNonValHash.insert("ADC1_RANGE",  &MyDimServer::apply_ADC1_RANGE_requested);
      PMCHNonValHash.insert("TIME_ALIGN",   &MyDimServer::apply_TIME_ALIGN_requested);
-     PMCHNonValHash.insert("CFD_TRHESHOLD",&MyDimServer::apply_CFD_THRESHOLD_requested);
+     PMCHNonValHash.insert("CFD_THRESHOLD",&MyDimServer::apply_CFD_THRESHOLD_requested);
      PMCHNonValHash.insert("CFD_ZERO",    &MyDimServer::apply_CFD_ZERO_requested);
      PMCHNonValHash.insert("THRESHOLD_CALIBR",&MyDimServer::apply_THRESHOLD_CALIBR_requested);
 }

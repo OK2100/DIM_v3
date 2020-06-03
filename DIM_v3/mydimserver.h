@@ -614,7 +614,7 @@ public slots:
 
     void update_new_OR_A_SIGN(quint16 val){tcm->orAsign->updateNew(val);}
     void update_new_OR_A_RATE(quint32 val){tcm->orArate->updateNew(val);}
-    void update_new_OR_C_SIGN(quint16 val){tcm->orAsign->updateNew(val);}
+    void update_new_OR_C_SIGN(quint16 val){tcm->orCsign->updateNew(val);}
     void update_new_OR_C_RATE(quint32 val){tcm->orCrate->updateNew(val);}
     void update_new_SC_SIGN(quint16 val){tcm->scsign->updateNew(val);}
     void update_new_SC_RATE(quint32 val){tcm->scrate->updateNew(val);}

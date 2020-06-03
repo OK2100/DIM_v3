@@ -46,8 +46,16 @@ void MainWindow::on_Btn_Start_clicked()
         emulator->node = ui->lE1_node->text();
 ////        emulator->serv->setNChannels(static_cast<quint8>(ui->SpinBox_Nchs->value()));
 
-        if(ui->checkWinCC->isChecked()){emulator->serv->excludeForWinCC=1; }
-        else {emulator->serv->excludeForWinCC=0;}
+        if(ui->checkWinCC->isChecked()){
+            emulator->serv->excludeForWinCC=1;
+            DimServicesFile.setFileName("WinCC_only_ServicesList_v2_0.txt");
+            DimCommandsFile.setFileName("WinCC_only_CommandsList_v2_0.txt");
+        }
+        else {
+            emulator->serv->excludeForWinCC=0;
+            DimServicesFile.setFileName("All_ServicesList_v2_0.txt");
+            DimCommandsFile.setFileName("All_CommandsList_v2_0.txt");
+        }
         server->startServer();
 
         ui->checkLab->setEnabled(0);
